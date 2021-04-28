@@ -1,0 +1,12 @@
+{
+	"supplementary.configGui.title": "Supplementary Config",
+
+	"supplementary.configGui.allowVegetalGeneration.title": "Vegetal Generation",
+	"supplementary.configGui.allowVegetalGeneration.tooltip": "Determines if vegetation should generate within the world.\n\u00A77Default: ON",
+
+	"itemGroup.supplementary": "Supplementary",
+	
+	"item.supplementary.cherries": "Cherries",
+
+	"block.supplementary.cherry_bush": "Cherry Bush"
+}
