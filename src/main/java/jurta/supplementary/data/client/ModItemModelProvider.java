@@ -17,6 +17,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Items
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
         builder(itemGenerated, "cherries");
+        builder(itemGenerated, "broccoli");
+        builder(itemGenerated, "broccoli_seeds");
+
     }
 
     private ItemModelBuilder builder(ModelFile model, String name) {

@@ -1,5 +1,6 @@
 package jurta.supplementary.init;
 
+import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -13,8 +14,10 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     // Vegetation
+    public static final RegistryObject<BroccoliBlock> BROCCOLI = registerNoItem("broccoli", () ->
+            new BroccoliBlock(AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
     public static final RegistryObject<CherryBushBlock> CHERRY_BUSH = registerNoItem("cherry_bush", () ->
-            new CherryBushBlock(AbstractBlock.Properties.of(Material.PLANT).noOcclusion().randomTicks().sound(SoundType.SWEET_BERRY_BUSH)));
+            new CherryBushBlock(AbstractBlock.Properties.of(Material.PLANT).noOcclusion().randomTicks().instabreak().sound(SoundType.SWEET_BERRY_BUSH)));
 
     static void register() {}
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "supplementary:block/broccoli_stage2"
+  }
+}

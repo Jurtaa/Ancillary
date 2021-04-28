@@ -1,12 +1,14 @@
 package jurta.supplementary.data.client;
 
 import jurta.supplementary.Supplementary;
+import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
 import jurta.supplementary.init.ModBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.apache.commons.lang3.Range;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
@@ -40,5 +42,30 @@ public class ModBlockStateProvider extends BlockStateProvider {
                         .texture("plant", modLoc("block/cherry_plant"))
                         .texture("side", modLoc("block/cherry_bush_side_stage3"))
                         .texture("top", modLoc("block/cherry_bush_top_stage3"))));
+        getVariantBuilder(ModBlocks.BROCCOLI.get())
+                .partialState().with(BroccoliBlock.AGE, 0).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage0", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage0"))))
+                .partialState().with(BroccoliBlock.AGE, 1).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage0", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage0"))))
+                .partialState().with(BroccoliBlock.AGE, 2).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage1", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage1"))))
+                .partialState().with(BroccoliBlock.AGE, 3).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage1", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage1"))))
+                .partialState().with(BroccoliBlock.AGE, 4).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage2", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage2"))))
+                .partialState().with(BroccoliBlock.AGE, 5).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage2", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage2"))))
+                .partialState().with(BroccoliBlock.AGE, 6).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage2", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage2"))))
+                .partialState().with(BroccoliBlock.AGE, 7).addModels(new ConfiguredModel(models()
+                        .withExistingParent("broccoli_stage3", mcLoc("block/crop"))
+                        .texture("crop", modLoc("block/broccoli_stage3"))));
     }
 }
