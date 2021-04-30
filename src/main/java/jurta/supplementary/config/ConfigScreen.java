@@ -16,8 +16,6 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import static net.minecraft.client.gui.screen.SettingsScreen.tooltipAt;
-
 public class ConfigScreen extends Screen {
     /** Distance from top of the screen to the options row list's top */
     private static final int OPTIONS_LIST_TOP_HEIGHT = 24;
@@ -116,7 +114,7 @@ public class ConfigScreen extends Screen {
 
     @Nullable
     public static List<IReorderingProcessor> tooltipAt(OptionsRowList optionsRowList, int mouseX, int mouseY) {
-        Optional<Widget> optional = optionsRowList.getMouseOver((double)mouseX, (double)mouseY);
+        Optional<Widget> optional = optionsRowList.getMouseOver(mouseX, mouseY);
         if (optional.isPresent() && optional.get() instanceof IBidiTooltip) {
             Optional<List<IReorderingProcessor>> optional1 = ((IBidiTooltip)optional.get()).getTooltip();
             return optional1.orElse((List<IReorderingProcessor>)null);

@@ -1,6 +1,5 @@
 package jurta.supplementary.init;
 
-import cpw.mods.modlauncher.LaunchPluginHandler;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;

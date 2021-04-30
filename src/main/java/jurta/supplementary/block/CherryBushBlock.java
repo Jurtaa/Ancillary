@@ -1,19 +1,15 @@
 package jurta.supplementary.block;
 
-import net.minecraft.block.*;
-import java.util.Random;
 import jurta.supplementary.init.ModItems;
-import net.minecraft.block.BushBlock;
+import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
-import net.minecraft.state.Property;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
-import net.minecraft.util.IItemProvider;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -25,13 +21,15 @@ import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.ForgeHooks;
 
+import java.util.Random;
+
 public class CherryBushBlock extends BushBlock implements IGrowable {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
     private static final VoxelShape SAPLING_SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 8.0D, 12.0D);
 
     public CherryBushBlock(AbstractBlock.Properties properties) {
         super(properties);
-        registerDefaultState(this.stateDefinition.any().setValue(AGE, Integer.valueOf(0)));
+        registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
     public ItemStack getCloneItemStack(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState) {
@@ -52,8 +50,8 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
 
     public void randomTick(BlockState blockState, ServerWorld serverWorld, BlockPos blockPos, Random random) {
         int i = blockState.getValue(AGE);
-        if (i < 3 && serverWorld.getRawBrightness(blockPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre((World)serverWorld, blockPos, blockState, (random.nextInt(5) == 0))) {
-            serverWorld.setBlock(blockPos, blockState.setValue(AGE, Integer.valueOf(i + 1)), 2);
+        if (i < 3 && serverWorld.getRawBrightness(blockPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(serverWorld, blockPos, blockState, random.nextInt(5) == 0)) {
+            serverWorld.setBlock(blockPos, blockState.setValue(AGE, i + 1), 2);
             ForgeHooks.onCropsGrowPost(serverWorld, blockPos, blockState);
         }
     }
@@ -67,7 +65,7 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
             int j = 1 + worldIn.random.nextInt(2);
             popResource(worldIn, blockPos, new ItemStack(ModItems.CHERRIES.get(), j + (flag ? 1 : 0)));
             worldIn.playSound(null, blockPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-            worldIn.setBlock(blockPos, blockState.setValue(AGE, Integer.valueOf(1)), 2);
+            worldIn.setBlock(blockPos, blockState.setValue(AGE, 1), 2);
             return ActionResultType.sidedSuccess(worldIn.isClientSide);
         }
         return super.use(blockState, worldIn, blockPos, playerEntity, hand, result);
@@ -91,6 +89,6 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
 
     public void performBonemeal(ServerWorld serverWorld, Random random, BlockPos blockPos, BlockState blockState) {
         int i = Math.min(3, blockState.getValue(AGE) + 1);
-        serverWorld.setBlock(blockPos, blockState.setValue(AGE, Integer.valueOf(i)), 2);
+        serverWorld.setBlock(blockPos, blockState.setValue(AGE, i), 2);
     }
 }
