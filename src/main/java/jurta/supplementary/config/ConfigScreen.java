@@ -3,6 +3,7 @@ package jurta.supplementary.config;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import jurta.supplementary.Supplementary;
 import net.minecraft.client.gui.IBidiTooltip;
+import net.minecraft.client.gui.screen.CustomizeSkinScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
@@ -17,13 +18,6 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class ConfigScreen extends Screen {
-    /** Distance from top of the screen to the options row list's top */
-    private static final int OPTIONS_LIST_TOP_HEIGHT = 24;
-    /** Distance from bottom of the screen to the options row list's bottom */
-    private static final int OPTIONS_LIST_BOTTOM_OFFSET = 32;
-    /** Height of each item in the options row list */
-    private static final int OPTIONS_LIST_ITEM_HEIGHT = 25;
-
     /** Width of a button */
     private static final int BUTTON_WIDTH = 200;
     /** Height of a button */
@@ -31,14 +25,7 @@ public class ConfigScreen extends Screen {
     /** Distance from bottom of the screen to the "Done" button's top */
     private static final int DONE_BUTTON_TOP_OFFSET = 26;
 
-    private static final ConfigManager CMI = ConfigManager.getInstance();
-
     private final Screen parentScreen;
-
-    /** List of options rows shown on the screen */
-    // Not a final field because this cannot be initialized in the constructor,
-    // as explained below
-    private OptionsRowList optionsRowList;
 
     /** Distance from top of the screen to this GUI's title */
     private static final int TITLE_HEIGHT = 8;
@@ -51,27 +38,9 @@ public class ConfigScreen extends Screen {
 
     @Override
     protected void init() {
-        // Create the options row list
-        // It must be created in this method instead of in the constructor,
-        // or it will not be displayed properly
-        this.optionsRowList = new OptionsRowList(
-                this.minecraft, this.width, this.height,
-                OPTIONS_LIST_TOP_HEIGHT,
-                this.height - OPTIONS_LIST_BOTTOM_OFFSET,
-                OPTIONS_LIST_ITEM_HEIGHT
-        );
-
-        this.optionsRowList.addBig(new BooleanOption(
-                "supplementary.configGui.allowVegetalGeneration.title",
-                new TranslationTextComponent("supplementary.configGui.allowVegetalGeneration.tooltip", Supplementary.MOD_ID),
-                unused -> CMI.allowVegetalGeneration(),
-                (unused, newValue) -> CMI.changeallowVegetalGeneration(newValue)
-        ));
-
-        // Add the options row list as this screen's child
-        // If this is not done, users cannot click on items in the list
-        this.children.add(this.optionsRowList);
-
+        this.addButton(new Button(this.width / 2 - 75, this.height / 6 - 6, 150, 20, new TranslationTextComponent("supplementary.configGui.generation"), (generation) -> {
+            this.minecraft.setScreen(new GenerationConfigScreen(this));
+        }));
         // Add the "Done" button
         this.addButton(new Button(
                 (this.width - BUTTON_WIDTH) / 2,
@@ -88,19 +57,11 @@ public class ConfigScreen extends Screen {
     public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
         // First draw the background of the screen
         this.renderBackground(matrixStack);
-        // Options row list must be rendered here,
-        // otherwise the GUI will be broken
-        this.optionsRowList.render(matrixStack, mouseX, mouseY, partialTicks);
         // Draw the title
         drawCenteredString(matrixStack, this.font, this.title.getString(),
                 this.width / 2, TITLE_HEIGHT, 0xFFFFFF);
         // Call the super class' method to complete rendering
         super.render(matrixStack, mouseX, mouseY, partialTicks);
-        // Allow tooltips to be drawn
-        List<IReorderingProcessor> list = tooltipAt(this.optionsRowList, mouseX, mouseY);
-        if (list != null) {
-            this.renderTooltip(matrixStack, list, mouseX, mouseY);
-        }
     }
 
     /**
@@ -108,18 +69,6 @@ public class ConfigScreen extends Screen {
      */
     @Override
     public void onClose() {
-        CMI.save();
-        Objects.requireNonNull(this.minecraft).setScreen(parentScreen);
-    }
-
-    @Nullable
-    public static List<IReorderingProcessor> tooltipAt(OptionsRowList optionsRowList, int mouseX, int mouseY) {
-        Optional<Widget> optional = optionsRowList.getMouseOver(mouseX, mouseY);
-        if (optional.isPresent() && optional.get() instanceof IBidiTooltip) {
-            Optional<List<IReorderingProcessor>> optional1 = ((IBidiTooltip)optional.get()).getTooltip();
-            return optional1.orElse((List<IReorderingProcessor>)null);
-        } else {
-            return null;
-        }
+        this.minecraft.setScreen(parentScreen);
     }
 }

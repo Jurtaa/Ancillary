@@ -36,7 +36,7 @@ public class ConfigManager {
 
     private ConfigManager(ForgeConfigSpec.Builder configSpecBuilder) {
         allowVegetalGeneration = configSpecBuilder
-                .comment("Determines if vegetation should generate within the world.")
+                .comment("Determines if vegetation should generate within worlds.")
                 .translation("supplementary.configGui.allowVegetalGeneration.title")
                 .define("allowVegetalGeneration", true);
     }

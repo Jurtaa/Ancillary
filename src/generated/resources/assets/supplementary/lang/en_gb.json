@@ -6,6 +6,8 @@
   "item.supplementary.cherries": "Cherries",
   "itemGroup.supplementary": "Supplementary",
   "supplementary.configGui.allowVegetalGeneration.title": "Vegetal Generation",
-  "supplementary.configGui.allowVegetalGeneration.tooltip": "Determines if vegetation should generate within worlds./n\u00A77Default: ON",
-  "supplementary.configGui.title": "Supplementary Configuration"
+  "supplementary.configGui.allowVegetalGeneration.tooltip": "Determines if vegetation should generate within worlds.\n\u00A77Default: ON",
+  "supplementary.configGui.generation": "Supplementary Generation",
+  "supplementary.configGui.generation.title": "Supplementary Generation Config",
+  "supplementary.configGui.title": "Supplementary Config"
 }
