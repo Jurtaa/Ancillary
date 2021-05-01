@@ -5,6 +5,7 @@ import jurta.supplementary.config.ConfigManager;
 import jurta.supplementary.config.ConfigScreen;
 import jurta.supplementary.data.client.ModBlockStateProvider;
 import jurta.supplementary.data.client.ModItemModelProvider;
+import jurta.supplementary.data.client.ModLanguageProvider;
 import jurta.supplementary.data.loot.ModLootTableProvider;
 import jurta.supplementary.init.ModFeatures;
 import jurta.supplementary.init.Registration;
@@ -118,6 +119,12 @@ public class Supplementary {
         }
     }
 
+    /* Registers the locales for the language provider */
+    private static final String[] LOCALE_CODES = new String[] {
+            "en_us",
+            "en_gb"
+    };
+
     private void gatherData(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper efh = event.getExistingFileHelper();
@@ -127,6 +134,9 @@ public class Supplementary {
         if (event.includeClient()) {
             gen.addProvider(blockstates);
             gen.addProvider(new ModItemModelProvider(gen, blockstates.getExistingHelper()));
+            for(String locale : LOCALE_CODES) {
+                gen.addProvider(new ModLanguageProvider(gen, locale));
+            }
         } if (event.includeServer()) {
             gen.addProvider(new ModLootTableProvider(gen));
             //gen.addProvider(new ModRecipesProvider(gen));
