@@ -14,10 +14,12 @@ public class ConfigScreen extends Screen {
     /** Distance from bottom of the screen to the "Done" button's top */
     private static final int DONE_BUTTON_TOP_OFFSET = 26;
 
+    private static final ConfigManager CMI = ConfigManager.getInstance();
+
     private final Screen parentScreen;
 
     /** Distance from top of the screen to this GUI's title */
-    private static final int TITLE_HEIGHT = 8;
+    private static final int TITLE_HEIGHT = 15;
 
     public ConfigScreen(Screen parentScreen) {
         // Use the super class' constructor to set the screen's title
@@ -58,6 +60,7 @@ public class ConfigScreen extends Screen {
      */
     @Override
     public void onClose() {
+        CMI.save();
         this.minecraft.setScreen(parentScreen);
     }
 }
