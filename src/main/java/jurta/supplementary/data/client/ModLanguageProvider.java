@@ -15,8 +15,11 @@ public class ModLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         String locale = this.getName().replace("Languages: ", "");
         switch(locale) {
-            case "en_us":
+            case "en_au":
+            case "en_ca":
             case "en_gb":
+            case "en_nz":
+            case "en_us":
                 add("itemGroup.supplementary", "Supplementary");
                 add("supplementary.configGui.title", "Supplementary Config");
                 add("supplementary.configGui.generation", "Generation");

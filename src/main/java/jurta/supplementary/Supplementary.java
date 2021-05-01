@@ -121,8 +121,11 @@ public class Supplementary {
 
     /* Registers the locales for the language provider */
     private static final String[] LOCALE_CODES = new String[] {
-            "en_us",
-            "en_gb"
+            "en_au",
+            "en_ca",
+            "en_gb",
+            "en_nz",
+            "en_us"
     };
 
     private void gatherData(GatherDataEvent event) {
