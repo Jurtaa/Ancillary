@@ -2,20 +2,9 @@ package jurta.supplementary.config;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import jurta.supplementary.Supplementary;
-import net.minecraft.client.gui.IBidiTooltip;
-import net.minecraft.client.gui.screen.CustomizeSkinScreen;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
-import net.minecraft.client.gui.widget.list.OptionsRowList;
-import net.minecraft.client.settings.BooleanOption;
-import net.minecraft.util.IReorderingProcessor;
 import net.minecraft.util.text.TranslationTextComponent;
-
-import javax.annotation.Nullable;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 public class ConfigScreen extends Screen {
     /** Width of a button */
