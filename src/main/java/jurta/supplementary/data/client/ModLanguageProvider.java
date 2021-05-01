@@ -17,6 +17,12 @@ public class ModLanguageProvider extends LanguageProvider {
         switch(locale) {
             case "en_us":
             case "en_gb":
+                add("itemGroup.supplementary", "Supplementary");
+                add("supplementary.configGui.title", "Supplementary Configuration");
+                add("supplementary.configGui.allowVegetalGeneration.title", "Vegetal Generation");
+                add("supplementary.configGui.allowVegetalGeneration.tooltip",
+                        "Determines if vegetation should generate within worlds./n" +
+                        "\u00A77Default: ON");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
                 addItem(ModItems.BROCCOLI, "Broccoli");
