@@ -43,7 +43,6 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         return super.getShape(blockState, iBlockReader, blockPos, iSelectionContext);
     }
 
-
     public boolean isRandomlyTicking(BlockState blockState) {
         return blockState.getValue(AGE) < 3;
     }
@@ -71,21 +70,17 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         return super.use(blockState, worldIn, blockPos, playerEntity, hand, result);
     }
 
-
     protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> block) {
         block.add(AGE);
     }
-
 
     public boolean isValidBonemealTarget(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState, boolean p_176473_4_) {
         return blockState.getValue(AGE) < 3;
     }
 
-
     public boolean isBonemealSuccess(World worldIn, Random random, BlockPos blockPos, BlockState blockState) {
         return true;
     }
-
 
     public void performBonemeal(ServerWorld serverWorld, Random random, BlockPos blockPos, BlockState blockState) {
         int i = Math.min(3, blockState.getValue(AGE) + 1);
