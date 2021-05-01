@@ -116,7 +116,7 @@ public class GenerationConfigScreen extends Screen {
         Optional<Widget> optional = optionsRowList.getMouseOver(mouseX, mouseY);
         if (optional.isPresent() && optional.get() instanceof IBidiTooltip) {
             Optional<List<IReorderingProcessor>> optional1 = ((IBidiTooltip)optional.get()).getTooltip();
-            return optional1.orElse((List<IReorderingProcessor>)null);
+            return optional1.orElse(null);
         } else {
             return null;
         }
