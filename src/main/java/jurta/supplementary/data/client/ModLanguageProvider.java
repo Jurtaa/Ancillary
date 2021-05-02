@@ -23,6 +23,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 add("itemGroup.supplementary", "Supplementary");
                 add("supplementary.configGui.title", "Supplementary Config");
                 add("supplementary.configGui.generation", "Generation");
+                add("supplementary.configGui.generation.tooltip", "Settings for generation relating to the mod.");
                 add("supplementary.configGui.generation.title", "Supplementary Generation Config");
                 add("supplementary.configGui.allowVegetalGeneration.title", "Vegetation");
                 add("supplementary.configGui.allowVegetalGeneration.tooltip",

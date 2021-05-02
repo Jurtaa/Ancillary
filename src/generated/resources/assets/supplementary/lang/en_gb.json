@@ -9,5 +9,6 @@
   "supplementary.configGui.allowVegetalGeneration.tooltip": "Determines if vegetation should generate within worlds.\n\u00A77Default: ON",
   "supplementary.configGui.generation": "Generation",
   "supplementary.configGui.generation.title": "Supplementary Generation Config",
+  "supplementary.configGui.generation.tooltip": "Settings for generation relating to the mod.",
   "supplementary.configGui.title": "Supplementary Config"
 }

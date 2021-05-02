@@ -31,6 +31,8 @@ public class ConfigScreen extends Screen {
     protected void init() {
         this.addButton(new Button(this.width / 2 - 75, this.height / 6 - 6, 150, 20, new TranslationTextComponent("supplementary.configGui.generation"), (generation) -> {
             this.minecraft.setScreen(new GenerationConfigScreen(this));
+        }, (tooltip, matrixStack, mouseX, mouseY) -> {
+            this.renderTooltip(matrixStack, new TranslationTextComponent("supplementary.configGui.generation.tooltip"), mouseX, mouseY);
         }));
         // Add the "Done" button
         this.addButton(new Button(
