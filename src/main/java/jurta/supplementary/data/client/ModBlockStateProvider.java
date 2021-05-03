@@ -20,6 +20,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Pillars
+        axisBlock(ModBlocks.DIAMOND_PILLAR.get());
+        axisBlock(ModBlocks.NETHERITE_PILLAR.get());
+        // Vegetation
         getVariantBuilder(ModBlocks.CHERRY_BUSH.get())
                 .partialState().with(CherryBushBlock.AGE, 0).addModels(new ConfiguredModel(models()
                         .withExistingParent("cherry_bush_stage0", modLoc("block/template_bush_sapling"))

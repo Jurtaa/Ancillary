@@ -1,4 +1,4 @@
-package jurta.supplementary.data.loot;
+package jurta.supplementary.data.server.loot;
 
 import jurta.supplementary.Supplementary;
 import jurta.supplementary.block.BroccoliBlock;
@@ -24,6 +24,10 @@ import java.util.stream.Collectors;
 public class ModBlockLootTableProvider extends BlockLootTables {
     @Override
     protected void addTables() {
+        // Pillars
+        dropSelf(ModBlocks.DIAMOND_PILLAR.get());
+        dropSelf(ModBlocks.NETHERITE_PILLAR.get());
+        // Vegetation
         ILootCondition.IBuilder ilootcondition$ibuilder = BlockStateProperty.hasBlockStateProperties(ModBlocks.BROCCOLI.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BroccoliBlock.AGE, 7));
         this.add(ModBlocks.BROCCOLI.get(), createCropDrops(ModBlocks.BROCCOLI.get(), ModItems.BROCCOLI.get(), ModItems.BROCCOLI_SEEDS.get(), ilootcondition$ibuilder));
         add(ModBlocks.CHERRY_BUSH.get(), (cherryBush) -> applyExplosionDecay(cherryBush, LootTable.lootTable().withPool(LootPool.lootPool().when(BlockStateProperty.hasBlockStateProperties(ModBlocks.CHERRY_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CherryBushBlock.AGE, 3))).add(ItemLootEntry.lootTableItem(ModItems.CHERRIES.get())).apply(SetCount.setCount(RandomValueRange.between(2.0F, 3.0F))).apply(ApplyBonus.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))).withPool(LootPool.lootPool().when(BlockStateProperty.hasBlockStateProperties(ModBlocks.CHERRY_BUSH.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CherryBushBlock.AGE, 2))).add(ItemLootEntry.lootTableItem(ModItems.CHERRIES.get())).apply(SetCount.setCount(RandomValueRange.between(1.0F, 2.0F))).apply(ApplyBonus.addUniformBonusCount(Enchantments.BLOCK_FORTUNE)))));

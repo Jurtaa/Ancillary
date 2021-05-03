@@ -1,4 +1,4 @@
-package jurta.supplementary.data.loot;
+package jurta.supplementary.data.server.loot;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;

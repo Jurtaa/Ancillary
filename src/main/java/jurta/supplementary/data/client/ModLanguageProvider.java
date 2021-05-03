@@ -31,6 +31,8 @@ public class ModLanguageProvider extends LanguageProvider {
                         "\u00A77Default: ON");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
+                addBlock(ModBlocks.DIAMOND_PILLAR, "Diamond Pillar");
+                addBlock(ModBlocks.NETHERITE_PILLAR, "Netherite Pillar");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");

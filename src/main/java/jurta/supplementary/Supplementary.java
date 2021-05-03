@@ -6,16 +6,20 @@ import jurta.supplementary.config.ConfigScreen;
 import jurta.supplementary.data.client.ModBlockStateProvider;
 import jurta.supplementary.data.client.ModItemModelProvider;
 import jurta.supplementary.data.client.ModLanguageProvider;
-import jurta.supplementary.data.loot.ModLootTableProvider;
+import jurta.supplementary.data.server.ModRecipeProvider;
+import jurta.supplementary.data.server.loot.ModLootTableProvider;
+import jurta.supplementary.init.ModBlocks;
 import jurta.supplementary.init.ModFeatures;
 import jurta.supplementary.init.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -142,7 +146,7 @@ public class Supplementary {
             }
         } if (event.includeServer()) {
             gen.addProvider(new ModLootTableProvider(gen));
-            //gen.addProvider(new ModRecipesProvider(gen));
+            gen.addProvider(new ModRecipeProvider(gen));
             //gen.addProvider(blocktags);
             //gen.addProvider(new ModItemTagsProvider(gen, blocktags, efh));
         }

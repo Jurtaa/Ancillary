@@ -14,6 +14,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Pillars
+        withExistingParent("diamond_pillar", modLoc("block/diamond_pillar"));
+        withExistingParent("netherite_pillar", modLoc("block/netherite_pillar"));
         // Items
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
         builder(itemGenerated, "cherries");
