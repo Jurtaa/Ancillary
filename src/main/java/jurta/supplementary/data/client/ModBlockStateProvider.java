@@ -20,6 +20,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Leaves
+        simpleBlock(ModBlocks.SAKURA_LEAVES.get());
+        // Sapling
+        simpleBlock(ModBlocks.SAKURA_SAPLING.get(), models().cross("sakura_sapling", modLoc("block/sakura_sapling")));
         // Pillars
         axisBlock(ModBlocks.DIAMOND_PILLAR.get());
         axisBlock(ModBlocks.NETHERITE_PILLAR.get());

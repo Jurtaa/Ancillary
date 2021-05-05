@@ -34,11 +34,17 @@ public class ConfigManager {
 
     private final ForgeConfigSpec.BooleanValue allowVegetalGeneration;
 
+    private final ForgeConfigSpec.BooleanValue allowTreeGeneration;
+
     private ConfigManager(ForgeConfigSpec.Builder configSpecBuilder) {
         allowVegetalGeneration = configSpecBuilder
                 .comment("Determines if vegetation should generate within worlds.")
-                .translation("supplementary.configGui.allowVegetalGeneration.title")
+                .translation("config.supplementary.allowVegetalGeneration.title")
                 .define("allowVegetalGeneration", true);
+        allowTreeGeneration = configSpecBuilder
+                .comment("Determines if trees should generate within worlds.")
+                .translation("config.supplementary.allowTreeGeneration.title")
+                .define("allowTreeGeneration", true);
     }
 
     public static ConfigManager getInstance() {
@@ -49,8 +55,16 @@ public class ConfigManager {
         return allowVegetalGeneration.get();
     }
 
-    public void changeallowVegetalGeneration(boolean newValue) {
+    public boolean allowTreeGeneration() {
+        return allowTreeGeneration.get();
+    }
+
+    public void changeAllowVegetalGeneration(boolean newValue) {
         allowVegetalGeneration.set(newValue);
+    }
+
+    public void changeAllowTreeGeneration(boolean newValue) {
+        allowTreeGeneration.set(newValue);
     }
 
     public void save() {

@@ -2,6 +2,7 @@ package jurta.supplementary.config;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import jurta.supplementary.Supplementary;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -23,16 +24,16 @@ public class ConfigScreen extends Screen {
 
     public ConfigScreen(Screen parentScreen) {
         // Use the super class' constructor to set the screen's title
-        super(new TranslationTextComponent("supplementary.configGui.title", Supplementary.MOD_ID));
+        super(new TranslationTextComponent("config.supplementary.title", Supplementary.MOD_ID));
         this.parentScreen = parentScreen;
     }
 
     @Override
     protected void init() {
-        this.addButton(new Button(this.width / 2 - 75, this.height / 6 - 6, 150, 20, new TranslationTextComponent("supplementary.configGui.generation"), (generation) -> {
+        this.addButton(new Button(this.width / 2 - 75, this.height / 6 - 6, 150, 20, new TranslationTextComponent("config.supplementary.generation"), (generation) -> {
             this.minecraft.setScreen(new GenerationConfigScreen(this));
         }, (tooltip, matrixStack, mouseX, mouseY) -> {
-            this.renderTooltip(matrixStack, new TranslationTextComponent("supplementary.configGui.generation.tooltip"), mouseX, mouseY);
+            this.renderTooltip(matrixStack, new TranslationTextComponent("config.supplementary.generation.tooltip"), mouseX, mouseY);
         }));
         // Add the "Done" button
         this.addButton(new Button(
@@ -40,7 +41,7 @@ public class ConfigScreen extends Screen {
                 this.height - DONE_BUTTON_TOP_OFFSET,
                 BUTTON_WIDTH, BUTTON_HEIGHT,
                 // Text shown on the button
-                new TranslationTextComponent("gui.done"),
+                DialogTexts.GUI_DONE,
                 // Action performed when the button is pressed
                 button -> this.onClose()
         ));

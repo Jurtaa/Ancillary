@@ -2,6 +2,7 @@ package jurta.supplementary.init;
 
 import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
+import jurta.supplementary.block.trees.SakuraTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
@@ -11,6 +12,12 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    // Leaves
+    public static final RegistryObject<LeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
+            new LeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
+    // Saplings
+    public static final RegistryObject<SaplingBlock> SAKURA_SAPLING = register("sakura_sapling", () ->
+            new SaplingBlock(new SakuraTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
     // Pillars
     public static final RegistryObject<RotatedPillarBlock> DIAMOND_PILLAR = register("diamond_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.DIAMOND_BLOCK)));

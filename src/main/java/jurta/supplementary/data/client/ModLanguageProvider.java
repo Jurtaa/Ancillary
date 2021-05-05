@@ -21,18 +21,24 @@ public class ModLanguageProvider extends LanguageProvider {
             case "en_nz":
             case "en_us":
                 add("itemGroup.supplementary", "Supplementary");
-                add("supplementary.configGui.title", "Supplementary Config");
-                add("supplementary.configGui.generation", "Generation");
-                add("supplementary.configGui.generation.tooltip", "Settings for generation relating to the mod.");
-                add("supplementary.configGui.generation.title", "Supplementary Generation Config");
-                add("supplementary.configGui.allowVegetalGeneration.title", "Vegetation");
-                add("supplementary.configGui.allowVegetalGeneration.tooltip",
+                add("config.supplementary.title", "Supplementary Config");
+                add("config.supplementary.generation", "Generation");
+                add("config.supplementary.generation.tooltip", "Settings for generation relating to the mod.");
+                add("config.supplementary.generation.title", "Supplementary Generation Config");
+                add("config.supplementary.allowVegetalGeneration.title", "Vegetation");
+                add("config.supplementary.allowVegetalGeneration.tooltip",
                         "Determines if vegetation should generate within worlds.\n" +
                         "\u00A77Default: ON");
+                add("config.supplementary.allowTreeGeneration.title", "Trees");
+                add("config.supplementary.allowTreeGeneration.tooltip",
+                        "Determines if trees should generate within worlds.\n" +
+                                "\u00A77Default: ON");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
                 addBlock(ModBlocks.DIAMOND_PILLAR, "Diamond Pillar");
                 addBlock(ModBlocks.NETHERITE_PILLAR, "Netherite Pillar");
+                addBlock(ModBlocks.SAKURA_LEAVES, "Sakura Leaves");
+                addBlock(ModBlocks.SAKURA_SAPLING, "Sakura Sapling");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");

@@ -9,5 +9,6 @@ public class ClientSetup {
         RenderType renderType = RenderType.cutout();
         RenderTypeLookup.setRenderLayer(ModBlocks.BROCCOLI.get(), renderType);
         RenderTypeLookup.setRenderLayer(ModBlocks.CHERRY_BUSH.get(), renderType);
+        RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_SAPLING.get(), renderType);
     }
 }

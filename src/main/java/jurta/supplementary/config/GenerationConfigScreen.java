@@ -2,6 +2,7 @@ package jurta.supplementary.config;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import jurta.supplementary.Supplementary;
+import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.IBidiTooltip;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
@@ -44,7 +45,7 @@ public class GenerationConfigScreen extends Screen {
 
     public GenerationConfigScreen(Screen parentScreen) {
         // Use the super class' constructor to set the screen's title
-        super(new TranslationTextComponent("supplementary.configGui.generation.title", Supplementary.MOD_ID));
+        super(new TranslationTextComponent("config.supplementary.generation.title", Supplementary.MOD_ID));
         this.parentScreen = parentScreen;
     }
 
@@ -60,12 +61,17 @@ public class GenerationConfigScreen extends Screen {
                 OPTIONS_LIST_ITEM_HEIGHT
         );
 
-        this.optionsRowList.addBig(new BooleanOption(
-                "supplementary.configGui.allowVegetalGeneration.title",
-                new TranslationTextComponent("supplementary.configGui.allowVegetalGeneration.tooltip", Supplementary.MOD_ID),
+        this.optionsRowList.addSmall(new BooleanOption(
+                "config.supplementary.allowVegetalGeneration.title",
+                new TranslationTextComponent("config.supplementary.allowVegetalGeneration.tooltip", Supplementary.MOD_ID),
                 unused -> CMI.allowVegetalGeneration(),
-                (unused, newValue) -> CMI.changeallowVegetalGeneration(newValue)
-        ));
+                (unused, newValue) -> CMI.changeAllowVegetalGeneration(newValue)
+        ), new BooleanOption(
+                "config.supplementary.allowTreeGeneration.title",
+                new TranslationTextComponent("config.supplementary.allowTreeGeneration.tooltip", Supplementary.MOD_ID),
+                unused -> CMI.allowTreeGeneration(),
+                (unused, newValue) -> CMI.changeAllowTreeGeneration(newValue))
+        );
 
         // Add the options row list as this screen's child
         // If this is not done, users cannot click on items in the list
@@ -77,7 +83,7 @@ public class GenerationConfigScreen extends Screen {
                 this.height - DONE_BUTTON_TOP_OFFSET,
                 BUTTON_WIDTH, BUTTON_HEIGHT,
                 // Text shown on the button
-                new TranslationTextComponent("gui.done"),
+                DialogTexts.GUI_DONE,
                 // Action performed when the button is pressed
                 button -> this.onClose()
         ));

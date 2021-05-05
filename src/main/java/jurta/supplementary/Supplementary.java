@@ -117,9 +117,14 @@ public class Supplementary {
 
     private void biomeLoading(BiomeLoadingEvent event) {
         RegistryKey<Biome> biome = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());
-        if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS) && ConfigManager.getInstance().allowVegetalGeneration()) {
-            event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_SPARSE);
-            event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_DECORATED);
+        ConfigManager config = ConfigManager.getInstance();
+        if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS)) {
+            if (config.allowVegetalGeneration()) {
+                event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_SPARSE);
+                event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_DECORATED);
+            } if (config.allowTreeGeneration()) {
+                event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_PLAIN_VEGETATION);
+            }
         }
     }
 

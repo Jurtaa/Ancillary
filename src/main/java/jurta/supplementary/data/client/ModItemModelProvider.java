@@ -14,6 +14,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Leaves
+        withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
         // Pillars
         withExistingParent("diamond_pillar", modLoc("block/diamond_pillar"));
         withExistingParent("netherite_pillar", modLoc("block/netherite_pillar"));
@@ -22,10 +24,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "cherries");
         builder(itemGenerated, "broccoli");
         builder(itemGenerated, "broccoli_seeds");
+        builder(itemGenerated, "sakura_sapling", "block/sakura_sapling");
 
     }
 
     private ItemModelBuilder builder(ModelFile model, String name) {
         return getBuilder(name).parent(model).texture("layer0", modLoc("item/" + name));
+    }
+
+    private ItemModelBuilder builder(ModelFile model, String name, String texture) {
+        return getBuilder(name).parent(model).texture("layer0", modLoc(texture));
     }
 }
