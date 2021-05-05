@@ -1,8 +1,0 @@
-{
-  "parent": "supplementary:block/template_bush_sapling",
-  "textures": {
-    "plant": "supplementary:block/cherry_plant",
-    "side": "supplementary:block/cherry_bush_side_stage1",
-    "top": "supplementary:block/cherry_bush_top_stage1"
-  }
-}
