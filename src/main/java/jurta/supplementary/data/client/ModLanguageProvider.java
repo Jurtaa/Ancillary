@@ -7,13 +7,15 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class ModLanguageProvider extends LanguageProvider {
+    private final String locale;
+
     public ModLanguageProvider(DataGenerator gen, String locale) {
         super(gen, Supplementary.MOD_ID, locale);
+        this.locale = locale;
     }
 
     @Override
     protected void addTranslations() {
-        String locale = this.getName().replace("Languages: ", "");
         switch(locale) {
             case "en_au":
             case "en_ca":
