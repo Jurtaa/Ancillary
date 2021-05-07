@@ -8,6 +8,8 @@ import jurta.supplementary.data.client.ModItemModelProvider;
 import jurta.supplementary.data.client.ModLanguageProvider;
 import jurta.supplementary.data.server.ModRecipeProvider;
 import jurta.supplementary.data.server.loot.ModLootTableProvider;
+import jurta.supplementary.data.server.tags.ModBlockTagsProvider;
+import jurta.supplementary.data.server.tags.ModItemTagsProvider;
 import jurta.supplementary.init.ModBlocks;
 import jurta.supplementary.init.ModFeatures;
 import jurta.supplementary.init.Registration;
@@ -141,7 +143,7 @@ public class Supplementary {
         DataGenerator gen = event.getGenerator();
         ExistingFileHelper efh = event.getExistingFileHelper();
         ModBlockStateProvider blockstates = new ModBlockStateProvider(gen, efh);
-        //ModBlockTagsProvider blocktags = new ModBlockTagsProvider(gen, efh);
+        ModBlockTagsProvider blocktags = new ModBlockTagsProvider(gen, efh);
 
         if (event.includeClient()) {
             gen.addProvider(blockstates);
@@ -152,8 +154,8 @@ public class Supplementary {
         } if (event.includeServer()) {
             gen.addProvider(new ModLootTableProvider(gen));
             gen.addProvider(new ModRecipeProvider(gen));
-            //gen.addProvider(blocktags);
-            //gen.addProvider(new ModItemTagsProvider(gen, blocktags, efh));
+            gen.addProvider(blocktags);
+            gen.addProvider(new ModItemTagsProvider(gen, blocktags, efh));
         }
     }
 }
