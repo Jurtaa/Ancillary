@@ -15,6 +15,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     }
 
     @Override
+    public String getName() {
+        return "Block Tags: " + modId;
+    }
+
+    @Override
     protected void addTags() {
         tag(BlockTags.LEAVES).add(ModBlocks.SAKURA_LEAVES.get());
         tag(BlockTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get());

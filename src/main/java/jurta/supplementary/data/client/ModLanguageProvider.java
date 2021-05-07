@@ -15,6 +15,11 @@ public class ModLanguageProvider extends LanguageProvider {
     }
 
     @Override
+    public String getName() {
+        return "Languages: " + Supplementary.MOD_ID + ": " + this.locale;
+    }
+
+    @Override
     protected void addTranslations() {
         switch(locale) {
             case "en_au":

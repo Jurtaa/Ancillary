@@ -2,6 +2,7 @@ package jurta.supplementary.data.server.loot;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
+import jurta.supplementary.Supplementary;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.LootTableProvider;
 import net.minecraft.loot.*;
@@ -18,8 +19,13 @@ public class ModLootTableProvider extends LootTableProvider {
 	public ModLootTableProvider(DataGenerator dataGeneratorIn) {
 		super(dataGeneratorIn);
 	}
-	
-	@Override
+
+    @Override
+    public String getName() {
+        return "Loot Tables: " + Supplementary.MOD_ID;
+    }
+
+    @Override
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootParameterSet>> getTables() {
         return ImmutableList.of(
                 Pair.of(ModBlockLootTableProvider::new, LootParameterSets.BLOCK)

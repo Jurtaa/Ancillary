@@ -1,18 +1,23 @@
 package jurta.supplementary.data.server;
 
+import jurta.supplementary.Supplementary;
 import jurta.supplementary.init.ModBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
-import net.minecraft.item.Items;
 
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider {
     public ModRecipeProvider(DataGenerator gen) {
         super(gen);
+    }
+
+    @Override
+    public String getName() {
+        return "Recipes: " + Supplementary.MOD_ID;
     }
 
     @Override

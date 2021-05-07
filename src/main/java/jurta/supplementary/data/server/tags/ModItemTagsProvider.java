@@ -16,6 +16,11 @@ public class ModItemTagsProvider extends ItemTagsProvider {
     }
 
     @Override
+    public String getName() {
+        return "Item Tags: " + modId;
+    }
+
+    @Override
     protected void addTags() {
         tag(ItemTags.LEAVES).add(ModBlocks.SAKURA_LEAVES.get().asItem());
         tag(ItemTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get().asItem());
