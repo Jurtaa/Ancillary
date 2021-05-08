@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "supplementary:netherite_pillar"
+    ]
+  },
+  "criteria": {
+    "has_netherite_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherite_block"
+          }
+        ]
+      }
+    },
+    "has_netherite_pillar": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "supplementary:netherite_pillar"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "supplementary:netherite_pillar"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_netherite_block",
+      "has_netherite_pillar",
+      "has_the_recipe"
+    ]
+  ]
+}

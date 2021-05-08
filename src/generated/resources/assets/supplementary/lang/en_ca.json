@@ -1,0 +1,23 @@
+{
+  "block.supplementary.broccoli": "Broccoli",
+  "block.supplementary.cherry_bush": "Cherry Bush",
+  "block.supplementary.diamond_pillar": "Diamond Pillar",
+  "block.supplementary.emerald_pillar": "Emerald Pillar",
+  "block.supplementary.gold_pillar": "Gold Pillar",
+  "block.supplementary.iron_pillar": "Iron Pillar",
+  "block.supplementary.netherite_pillar": "Netherite Pillar",
+  "block.supplementary.sakura_leaves": "Sakura Leaves",
+  "block.supplementary.sakura_sapling": "Sakura Sapling",
+  "config.supplementary.allowTreeGeneration.title": "Trees",
+  "config.supplementary.allowTreeGeneration.tooltip": "Determines if trees should generate within worlds.\n\u00A77Default: ON",
+  "config.supplementary.allowVegetalGeneration.title": "Vegetation",
+  "config.supplementary.allowVegetalGeneration.tooltip": "Determines if vegetation should generate within worlds.\n\u00A77Default: ON",
+  "config.supplementary.generation": "Generation",
+  "config.supplementary.generation.title": "Supplementary Generation Config",
+  "config.supplementary.generation.tooltip": "Settings for generation relating to the mod.",
+  "config.supplementary.title": "Supplementary Config",
+  "item.supplementary.broccoli": "Broccoli",
+  "item.supplementary.broccoli_seeds": "Broccoli Seeds",
+  "item.supplementary.cherries": "Cherries",
+  "itemGroup.supplementary": "Supplementary"
+}
