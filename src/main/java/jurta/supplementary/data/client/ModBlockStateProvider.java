@@ -25,7 +25,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Sapling
         simpleBlock(ModBlocks.SAKURA_SAPLING.get(), models().cross("sakura_sapling", modLoc("block/sakura_sapling")));
         // Pillars
+        axisBlock(ModBlocks.IRON_PILLAR.get());
+        axisBlock(ModBlocks.GOLD_PILLAR.get());
         axisBlock(ModBlocks.DIAMOND_PILLAR.get());
+        axisBlock(ModBlocks.EMERALD_PILLAR.get());
         axisBlock(ModBlocks.NETHERITE_PILLAR.get());
         // Vegetation
         getVariantBuilder(ModBlocks.CHERRY_BUSH.get())

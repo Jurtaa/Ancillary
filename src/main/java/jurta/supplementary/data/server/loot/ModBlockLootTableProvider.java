@@ -39,7 +39,10 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         // Sapling
         dropSelf(ModBlocks.SAKURA_SAPLING.get());
         // Pillars
+        dropSelf(ModBlocks.IRON_PILLAR.get());
+        dropSelf(ModBlocks.GOLD_PILLAR.get());
         dropSelf(ModBlocks.DIAMOND_PILLAR.get());
+        dropSelf(ModBlocks.EMERALD_PILLAR.get());
         dropSelf(ModBlocks.NETHERITE_PILLAR.get());
         // Vegetation
         ILootCondition.IBuilder ilootcondition$ibuilder = BlockStateProperty.hasBlockStateProperties(ModBlocks.BROCCOLI.get()).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BroccoliBlock.AGE, 7));

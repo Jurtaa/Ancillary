@@ -19,8 +19,14 @@ public class ModBlocks {
     public static final RegistryObject<SaplingBlock> SAKURA_SAPLING = register("sakura_sapling", () ->
             new SaplingBlock(new SakuraTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
     // Pillars
+    public static final RegistryObject<RotatedPillarBlock> IRON_PILLAR = register("iron_pillar", () ->
+            new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<RotatedPillarBlock> GOLD_PILLAR = register("gold_pillar", () ->
+            new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.GOLD_BLOCK)));
     public static final RegistryObject<RotatedPillarBlock> DIAMOND_PILLAR = register("diamond_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.DIAMOND_BLOCK)));
+    public static final RegistryObject<RotatedPillarBlock> EMERALD_PILLAR = register("emerald_pillar", () ->
+            new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.EMERALD_BLOCK)));
     public static final RegistryObject<RotatedPillarBlock> NETHERITE_PILLAR = register("netherite_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.NETHERITE_BLOCK)));
     // Vegetation

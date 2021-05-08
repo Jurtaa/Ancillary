@@ -17,7 +17,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Leaves
         withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
         // Pillars
+        withExistingParent("iron_pillar", modLoc("block/iron_pillar"));
+        withExistingParent("gold_pillar", modLoc("block/gold_pillar"));
         withExistingParent("diamond_pillar", modLoc("block/diamond_pillar"));
+        withExistingParent("emerald_pillar", modLoc("block/emerald_pillar"));
         withExistingParent("netherite_pillar", modLoc("block/netherite_pillar"));
         // Items
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
