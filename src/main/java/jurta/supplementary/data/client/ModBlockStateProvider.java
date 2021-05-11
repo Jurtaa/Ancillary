@@ -20,6 +20,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Rocks
+        simpleBlock(ModBlocks.LUSH_STONE.get(), models().cubeBottomTop("lush_stone", modLoc("block/lush_stone_side"), mcLoc("block/stone"), modLoc("block/lush_stone_top")));
         // Leaves
         simpleBlock(ModBlocks.SAKURA_LEAVES.get());
         // Sapling

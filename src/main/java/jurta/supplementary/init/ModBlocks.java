@@ -2,9 +2,11 @@ package jurta.supplementary.init;
 
 import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
+import jurta.supplementary.block.LushStoneBlock;
 import jurta.supplementary.block.trees.SakuraTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
@@ -12,6 +14,9 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    // Rocks
+    public static final RegistryObject<LushStoneBlock> LUSH_STONE = register("lush_stone", () ->
+            new LushStoneBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().randomTicks().strength(1.5F, 6.0F)));
     // Leaves
     public static final RegistryObject<LeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
             new LeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));

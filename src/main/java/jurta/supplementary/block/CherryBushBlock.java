@@ -74,7 +74,7 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         block.add(AGE);
     }
 
-    public boolean isValidBonemealTarget(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState, boolean p_176473_4_) {
+    public boolean isValidBonemealTarget(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState, boolean isClient) {
         return blockState.getValue(AGE) < 3;
     }
 

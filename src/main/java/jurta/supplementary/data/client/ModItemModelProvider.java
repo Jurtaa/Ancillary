@@ -14,6 +14,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Rocks
+        withExistingParent("lush_stone", modLoc("block/lush_stone"));
         // Leaves
         withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
         // Pillars

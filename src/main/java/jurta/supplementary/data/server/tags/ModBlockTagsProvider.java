@@ -23,5 +23,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
     protected void addTags() {
         tag(BlockTags.LEAVES).add(ModBlocks.SAKURA_LEAVES.get());
         tag(BlockTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get());
+        tag(BlockTags.BASE_STONE_OVERWORLD).add(ModBlocks.LUSH_STONE.get());
     }
 }
