@@ -1,0 +1,74 @@
+{
+  "block.lush_stone.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "supplementary:block/lush_stone/break1",
+      "supplementary:block/lush_stone/break2",
+      "supplementary:block/lush_stone/break3",
+      "supplementary:block/lush_stone/break4",
+      "supplementary:block/lush_stone/break5",
+      "supplementary:block/lush_stone/break6"
+    ]
+  },
+  "block.lush_stone.fall": {
+    "sounds": [
+      "supplementary:block/lush_stone/step1",
+      "supplementary:block/lush_stone/step2",
+      "supplementary:block/lush_stone/step3",
+      "supplementary:block/lush_stone/step4",
+      "supplementary:block/lush_stone/step5",
+      "supplementary:block/lush_stone/step6"
+    ]
+  },
+  "block.lush_stone.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      {
+        "name": "supplementary:block/lush_stone/step1",
+        "volume": 0.55
+      },
+      {
+        "name": "supplementary:block/lush_stone/step2",
+        "volume": 0.55
+      },
+      {
+        "name": "supplementary:block/lush_stone/step3",
+        "volume": 0.55
+      },
+      {
+        "name": "supplementary:block/lush_stone/step4",
+        "volume": 0.55
+      },
+      {
+        "name": "supplementary:block/lush_stone/step5",
+        "volume": 0.55
+      },
+      {
+        "name": "supplementary:block/lush_stone/step6",
+        "volume": 0.55
+      }
+    ]
+  },
+  "block.lush_stone.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "supplementary:block/lush_stone/break1",
+      "supplementary:block/lush_stone/break2",
+      "supplementary:block/lush_stone/break3",
+      "supplementary:block/lush_stone/break4",
+      "supplementary:block/lush_stone/break5",
+      "supplementary:block/lush_stone/break6"
+    ]
+  },
+  "block.lush_stone.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "supplementary:block/lush_stone/step1",
+      "supplementary:block/lush_stone/step2",
+      "supplementary:block/lush_stone/step3",
+      "supplementary:block/lush_stone/step4",
+      "supplementary:block/lush_stone/step5",
+      "supplementary:block/lush_stone/step6"
+    ]
+  }
+}
