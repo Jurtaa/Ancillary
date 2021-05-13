@@ -45,6 +45,8 @@ c3503fd5fb942b8561feb44562d4ec2861d25c68 assets/supplementary/models/item/lush_s
 2c1f70424183f6d71e966225349202c0e5dc4a36 assets/supplementary/models/item/netherite_pillar.json
 81f07508bc48926ffa049764ccbfeeca4799c64a assets/supplementary/models/item/sakura_leaves.json
 d6fe29679c93159a9a3c9d6777cb1255c74eff90 assets/supplementary/models/item/sakura_sapling.json
+6a7dda7ec722ba26f4fc33752e30665932eb51a3 data/forge/tags/blocks/stone.json
+6a7dda7ec722ba26f4fc33752e30665932eb51a3 data/forge/tags/items/stone.json
 6a7dda7ec722ba26f4fc33752e30665932eb51a3 data/minecraft/tags/blocks/base_stone_overworld.json
 d34c7469bb9f33e666f0681f4a29bcb7fc5c7cdb data/minecraft/tags/blocks/leaves.json
 4c284f9fdc692b38f543f1eea0ff400a852bccb2 data/minecraft/tags/blocks/saplings.json

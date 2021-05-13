@@ -6,6 +6,7 @@ import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
@@ -22,7 +23,10 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags() {
+        // Minecraft Tags
         tag(ItemTags.LEAVES).add(ModBlocks.SAKURA_LEAVES.get().asItem());
         tag(ItemTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get().asItem());
+        // Forge Tags
+        tag(Tags.Items.STONE).add(ModBlocks.LUSH_STONE.get().asItem());
     }
 }

@@ -5,6 +5,7 @@ import jurta.supplementary.init.ModBlocks;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
@@ -21,8 +22,11 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags() {
+        // Minecraft Tags
         tag(BlockTags.LEAVES).add(ModBlocks.SAKURA_LEAVES.get());
         tag(BlockTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get());
         tag(BlockTags.BASE_STONE_OVERWORLD).add(ModBlocks.LUSH_STONE.get());
+        // Forge Tags
+        tag(Tags.Blocks.STONE).add(ModBlocks.LUSH_STONE.get());
     }
 }

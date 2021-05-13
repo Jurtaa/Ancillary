@@ -34,8 +34,8 @@ public class ModFeatures {
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> FANCY_SAKURA_BEES_005 = register("fancy_sakura_bees_005", Feature.TREE.configured(FANCY_SAKURA.config().withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_005))));
     public static final ConfiguredFeature<?, ?> SAKURA_PLAIN_VEGETATION = register("sakura_plain_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(FANCY_SAKURA_BEES_005.weighted(0.33333334F)), SAKURA_BEES_005)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
 
-    private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String string, ConfiguredFeature<FC, ?> configuredFeature) {
-        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, string, configuredFeature);
+    private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
+        return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, name, configuredFeature);
     }
 
     public static final class Configs {
