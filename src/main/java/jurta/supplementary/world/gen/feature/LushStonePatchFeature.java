@@ -18,11 +18,8 @@ public class LushStonePatchFeature extends AbstractSphereReplaceConfig {
     }
 
     public boolean place(ISeedReader reader, ChunkGenerator generator, Random random, BlockPos pos, SphereReplaceConfig config) {
-        for(BlockState blockstate : config.targets) {
-            if (!reader.getBlockState(pos.above(1)).isAir()) {
-                reader.setBlock(pos, Blocks.STONE.defaultBlockState(), 2);
-                break;
-            }
+        if (!reader.getBlockState(pos.above()).isAir()) {
+           setBlock(reader, pos, Blocks.STONE.defaultBlockState());
         }
         return !reader.getBlockState(pos).isAir() ? false : super.place(reader, generator, random, pos, config);
     }
