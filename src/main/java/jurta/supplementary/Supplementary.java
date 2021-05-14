@@ -124,6 +124,8 @@ public class Supplementary {
             } if (config.allowTreeGeneration()) {
                 event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_PLAIN_VEGETATION);
             }
+        } if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OVERWORLD)) {
+            //event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
         }
     }
 

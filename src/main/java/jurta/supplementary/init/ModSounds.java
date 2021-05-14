@@ -5,7 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.fml.RegistryObject;
 
-public class ModSoundEvents {
+public class ModSounds {
     // Lush Stone
     public static final RegistryObject<SoundEvent> BLOCK_LUSH_STONE_BREAK = Registration.SOUNDS.register("block_lush_stone_break", () ->
             new SoundEvent(modLoc("block.lush_stone.break")));
