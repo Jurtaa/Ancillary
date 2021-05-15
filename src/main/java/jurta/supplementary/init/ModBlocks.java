@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     // Rocks
-    public static final RegistryObject<LushStoneBlock> LUSH_STONE = register("lush_stone", () ->
+    public static final RegistryObject<LushStoneBlock> LUSH_STONE = registerNoItem("lush_stone", () ->
             new LushStoneBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().randomTicks().strength(1.5F, 6.0F).sound(ModSoundType.LUSH_STONE)));
     // Leaves
     public static final RegistryObject<LeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->

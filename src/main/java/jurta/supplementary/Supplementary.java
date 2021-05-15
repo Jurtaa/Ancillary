@@ -129,7 +129,7 @@ public class Supplementary {
         }
     }
 
-    /* Registers the locales for the language provider */
+    // Registers the locales for the language provider
     private static final String[] LOCALE_CODES = new String[] {
             "en_au",
             "en_ca",
