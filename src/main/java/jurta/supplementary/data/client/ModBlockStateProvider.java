@@ -35,10 +35,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Vegetation
         getVariantBuilder(ModBlocks.CHERRY_BUSH.get())
                 .partialState().with(CherryBushBlock.AGE, 0).addModels(new ConfiguredModel(models()
-                        .withExistingParent("cherry_bush_stage0", modLoc("block/template_bush_sapling"))
-                        .texture("plant", modLoc("block/cherry_plant"))
-                        .texture("side", modLoc("block/cherry_bush_side_stage1"))
-                        .texture("top", modLoc("block/cherry_bush_top_stage1"))))
+                        .cross("cherry_bush_stage0", modLoc("block/cherry_bush_sapling"))))
                 .partialState().with(CherryBushBlock.AGE, 1).addModels(new ConfiguredModel(models()
                         .withExistingParent("cherry_bush_stage1", modLoc("block/template_bush"))
                         .texture("plant", modLoc("block/cherry_plant"))
