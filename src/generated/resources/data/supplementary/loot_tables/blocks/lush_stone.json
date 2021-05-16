@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "supplementary:lush_stone"
+              "name": "minecraft:air"
             },
             {
               "type": "minecraft:item",

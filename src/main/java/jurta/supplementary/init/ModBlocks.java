@@ -3,6 +3,7 @@ package jurta.supplementary.init;
 import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
 import jurta.supplementary.block.LushStoneBlock;
+import jurta.supplementary.block.RockBlock;
 import jurta.supplementary.block.trees.SakuraTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
@@ -15,6 +16,8 @@ import java.util.function.Supplier;
 
 public class ModBlocks {
     // Rocks
+    public static final RegistryObject<RockBlock> ROCK = register("rock", () ->
+            new RockBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().strength(1.0F, 4.0F).noOcclusion()));
     public static final RegistryObject<LushStoneBlock> LUSH_STONE = registerNoItem("lush_stone", () ->
             new LushStoneBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().randomTicks().strength(1.5F, 6.0F).sound(ModSoundType.LUSH_STONE)));
     // Leaves

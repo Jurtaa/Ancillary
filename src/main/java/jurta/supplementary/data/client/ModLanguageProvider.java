@@ -43,6 +43,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.LUSH_STONE, "Lush Stone");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
+                addBlock(ModBlocks.ROCK, "Rock");
                 addBlock(ModBlocks.IRON_PILLAR, "Iron Pillar");
                 addBlock(ModBlocks.GOLD_PILLAR, "Gold Pillar");
                 addBlock(ModBlocks.DIAMOND_PILLAR, "Diamond Pillar");

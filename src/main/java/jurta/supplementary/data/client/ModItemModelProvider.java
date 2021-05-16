@@ -26,6 +26,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("netherite_pillar", modLoc("block/netherite_pillar"));
         // Items
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
+        builder(itemGenerated, "rock");
         builder(itemGenerated, "cherries");
         builder(itemGenerated, "broccoli");
         builder(itemGenerated, "broccoli_seeds");
