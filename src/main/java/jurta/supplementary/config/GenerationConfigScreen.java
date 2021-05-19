@@ -72,6 +72,12 @@ public class GenerationConfigScreen extends Screen {
                 unused -> CMI.allowTreeGeneration(),
                 (unused, newValue) -> CMI.changeAllowTreeGeneration(newValue))
         );
+        this.optionsRowList.addBig(new BooleanOption(
+                "config.supplementary.allowRockGeneration.title",
+                new TranslationTextComponent("config.supplementary.allowRockGeneration.tooltip", Supplementary.MOD_ID),
+                unused -> CMI.allowRockGeneration(),
+                (unused, newValue) -> CMI.changeAllowRockGeneration(newValue))
+        );
 
         // Add the options row list as this screen's child
         // If this is not done, users cannot click on items in the list

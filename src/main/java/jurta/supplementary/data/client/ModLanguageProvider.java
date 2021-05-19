@@ -40,6 +40,10 @@ public class ModLanguageProvider extends LanguageProvider {
                 add("config.supplementary.allowTreeGeneration.tooltip",
                         "Determines if trees should generate within worlds.\n" +
                                 "\u00A77Default: ON");
+                add("config.supplementary.allowRockGeneration.title", "Rocks");
+                add("config.supplementary.allowRockGeneration.tooltip",
+                        "Determines if rocks should generate within worlds.\n" +
+                                "\u00A77Default: ON");
                 addBlock(ModBlocks.LUSH_STONE, "Lush Stone");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");

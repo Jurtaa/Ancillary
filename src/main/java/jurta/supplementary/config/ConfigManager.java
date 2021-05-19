@@ -36,6 +36,8 @@ public class ConfigManager {
 
     private final ForgeConfigSpec.BooleanValue allowTreeGeneration;
 
+    private final ForgeConfigSpec.BooleanValue allowRockGeneration;
+
     private ConfigManager(ForgeConfigSpec.Builder configSpecBuilder) {
         allowVegetalGeneration = configSpecBuilder
                 .comment("Determines if vegetation should generate within worlds.")
@@ -45,6 +47,10 @@ public class ConfigManager {
                 .comment("Determines if trees should generate within worlds.")
                 .translation("config.supplementary.allowTreeGeneration.title")
                 .define("allowTreeGeneration", true);
+        allowRockGeneration = configSpecBuilder
+                .comment("Determines if rocks should generate within worlds.")
+                .translation("config.supplementary.allowRockGeneration.title")
+                .define("allowRockGeneration", true);
     }
 
     public static ConfigManager getInstance() {
@@ -59,12 +65,20 @@ public class ConfigManager {
         return allowTreeGeneration.get();
     }
 
+    public boolean allowRockGeneration() {
+        return allowRockGeneration.get();
+    }
+
     public void changeAllowVegetalGeneration(boolean newValue) {
         allowVegetalGeneration.set(newValue);
     }
 
     public void changeAllowTreeGeneration(boolean newValue) {
         allowTreeGeneration.set(newValue);
+    }
+
+    public void changeAllowRockGeneration(boolean newValue) {
+        allowRockGeneration.set(newValue);
     }
 
     public void save() {

@@ -34,13 +34,15 @@ public class ModFeatures {
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> FANCY_SAKURA_BEES_005 = register("fancy_sakura_bees_005", Feature.TREE.configured(FANCY_SAKURA.config().withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_005))));
     public static final ConfiguredFeature<?, ?> SAKURA_PLAIN_VEGETATION = register("sakura_plain_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(FANCY_SAKURA_BEES_005.weighted(0.33333334F)), SAKURA_BEES_005)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
     public static final ConfiguredFeature<?, ?> DISK_LUSH_STONE = register("disk_lush_stone", ModFeature.LUSH_STONE_PATCH.get().configured(new SphereReplaceConfig(States.LUSH_STONE, FeatureSpread.of(3, 1), 1, ImmutableList.of(States.STONE))).decorated(Features.Placements.TOP_SOLID_HEIGHTMAP_SQUARE));
+    public static final ConfiguredFeature<?, ?> PATCH_ROCK = register("rock", Feature.RANDOM_PATCH.configured(Configs.ROCK_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE).count(10));
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, name, configuredFeature);
     }
 
     public static final class Configs {
-        public static final BlockClusterFeatureConfig CHERRY_BUSH_CONFIG = new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModFeatures.States.CHERRY_BUSH), SimpleBlockPlacer.INSTANCE).tries(64).whitelist(ImmutableSet.of(Blocks.GRASS_BLOCK.getBlock())).noProjection().build();
+        public static final BlockClusterFeatureConfig CHERRY_BUSH_CONFIG = new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.CHERRY_BUSH), SimpleBlockPlacer.INSTANCE).tries(64).whitelist(ImmutableSet.of(Blocks.GRASS_BLOCK.getBlock())).noProjection().build();
+        public static final BlockClusterFeatureConfig ROCK_CONFIG = new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(States.ROCK), SimpleBlockPlacer.INSTANCE).tries(16).whitelist(ImmutableSet.of(Blocks.STONE.getBlock(), Blocks.ANDESITE.getBlock(), Blocks.DIORITE.getBlock(), Blocks.GRANITE.getBlock())).noProjection().build();
     }
 
     public static final class Placements {}
@@ -51,5 +53,6 @@ public class ModFeatures {
         protected static final BlockState SAKURA_LEAVES = ModBlocks.SAKURA_LEAVES.get().defaultBlockState();
         protected static final BlockState LUSH_STONE = ModBlocks.LUSH_STONE.get().defaultBlockState();
         protected static final BlockState STONE = Blocks.STONE.defaultBlockState();
+        protected static final BlockState ROCK = ModBlocks.ROCK.get().defaultBlockState();
     }
 }

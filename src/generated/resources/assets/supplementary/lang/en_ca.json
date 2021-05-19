@@ -10,6 +10,8 @@
   "block.supplementary.rock": "Rock",
   "block.supplementary.sakura_leaves": "Sakura Leaves",
   "block.supplementary.sakura_sapling": "Sakura Sapling",
+  "config.supplementary.allowRockGeneration.title": "Rocks",
+  "config.supplementary.allowRockGeneration.tooltip": "Determines if rocks should generate within worlds.\n\u00A77Default: ON",
   "config.supplementary.allowTreeGeneration.title": "Trees",
   "config.supplementary.allowTreeGeneration.tooltip": "Determines if trees should generate within worlds.\n\u00A77Default: ON",
   "config.supplementary.allowVegetalGeneration.title": "Vegetation",

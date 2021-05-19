@@ -126,6 +126,9 @@ public class Supplementary {
             }
         } if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OVERWORLD)) {
             //event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
+            if (config.allowRockGeneration()) {
+                event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_ROCK);
+            }
         }
     }
 
