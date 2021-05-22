@@ -1,7 +1,6 @@
 package jurta.supplementary.world.gen.feature;
 
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.gen.ChunkGenerator;
@@ -15,10 +14,11 @@ public class LushStonePatchFeature extends AbstractSphereReplaceConfig {
         super(codec);
     }
 
+    @Override
     public boolean place(ISeedReader reader, ChunkGenerator generator, Random random, BlockPos pos, SphereReplaceConfig config) {
-        if (!reader.getBlockState(pos.above()).isAir()) {
-           setBlock(reader, pos, Blocks.STONE.defaultBlockState());
+        if (!reader.isEmptyBlock(pos.above())) {
+            return false;
         }
-        return !reader.getBlockState(pos).isAir() ? false : super.place(reader, generator, random, pos, config);
+        return !reader.isEmptyBlock(pos) ? false : super.place(reader, generator, random, pos, config);
     }
 }

@@ -72,11 +72,16 @@ public class GenerationConfigScreen extends Screen {
                 unused -> CMI.allowTreeGeneration(),
                 (unused, newValue) -> CMI.changeAllowTreeGeneration(newValue))
         );
-        this.optionsRowList.addBig(new BooleanOption(
+        this.optionsRowList.addSmall(new BooleanOption(
                 "config.supplementary.allowRockGeneration.title",
                 new TranslationTextComponent("config.supplementary.allowRockGeneration.tooltip", Supplementary.MOD_ID),
                 unused -> CMI.allowRockGeneration(),
-                (unused, newValue) -> CMI.changeAllowRockGeneration(newValue))
+                (unused, newValue) -> CMI.changeAllowRockGeneration(newValue)
+        ), new BooleanOption(
+                "config.supplementary.allowLushStoneGeneration.title",
+                new TranslationTextComponent("config.supplementary.allowLushStoneGeneration.tooltip", Supplementary.MOD_ID),
+                unused -> CMI.allowLushStoneGeneration(),
+                (unused, newValue) -> CMI.changeAllowLushStoneGeneration(newValue))
         );
 
         // Add the options row list as this screen's child

@@ -18,10 +18,12 @@ public class BroccoliBlock extends CropsBlock {
         super(properties);
     }
 
+    @Override
     protected IItemProvider getBaseSeedId() {
         return ModItems.BROCCOLI_SEEDS.get();
     }
 
+    @Override
     public VoxelShape getShape(BlockState blockState, IBlockReader blockReader, BlockPos blockPos, ISelectionContext selectionContext) {
         return SHAPE_BY_AGE[blockState.getValue(this.getAgeProperty())];
     }

@@ -127,8 +127,9 @@ public class Supplementary {
                 gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_PLAIN_VEGETATION);
             }
         } if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OVERWORLD)) {
-            //gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
-            if (config.allowRockGeneration()) {
+            if (config.allowLushStoneGeneration()) {
+                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
+            } if (config.allowRockGeneration()) {
                 gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_ROCK);
                 gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_PEBBLES);
             }

@@ -38,6 +38,8 @@ public class ConfigManager {
 
     private final ForgeConfigSpec.BooleanValue allowRockGeneration;
 
+    private final ForgeConfigSpec.BooleanValue allowLushStoneGeneration;
+
     private ConfigManager(ForgeConfigSpec.Builder configSpecBuilder) {
         allowVegetalGeneration = configSpecBuilder
                 .comment("Determines if vegetation should generate within worlds.")
@@ -51,6 +53,10 @@ public class ConfigManager {
                 .comment("Determines if rocks should generate within worlds.")
                 .translation("config.supplementary.allowRockGeneration.title")
                 .define("allowRockGeneration", true);
+        allowLushStoneGeneration = configSpecBuilder
+                .comment("Determines if lush stone should generate within worlds. WARNING: Doesn't generate as intended.")
+                .translation("config.supplementary.allowLushStoneGeneration.title")
+                .define("allowLushStoneGeneration", false);
     }
 
     public static ConfigManager getInstance() {
@@ -69,6 +75,10 @@ public class ConfigManager {
         return allowRockGeneration.get();
     }
 
+    public boolean allowLushStoneGeneration() {
+        return allowLushStoneGeneration.get();
+    }
+
     public void changeAllowVegetalGeneration(boolean newValue) {
         allowVegetalGeneration.set(newValue);
     }
@@ -79,6 +89,10 @@ public class ConfigManager {
 
     public void changeAllowRockGeneration(boolean newValue) {
         allowRockGeneration.set(newValue);
+    }
+
+    public void changeAllowLushStoneGeneration(boolean newValue) {
+        allowLushStoneGeneration.set(newValue);
     }
 
     public void save() {

@@ -32,10 +32,12 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
+    @Override
     public ItemStack getCloneItemStack(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState) {
         return new ItemStack(ModItems.CHERRIES.get());
     }
 
+    @Override
     public VoxelShape getShape(BlockState blockState, IBlockReader iBlockReader, BlockPos blockPos, ISelectionContext iSelectionContext) {
         if (blockState.getValue(AGE) == 0) {
             return SAPLING_SHAPE;
@@ -43,10 +45,12 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         return super.getShape(blockState, iBlockReader, blockPos, iSelectionContext);
     }
 
+    @Override
     public boolean isRandomlyTicking(BlockState blockState) {
         return blockState.getValue(AGE) < 3;
     }
 
+    @Override
     public void randomTick(BlockState blockState, ServerWorld serverWorld, BlockPos blockPos, Random random) {
         int i = blockState.getValue(AGE);
         if (i < 3 && serverWorld.getRawBrightness(blockPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(serverWorld, blockPos, blockState, random.nextInt(5) == 0)) {
@@ -55,6 +59,7 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         }
     }
 
+    @Override
     public ActionResultType use(BlockState blockState, World worldIn, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result) {
         int i = blockState.getValue(AGE);
         boolean flag = (i == 3);
@@ -70,18 +75,22 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
         return super.use(blockState, worldIn, blockPos, playerEntity, hand, result);
     }
 
+    @Override
     protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> block) {
         block.add(AGE);
     }
 
+    @Override
     public boolean isValidBonemealTarget(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState, boolean isClient) {
         return blockState.getValue(AGE) < 3;
     }
 
+    @Override
     public boolean isBonemealSuccess(World worldIn, Random random, BlockPos blockPos, BlockState blockState) {
         return true;
     }
 
+    @Override
     public void performBonemeal(ServerWorld serverWorld, Random random, BlockPos blockPos, BlockState blockState) {
         int i = Math.min(3, blockState.getValue(AGE) + 1);
         serverWorld.setBlock(blockPos, blockState.setValue(AGE, i), 2);

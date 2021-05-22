@@ -23,6 +23,7 @@ public class LushStoneBlock extends Block {
         return i < worldReader.getMaxLightLevel();
     }
 
+    @Override
     public void randomTick(BlockState state, ServerWorld serverWorld, BlockPos pos, Random random) {
         if (!canBeLushStone(state, serverWorld, pos)) {
             serverWorld.setBlockAndUpdate(pos, Blocks.STONE.defaultBlockState());
