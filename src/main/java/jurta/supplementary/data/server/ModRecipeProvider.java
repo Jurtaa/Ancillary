@@ -3,10 +3,7 @@ package jurta.supplementary.data.server;
 import jurta.supplementary.Supplementary;
 import jurta.supplementary.init.ModBlocks;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.RecipeProvider;
-import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.data.*;
 
 import java.util.function.Consumer;
 
@@ -57,5 +54,25 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_netherite_block", has(Blocks.NETHERITE_BLOCK))
                 .unlockedBy("has_netherite_pillar", has(ModBlocks.NETHERITE_PILLAR.get()))
                 .save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModBlocks.ROCK.get())
+                .requires(ModBlocks.PEBBLES.get(), 4)
+                .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
+                .unlockedBy("has_pebbles", has(ModBlocks.PEBBLES.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModBlocks.PEBBLES.get(), 4)
+                .requires(ModBlocks.ROCK.get())
+                .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
+                .unlockedBy("has_pebbles", has(ModBlocks.PEBBLES.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModBlocks.ROCK_BLOCK.get())
+                .requires(ModBlocks.ROCK.get(), 9)
+                .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModBlocks.ROCK.get(), 9)
+                .requires(ModBlocks.ROCK_BLOCK.get())
+                .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .save(consumer, "rock_from_rock_block");
     }
 }

@@ -22,6 +22,7 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.common.world.BiomeGenerationSettingsBuilder;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -117,17 +118,19 @@ public class Supplementary {
     private void biomeLoading(BiomeLoadingEvent event) {
         RegistryKey<Biome> biome = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());
         ConfigManager config = ConfigManager.getInstance();
+        BiomeGenerationSettingsBuilder gen = event.getGeneration();
         if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS)) {
             if (config.allowVegetalGeneration()) {
-                event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_SPARSE);
-                event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_DECORATED);
+                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_SPARSE);
+                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_DECORATED);
             } if (config.allowTreeGeneration()) {
-                event.getGeneration().addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_PLAIN_VEGETATION);
+                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_PLAIN_VEGETATION);
             }
         } if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OVERWORLD)) {
-            //event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
+            //gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
             if (config.allowRockGeneration()) {
-                event.getGeneration().addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_ROCK);
+                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_ROCK);
+                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_PEBBLES);
             }
         }
     }

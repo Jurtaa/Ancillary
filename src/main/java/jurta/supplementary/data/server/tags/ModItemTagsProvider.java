@@ -2,6 +2,8 @@ package jurta.supplementary.data.server.tags;
 
 import jurta.supplementary.Supplementary;
 import jurta.supplementary.init.ModBlocks;
+import jurta.supplementary.init.ModItems;
+import jurta.supplementary.init.ModTags;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
@@ -26,7 +28,13 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         // Minecraft Tags
         tag(ItemTags.LEAVES).add(ModBlocks.SAKURA_LEAVES.get().asItem());
         tag(ItemTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get().asItem());
+        tag(ItemTags.STONE_CRAFTING_MATERIALS).add(ModBlocks.ROCK_BLOCK.get().asItem());
+        tag(ItemTags.STONE_TOOL_MATERIALS).add(ModBlocks.ROCK_BLOCK.get().asItem());
         // Forge Tags
         tag(Tags.Items.STONE).add(ModBlocks.LUSH_STONE.get().asItem());
+        tag(ModTags.Items.CROPS_BROCCOLI).add(ModItems.BROCCOLI.get().asItem());
+        tag(Tags.Items.CROPS).addTag(ModTags.Items.CROPS_BROCCOLI);
+        tag(ModTags.Items.STORAGE_BLOCKS_ROCK).add(ModBlocks.ROCK_BLOCK.get().asItem());
+        tag(Tags.Items.STORAGE_BLOCKS).addTag(ModTags.Items.STORAGE_BLOCKS_ROCK);
     }
 }

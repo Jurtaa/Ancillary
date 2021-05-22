@@ -15,6 +15,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         // Rocks
+        withExistingParent("rock_block", modLoc("block/rock_block"));
         withExistingParent("lush_stone", modLoc("block/lush_stone"));
         // Leaves
         withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
@@ -26,6 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("netherite_pillar", modLoc("block/netherite_pillar"));
         // Items
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
+        builder(itemGenerated, "pebbles");
         builder(itemGenerated, "rock");
         builder(itemGenerated, "cherries");
         builder(itemGenerated, "broccoli");

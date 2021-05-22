@@ -44,9 +44,11 @@ public class ModLanguageProvider extends LanguageProvider {
                 add("config.supplementary.allowRockGeneration.tooltip",
                         "Determines if rocks should generate within worlds.\n" +
                                 "\u00A77Default: ON");
+                addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");
                 addBlock(ModBlocks.LUSH_STONE, "Lush Stone");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
+                addBlock(ModBlocks.PEBBLES, "Pebbles");
                 addBlock(ModBlocks.ROCK, "Rock");
                 addBlock(ModBlocks.IRON_PILLAR, "Iron Pillar");
                 addBlock(ModBlocks.GOLD_PILLAR, "Gold Pillar");
