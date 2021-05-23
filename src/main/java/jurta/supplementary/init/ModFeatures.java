@@ -24,8 +24,8 @@ public class ModFeatures {
     public static final ConfiguredFeature<?, ?> PATCH_CHERRY_BUSH = register("patch_cherry_bush", Feature.RANDOM_PATCH.configured(Configs.CHERRY_BUSH_CONFIG));
     public static final ConfiguredFeature<?, ?> PATCH_CHERRY_SPARSE = register("patch_cherry_sparse", PATCH_CHERRY_BUSH.decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE));
     public static final ConfiguredFeature<?, ?> PATCH_CHERRY_DECORATED = register("patch_cherry_decorated", PATCH_CHERRY_BUSH.decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE).chance(12));
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SAKURA = register("sakura", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.OAK_LOG), new SimpleBlockStateProvider(States.SAKURA_LEAVES), new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3), new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).ignoreVines().build()));
-    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> FANCY_SAKURA = register("fancy_sakura", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.OAK_LOG), new SimpleBlockStateProvider(States.SAKURA_LEAVES), new FancyFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(4), 4), new FancyTrunkPlacer(3, 11, 0), new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SAKURA = register("sakura", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.SAKURA_LOG), new SimpleBlockStateProvider(States.SAKURA_LEAVES), new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3), new StraightTrunkPlacer(4, 2, 0), new TwoLayerFeature(1, 0, 1))).ignoreVines().build()));
+    public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> FANCY_SAKURA = register("fancy_sakura", Feature.TREE.configured((new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(States.SAKURA_LOG), new SimpleBlockStateProvider(States.SAKURA_LEAVES), new FancyFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(4), 4), new FancyTrunkPlacer(3, 11, 0), new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SAKURA_BEES_0002 = register("sakura_bees_0002", Feature.TREE.configured(SAKURA.config().withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_0002))));
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SAKURA_BEES_002 = register("sakura_bees_002", Feature.TREE.configured(SAKURA.config().withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_002))));
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SAKURA_BEES_005 = register("sakura_bees_005", Feature.TREE.configured(SAKURA.config().withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_005))));
@@ -51,7 +51,7 @@ public class ModFeatures {
 
     public static final class States {
         protected static final BlockState CHERRY_BUSH = ModBlocks.CHERRY_BUSH.get().defaultBlockState().setValue(CherryBushBlock.AGE, 3);
-        protected static final BlockState OAK_LOG = Blocks.OAK_LOG.defaultBlockState();
+        protected static final BlockState SAKURA_LOG = ModBlocks.SAKURA_LOG.get().defaultBlockState();
         protected static final BlockState SAKURA_LEAVES = ModBlocks.SAKURA_LEAVES.get().defaultBlockState();
         protected static final BlockState LUSH_STONE = ModBlocks.LUSH_STONE.get().defaultBlockState();
         protected static final BlockState STONE = Blocks.STONE.defaultBlockState();

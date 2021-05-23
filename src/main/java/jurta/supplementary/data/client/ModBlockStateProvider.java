@@ -31,6 +31,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.SAKURA_LEAVES.get());
         // Sapling
         simpleBlock(ModBlocks.SAKURA_SAPLING.get(), models().cross("sakura_sapling", modLoc("block/sakura_sapling")));
+        // Logs
+        logBlock(ModBlocks.SAKURA_LOG.get());
+        logBlock(ModBlocks.STRIPPED_SAKURA_LOG.get());
+        // Wood
+        axisBlock(ModBlocks.SAKURA_WOOD.get(), modLoc("block/sakura_log"), modLoc("block/sakura_log"));
+        axisBlock(ModBlocks.STRIPPED_SAKURA_WOOD.get(), modLoc("block/stripped_sakura_log"), modLoc("block/stripped_sakura_log"));
+        // Signs
+        simpleBlock(ModBlocks.SAKURA_SIGN.get(), models().withExistingParent("sakura_sign", mcLoc("block/block")).texture("particle", modLoc("block/sakura_planks")));
+        simpleBlock(ModBlocks.SAKURA_WALL_SIGN.get(), models().withExistingParent("sakura_sign", mcLoc("block/block")).texture("particle", modLoc("block/sakura_planks")));
         // Pillars
         axisBlock(ModBlocks.IRON_PILLAR.get());
         axisBlock(ModBlocks.GOLD_PILLAR.get());

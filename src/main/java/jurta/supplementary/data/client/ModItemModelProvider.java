@@ -19,6 +19,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("lush_stone", modLoc("block/lush_stone"));
         // Leaves
         withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
+        // Logs
+        withExistingParent("sakura_log", modLoc("block/sakura_log"));
+        withExistingParent("stripped_sakura_log", modLoc("block/stripped_sakura_log"));
+        // Wood
+        withExistingParent("sakura_wood", modLoc("block/sakura_wood"));
+        withExistingParent("stripped_sakura_wood", modLoc("block/stripped_sakura_wood"));
         // Pillars
         withExistingParent("iron_pillar", modLoc("block/iron_pillar"));
         withExistingParent("gold_pillar", modLoc("block/gold_pillar"));
@@ -32,6 +38,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "cherries");
         builder(itemGenerated, "broccoli");
         builder(itemGenerated, "broccoli_seeds");
+        builder(itemGenerated, "sakura_sign");
         builder(itemGenerated, "sakura_sapling", "block/sakura_sapling");
 
     }

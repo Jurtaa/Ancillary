@@ -30,11 +30,15 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get().asItem());
         tag(ItemTags.STONE_CRAFTING_MATERIALS).add(ModBlocks.ROCK_BLOCK.get().asItem());
         tag(ItemTags.STONE_TOOL_MATERIALS).add(ModBlocks.ROCK_BLOCK.get().asItem());
+        tag(ItemTags.LOGS_THAT_BURN).addTag(ModTags.Items.SAKURA_LOGS);
+        tag(ItemTags.SIGNS).add(ModItems.SAKURA_SIGN.get());
         // Forge Tags
         tag(Tags.Items.STONE).add(ModBlocks.LUSH_STONE.get().asItem());
         tag(ModTags.Items.CROPS_BROCCOLI).add(ModItems.BROCCOLI.get().asItem());
         tag(Tags.Items.CROPS).addTag(ModTags.Items.CROPS_BROCCOLI);
         tag(ModTags.Items.STORAGE_BLOCKS_ROCK).add(ModBlocks.ROCK_BLOCK.get().asItem());
         tag(Tags.Items.STORAGE_BLOCKS).addTag(ModTags.Items.STORAGE_BLOCKS_ROCK);
+        // Supplementary Tags
+        tag(ModTags.Items.SAKURA_LOGS).add(ModBlocks.SAKURA_LOG.get().asItem(), ModBlocks.SAKURA_WOOD.get().asItem(), ModBlocks.STRIPPED_SAKURA_LOG.get().asItem(), ModBlocks.STRIPPED_SAKURA_WOOD.get().asItem());
     }
 }

@@ -44,6 +44,14 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         add(ModBlocks.SAKURA_LEAVES.get(), (sakuraLeaves) -> createLeavesDrops(sakuraLeaves, ModBlocks.SAKURA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES).withPool(LootPool.lootPool().setRolls(ConstantRange.exactly(1)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionCondition(sakuraLeaves, ItemLootEntry.lootTableItem(ModItems.CHERRIES.get())).when(TableBonus.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F)))));
         // Sapling
         dropSelf(ModBlocks.SAKURA_SAPLING.get());
+        // Logs
+        dropSelf(ModBlocks.SAKURA_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_SAKURA_LOG.get());
+        // Wood
+        dropSelf(ModBlocks.SAKURA_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_SAKURA_WOOD.get());
+        // Signs
+        dropSelf(ModBlocks.SAKURA_SIGN.get());
         // Pillars
         dropSelf(ModBlocks.IRON_PILLAR.get());
         dropSelf(ModBlocks.GOLD_PILLAR.get());

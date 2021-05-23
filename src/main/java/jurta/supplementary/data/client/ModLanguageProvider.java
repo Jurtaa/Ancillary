@@ -62,9 +62,17 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.NETHERITE_PILLAR, "Netherite Pillar");
                 addBlock(ModBlocks.SAKURA_LEAVES, "Sakura Leaves");
                 addBlock(ModBlocks.SAKURA_SAPLING, "Sakura Sapling");
+                addBlock(ModBlocks.SAKURA_LOG, "Sakura Log");
+                addBlock(ModBlocks.SAKURA_WOOD, "Sakura Wood");
+                addBlock(ModBlocks.STRIPPED_SAKURA_LOG, "Stripped Sakura Log");
+                addBlock(ModBlocks.STRIPPED_SAKURA_WOOD, "Stripped Sakura Wood");
+                addBlock(ModBlocks.SAKURA_SIGN, "Sakura Sign");
+                add("block.supplementary.sakura_wall_sign", "Sakura Wall Sign");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");
+                addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
+                addItem(ModItems.SAKURA_SIGN, "Sakura Sign");
                 break;
         }
     }

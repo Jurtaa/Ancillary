@@ -11,7 +11,13 @@
   "block.supplementary.rock": "Rock",
   "block.supplementary.rock_block": "Rock Block",
   "block.supplementary.sakura_leaves": "Sakura Leaves",
+  "block.supplementary.sakura_log": "Sakura Log",
   "block.supplementary.sakura_sapling": "Sakura Sapling",
+  "block.supplementary.sakura_sign": "Sakura Sign",
+  "block.supplementary.sakura_wall_sign": "Sakura Wall Sign",
+  "block.supplementary.sakura_wood": "Sakura Wood",
+  "block.supplementary.stripped_sakura_log": "Stripped Sakura Log",
+  "block.supplementary.stripped_sakura_wood": "Stripped Sakura Wood",
   "config.supplementary.allowLushStoneGeneration.title": "Lush Stone",
   "config.supplementary.allowLushStoneGeneration.tooltip": "Determines if lush stone should generate within worlds.\n\u00A74WARNING: Doesn't generate as intended.\n\u00A7r\u00A77Default: OFF",
   "config.supplementary.allowRockGeneration.title": "Rocks",
@@ -27,5 +33,6 @@
   "item.supplementary.broccoli": "Broccoli",
   "item.supplementary.broccoli_seeds": "Broccoli Seeds",
   "item.supplementary.cherries": "Cherries",
+  "item.supplementary.sakura_sign": "Sakura Sign",
   "itemGroup.supplementary": "Supplementary"
 }

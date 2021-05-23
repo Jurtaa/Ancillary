@@ -7,6 +7,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.Direction;
 import net.minecraftforge.fml.RegistryObject;
 
 import java.util.function.Supplier;
@@ -24,9 +25,28 @@ public class ModBlocks {
     // Leaves
     public static final RegistryObject<LeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
             new LeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
+    // Logs
+    public static final RegistryObject<RotatedPillarBlock> SAKURA_LOG = register("sakura_log", () ->
+            log(MaterialColor.TERRACOTTA_PINK, MaterialColor.COLOR_BROWN));
+    // Wood
+    public static final RegistryObject<RotatedPillarBlock> SAKURA_WOOD = register("sakura_wood", () ->
+            new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F).sound(SoundType.WOOD)));
+    // Stripped Logs
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_SAKURA_LOG = register("stripped_sakura_log", () ->
+            log(MaterialColor.TERRACOTTA_PINK, MaterialColor.TERRACOTTA_PINK));
+    // Stripped Wood
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_SAKURA_WOOD = register("stripped_sakura_wood", () ->
+            new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F).sound(SoundType.WOOD)));
     // Saplings
     public static final RegistryObject<SaplingBlock> SAKURA_SAPLING = register("sakura_sapling", () ->
             new SaplingBlock(new SakuraTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
+    // Signs
+    public static final RegistryObject<StandingSignBlock> SAKURA_SIGN = registerNoItem("sakura_sign", () ->
+            new ModStandingSignBlock(AbstractBlock.Properties.of(Material.WOOD).noCollission()
+                    .strength(1.0F).sound(SoundType.WOOD), ModWoodType.SAKURA));
+    public static final RegistryObject<WallSignBlock> SAKURA_WALL_SIGN = registerNoItem("sakura_wall_sign", () ->
+            new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD).noCollission()
+                    .strength(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.SAKURA_SIGN), ModWoodType.SAKURA));
     // Pillars
     public static final RegistryObject<RotatedPillarBlock> IRON_PILLAR = register("iron_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
@@ -54,5 +74,11 @@ public class ModBlocks {
         RegistryObject<T> ret = registerNoItem(name, block);
         Registration.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties().tab(ModTabs.SUPPLEMENTARY)));
         return ret;
+    }
+
+    private static RotatedPillarBlock log(MaterialColor top, MaterialColor side) {
+        return new RotatedPillarBlock(AbstractBlock.Properties.of(Material.WOOD, (log) ->
+                log.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? top : side)
+                .strength(2.0F).sound(SoundType.WOOD));
     }
 }

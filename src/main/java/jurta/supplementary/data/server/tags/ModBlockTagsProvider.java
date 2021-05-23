@@ -28,9 +28,14 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.SAPLINGS).add(ModBlocks.SAKURA_SAPLING.get());
         tag(BlockTags.BASE_STONE_OVERWORLD).add(ModBlocks.LUSH_STONE.get());
         tag(BlockTags.CROPS).add(ModBlocks.BROCCOLI.get());
+        tag(BlockTags.LOGS_THAT_BURN).addTag(ModTags.Blocks.SAKURA_LOGS);
+        tag(BlockTags.STANDING_SIGNS).add(ModBlocks.SAKURA_SIGN.get());
+        tag(BlockTags.WALL_SIGNS).add(ModBlocks.SAKURA_WALL_SIGN.get());
         // Forge Tags
         tag(Tags.Blocks.STONE).add(ModBlocks.LUSH_STONE.get());
         tag(ModTags.Blocks.STORAGE_BLOCKS_ROCK).add(ModBlocks.ROCK_BLOCK.get());
         tag(Tags.Blocks.STORAGE_BLOCKS).addTag(ModTags.Blocks.STORAGE_BLOCKS_ROCK);
+        // Supplementary Tags
+        tag(ModTags.Blocks.SAKURA_LOGS).add(ModBlocks.SAKURA_LOG.get(), ModBlocks.SAKURA_WOOD.get(), ModBlocks.STRIPPED_SAKURA_LOG.get(), ModBlocks.STRIPPED_SAKURA_WOOD.get());
     }
 }
