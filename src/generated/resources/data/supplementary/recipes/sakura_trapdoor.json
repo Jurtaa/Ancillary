@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "supplementary:sakura_planks"
+    }
+  },
+  "result": {
+    "item": "supplementary:sakura_trapdoor"
+  }
+}

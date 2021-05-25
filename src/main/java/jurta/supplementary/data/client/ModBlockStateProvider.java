@@ -4,7 +4,13 @@ import jurta.supplementary.Supplementary;
 import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
 import jurta.supplementary.init.ModBlocks;
+import net.minecraft.block.AbstractButtonBlock;
+import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.state.properties.AttachFace;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -37,9 +43,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Wood
         axisBlock(ModBlocks.SAKURA_WOOD.get(), modLoc("block/sakura_log"), modLoc("block/sakura_log"));
         axisBlock(ModBlocks.STRIPPED_SAKURA_WOOD.get(), modLoc("block/stripped_sakura_log"), modLoc("block/stripped_sakura_log"));
+        // Planks
+        simpleBlock(ModBlocks.SAKURA_PLANKS.get());
+        // Stairs
+        stairsBlock(ModBlocks.SAKURA_STAIRS.get(), modLoc("block/sakura_planks"));
+        // Slabs
+        slabBlock(ModBlocks.SAKURA_SLAB.get(), modLoc("block/sakura_planks"), modLoc("block/sakura_planks"));
+        // Buttons
+        buttonBlock(ModBlocks.SAKURA_BUTTON.get(), modLoc("block/sakura_planks"));
+        // Pressure Plates
+        pressurePlateBlock(ModBlocks.SAKURA_PRESSURE_PLATE.get(), modLoc("block/sakura_planks"));
         // Signs
         simpleBlock(ModBlocks.SAKURA_SIGN.get(), models().withExistingParent("sakura_sign", mcLoc("block/block")).texture("particle", modLoc("block/sakura_planks")));
         simpleBlock(ModBlocks.SAKURA_WALL_SIGN.get(), models().withExistingParent("sakura_sign", mcLoc("block/block")).texture("particle", modLoc("block/sakura_planks")));
+        // Doors
+        doorBlock(ModBlocks.SAKURA_DOOR.get(), modLoc("block/sakura_door_bottom"), modLoc("block/sakura_door_top"));
+        // Trapdoors
+        trapdoorBlock(ModBlocks.SAKURA_TRAPDOOR.get(), modLoc("block/sakura_trapdoor"), true);
+        // Fences
+        fenceBlock(ModBlocks.SAKURA_FENCE.get(), modLoc("block/sakura_planks"));
+        // Fence Gates
+        fenceGateBlock(ModBlocks.SAKURA_FENCE_GATE.get(), modLoc("block/sakura_planks"));
         // Pillars
         axisBlock(ModBlocks.IRON_PILLAR.get());
         axisBlock(ModBlocks.GOLD_PILLAR.get());
@@ -90,5 +114,38 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .partialState().with(BroccoliBlock.AGE, 7).addModels(new ConfiguredModel(models()
                         .withExistingParent("broccoli_stage3", mcLoc("block/crop"))
                         .texture("crop", modLoc("block/broccoli_stage3"))));
+    }
+
+    public void pressurePlateBlock(PressurePlateBlock block, ResourceLocation texture) {
+        String name = block.getRegistryName().getPath();
+        getVariantBuilder(block).forAllStates(state -> {
+            boolean isPowered = state.getValue(BlockStateProperties.POWERED);
+            return ConfiguredModel.builder().modelFile(models().withExistingParent(
+                    isPowered ? name + "_down" : name,
+                    isPowered ? "block/pressure_plate_down" : "block/pressure_plate_up")
+                    .texture("texture", texture))
+                    .build();
+        });
+    }
+
+    public void buttonBlock(AbstractButtonBlock block, ResourceLocation texture) {
+        String name = block.getRegistryName().getPath();
+        getVariantBuilder(block).forAllStates(state -> {
+            boolean isPowered = state.getValue(BlockStateProperties.POWERED);
+            Direction dir = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+            AttachFace face = state.getValue(BlockStateProperties.ATTACH_FACE);
+            return ConfiguredModel.builder().modelFile(models().withExistingParent(
+                    isPowered ? name + "_pressed" : name,
+                    isPowered ? "block/button_pressed" : "block/button")
+                    .texture("texture", texture))
+                    .rotationX(face.ordinal() * 90)
+                    .rotationY((((int) dir.toYRot() + 180) + (face == AttachFace.CEILING ? 180 : 0)) % 360)
+                    .uvLock(face == AttachFace.WALL)
+                    .build();
+        });
+        models().withExistingParent(
+                name + "_inventory",
+                mcLoc("block/button_inventory"))
+                .texture("texture", texture);
     }
 }

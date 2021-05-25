@@ -66,12 +66,21 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.SAKURA_WOOD, "Sakura Wood");
                 addBlock(ModBlocks.STRIPPED_SAKURA_LOG, "Stripped Sakura Log");
                 addBlock(ModBlocks.STRIPPED_SAKURA_WOOD, "Stripped Sakura Wood");
+                addBlock(ModBlocks.SAKURA_PLANKS, "Sakura Planks");
+                addBlock(ModBlocks.SAKURA_STAIRS, "Sakura Stairs");
+                addBlock(ModBlocks.SAKURA_SLAB, "Sakura Slab");
                 addBlock(ModBlocks.SAKURA_SIGN, "Sakura Sign");
                 add("block.supplementary.sakura_wall_sign", "Sakura Wall Sign");
+                addBlock(ModBlocks.SAKURA_PRESSURE_PLATE, "Sakura Pressure Plate");
+                addBlock(ModBlocks.SAKURA_BUTTON, "Sakura Button");
+                addBlock(ModBlocks.SAKURA_DOOR, "Sakura Door");
+                addBlock(ModBlocks.SAKURA_TRAPDOOR, "Sakura Trapdoor");
+                addBlock(ModBlocks.SAKURA_FENCE, "Sakura Fence");
+                addBlock(ModBlocks.SAKURA_FENCE_GATE, "Sakura Fence Gate");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");
-                addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
+                // addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
                 addItem(ModItems.SAKURA_SIGN, "Sakura Sign");
                 break;
         }

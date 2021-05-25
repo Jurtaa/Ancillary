@@ -32,6 +32,14 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.STONE_TOOL_MATERIALS).add(ModBlocks.ROCK_BLOCK.get().asItem());
         tag(ItemTags.LOGS_THAT_BURN).addTag(ModTags.Items.SAKURA_LOGS);
         tag(ItemTags.SIGNS).add(ModItems.SAKURA_SIGN.get());
+        tag(ItemTags.WOODEN_DOORS).add(ModBlocks.SAKURA_DOOR.get().asItem());
+        tag(ItemTags.WOODEN_TRAPDOORS).add(ModBlocks.SAKURA_TRAPDOOR.get().asItem());
+        tag(ItemTags.PLANKS).add(ModBlocks.SAKURA_PLANKS.get().asItem());
+        tag(ItemTags.WOODEN_STAIRS).add(ModBlocks.SAKURA_STAIRS.get().asItem());
+        tag(ItemTags.WOODEN_SLABS).add(ModBlocks.SAKURA_SLAB.get().asItem());
+        tag(ItemTags.WOODEN_BUTTONS).add(ModBlocks.SAKURA_BUTTON.get().asItem());
+        tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.SAKURA_PRESSURE_PLATE.get().asItem());
+        tag(ItemTags.WOODEN_FENCES).add(ModBlocks.SAKURA_FENCE.get().asItem(), ModBlocks.SAKURA_FENCE_GATE.get().asItem());
         // Forge Tags
         tag(Tags.Items.STONE).add(ModBlocks.LUSH_STONE.get().asItem());
         tag(ModTags.Items.CROPS_BROCCOLI).add(ModItems.BROCCOLI.get().asItem());

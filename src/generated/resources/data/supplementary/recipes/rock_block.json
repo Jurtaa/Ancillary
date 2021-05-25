@@ -1,34 +1,15 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
-      "item": "supplementary:rock"
-    },
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
       "item": "supplementary:rock"
     }
-  ],
+  },
   "result": {
     "item": "supplementary:rock_block"
   }

@@ -50,8 +50,26 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         // Wood
         dropSelf(ModBlocks.SAKURA_WOOD.get());
         dropSelf(ModBlocks.STRIPPED_SAKURA_WOOD.get());
+        // Planks
+        dropSelf(ModBlocks.SAKURA_PLANKS.get());
+        // Stairs
+        dropSelf(ModBlocks.SAKURA_STAIRS.get());
+        // Slabs
+        add(ModBlocks.SAKURA_SLAB.get(), createSlabItemTable(ModBlocks.SAKURA_SLAB.get()));
+        // Buttons
+        dropSelf(ModBlocks.SAKURA_BUTTON.get());
+        // Pressure Plates
+        dropSelf(ModBlocks.SAKURA_PRESSURE_PLATE.get());
         // Signs
         dropSelf(ModBlocks.SAKURA_SIGN.get());
+        // Doors
+        add(ModBlocks.SAKURA_DOOR.get(), createDoorTable(ModBlocks.SAKURA_DOOR.get()));
+        // Trapdoors
+        dropSelf(ModBlocks.SAKURA_TRAPDOOR.get());
+        // Fences
+        dropSelf(ModBlocks.SAKURA_FENCE.get());
+        // Fence Gates
+        dropSelf(ModBlocks.SAKURA_FENCE_GATE.get());
         // Pillars
         dropSelf(ModBlocks.IRON_PILLAR.get());
         dropSelf(ModBlocks.GOLD_PILLAR.get());

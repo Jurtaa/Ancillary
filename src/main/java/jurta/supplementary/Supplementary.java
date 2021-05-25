@@ -2,6 +2,7 @@ package jurta.supplementary;
 
 import com.google.common.collect.ImmutableList;
 import jurta.supplementary.client.ClientSetup;
+import jurta.supplementary.client.particle.CherryBlossomParticle;
 import jurta.supplementary.config.ConfigManager;
 import jurta.supplementary.config.ConfigScreen;
 import jurta.supplementary.data.client.ModBlockStateProvider;
@@ -13,9 +14,12 @@ import jurta.supplementary.data.server.tags.ModBlockTagsProvider;
 import jurta.supplementary.data.server.tags.ModItemTagsProvider;
 import jurta.supplementary.init.ModBlocks;
 import jurta.supplementary.init.ModFeatures;
+import jurta.supplementary.init.ModParticleTypes;
 import jurta.supplementary.init.Registration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.RegistryKey;
@@ -27,6 +31,7 @@ import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.jigsaw.JigsawPattern;
 import net.minecraft.world.gen.feature.jigsaw.SingleJigsawPiece;
 import net.minecraft.world.gen.feature.template.*;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
@@ -84,6 +89,7 @@ public class Supplementary {
         eventBus.addListener(this::biomeLoading);
         eventBus.addListener(this::stripBlock);
         eventBus.addListener(this::addNewVillageCrop);
+        modBus.addListener(this::registerParticles);
 
         Registration.init(modBus);
     }
@@ -300,5 +306,10 @@ public class Supplementary {
                 new ResourceLocation("minecraft:village/desert/houses/desert_farm_1"),
                 new ResourceLocation("minecraft:village/desert/houses/desert_farm_2")
         ));
+    }
+
+    private void registerParticles(ParticleFactoryRegisterEvent event) {
+        ParticleManager engine = Minecraft.getInstance().particleEngine;
+        engine.register(ModParticleTypes.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Factory::new);
     }
 }

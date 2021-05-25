@@ -25,6 +25,22 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Wood
         withExistingParent("sakura_wood", modLoc("block/sakura_wood"));
         withExistingParent("stripped_sakura_wood", modLoc("block/stripped_sakura_wood"));
+        // Planks
+        withExistingParent("sakura_planks", modLoc("block/sakura_planks"));
+        // Stairs
+        withExistingParent("sakura_stairs", modLoc("block/sakura_stairs"));
+        // Slabs
+        withExistingParent("sakura_slab", modLoc("block/sakura_slab"));
+        // Buttons
+        withExistingParent("sakura_button", modLoc("block/sakura_button_inventory"));
+        // Pressure Plates
+        withExistingParent("sakura_pressure_plate", modLoc("block/sakura_pressure_plate"));
+        // Trapdoors
+        withExistingParent("sakura_trapdoor", modLoc("block/sakura_trapdoor_bottom"));
+        // Fences
+        fenceInventory("sakura_fence", modLoc("block/sakura_planks"));
+        // Fence Gates
+        withExistingParent("sakura_fence_gate", modLoc("block/sakura_fence_gate"));
         // Pillars
         withExistingParent("iron_pillar", modLoc("block/iron_pillar"));
         withExistingParent("gold_pillar", modLoc("block/gold_pillar"));
@@ -39,6 +55,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "broccoli");
         builder(itemGenerated, "broccoli_seeds");
         builder(itemGenerated, "sakura_sign");
+        builder(itemGenerated, "sakura_door");
         builder(itemGenerated, "sakura_sapling", "block/sakura_sapling");
 
     }

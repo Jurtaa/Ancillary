@@ -1,9 +1,7 @@
 package jurta.supplementary.init;
 
 import jurta.supplementary.item.ModSignItem;
-import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.item.BlockNamedItem;
-import net.minecraft.item.BoatItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 
@@ -19,8 +17,8 @@ public class ModItems {
     public static final RegistryObject<Item> SAKURA_SIGN = Registration.ITEMS.register("sakura_sign", () ->
             new ModSignItem(new Item.Properties().tab(ModTabs.SUPPLEMENTARY), ModBlocks.SAKURA_SIGN.get(), ModBlocks.SAKURA_WALL_SIGN.get()));
     // Boats
-    public static final RegistryObject<Item> SAKURA_BOAT = Registration.ITEMS.register("sakura_boat", () ->
-            new BoatItem(BoatEntity.Type.OAK, new Item.Properties().tab(ModTabs.SUPPLEMENTARY)));
+    // public static final RegistryObject<Item> SAKURA_BOAT = Registration.ITEMS.register("sakura_boat", () ->
+    //         new BoatItem(BoatEntity.Type.OAK, new Item.Properties().tab(ModTabs.SUPPLEMENTARY)));
 
     static void register() {}
 }

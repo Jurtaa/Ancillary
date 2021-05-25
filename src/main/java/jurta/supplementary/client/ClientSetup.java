@@ -11,10 +11,12 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 
 public class ClientSetup {
     public static void setupBlockRenderLayers() {
-        RenderType renderType = RenderType.cutout();
-        RenderTypeLookup.setRenderLayer(ModBlocks.BROCCOLI.get(), renderType);
-        RenderTypeLookup.setRenderLayer(ModBlocks.CHERRY_BUSH.get(), renderType);
-        RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_SAPLING.get(), renderType);
+        RenderType cutout = RenderType.cutout();
+        RenderTypeLookup.setRenderLayer(ModBlocks.BROCCOLI.get(), cutout);
+        RenderTypeLookup.setRenderLayer(ModBlocks.CHERRY_BUSH.get(), cutout);
+        RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_SAPLING.get(), cutout);
+        RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_DOOR.get(), cutout);
+        RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_TRAPDOOR.get(), cutout);
     }
 
     public static void setupAtlases() {

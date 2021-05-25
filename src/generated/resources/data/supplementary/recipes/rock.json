@@ -1,19 +1,14 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "supplementary:pebbles"
-    },
-    {
-      "item": "supplementary:pebbles"
-    },
-    {
-      "item": "supplementary:pebbles"
-    },
-    {
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
       "item": "supplementary:pebbles"
     }
-  ],
+  },
   "result": {
     "item": "supplementary:rock"
   }

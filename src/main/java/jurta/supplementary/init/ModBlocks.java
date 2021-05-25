@@ -23,8 +23,8 @@ public class ModBlocks {
     public static final RegistryObject<LushStoneBlock> LUSH_STONE = registerNoItem("lush_stone", () ->
             new LushStoneBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().randomTicks().strength(1.5F, 6.0F).sound(ModSoundType.LUSH_STONE)));
     // Leaves
-    public static final RegistryObject<LeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
-            new LeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<SakuraLeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
+            new SakuraLeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
     // Logs
     public static final RegistryObject<RotatedPillarBlock> SAKURA_LOG = register("sakura_log", () ->
             log(MaterialColor.TERRACOTTA_PINK, MaterialColor.COLOR_BROWN));
@@ -40,6 +40,21 @@ public class ModBlocks {
     // Saplings
     public static final RegistryObject<SaplingBlock> SAKURA_SAPLING = register("sakura_sapling", () ->
             new SaplingBlock(new SakuraTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING)));
+    // Planks
+    public static final RegistryObject<Block> SAKURA_PLANKS = register("sakura_planks", () ->
+            new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    // Stairs
+    public static final RegistryObject<StairsBlock> SAKURA_STAIRS = register("sakura_stairs", () ->
+            new StairsBlock(() -> SAKURA_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
+    // Slabs
+    public static final RegistryObject<SlabBlock> SAKURA_SLAB = register("sakura_slab", () ->
+            new SlabBlock(AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
+    // Buttons
+    public static final RegistryObject<WoodButtonBlock> SAKURA_BUTTON = register("sakura_button", () ->
+            new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON)));
+    // Pressure Plates
+    public static final RegistryObject<PressurePlateBlock> SAKURA_PRESSURE_PLATE = register("sakura_pressure_plate", () ->
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).noCollission().strength(0.5F).sound(SoundType.WOOD)));
     // Signs
     public static final RegistryObject<StandingSignBlock> SAKURA_SIGN = registerNoItem("sakura_sign", () ->
             new ModStandingSignBlock(AbstractBlock.Properties.of(Material.WOOD).noCollission()
@@ -47,6 +62,18 @@ public class ModBlocks {
     public static final RegistryObject<WallSignBlock> SAKURA_WALL_SIGN = registerNoItem("sakura_wall_sign", () ->
             new ModWallSignBlock(AbstractBlock.Properties.of(Material.WOOD).noCollission()
                     .strength(1.0F).sound(SoundType.WOOD).lootFrom(ModBlocks.SAKURA_SIGN), ModWoodType.SAKURA));
+    // Doors
+    public static final RegistryObject<DoorBlock> SAKURA_DOOR = register("sakura_door", () ->
+            new DoorBlock(AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
+    // Trapdoors
+    public static final RegistryObject<TrapDoorBlock> SAKURA_TRAPDOOR = register("sakura_trapdoor", () ->
+            new TrapDoorBlock(AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).strength(3.0F).sound(SoundType.WOOD).noOcclusion()));
+    // Fences
+    public static final RegistryObject<FenceBlock> SAKURA_FENCE = register("sakura_fence", () ->
+            new FenceBlock(AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    // Fence Gates
+    public static final RegistryObject<FenceGateBlock> SAKURA_FENCE_GATE = register("sakura_fence_gate", () ->
+            new FenceGateBlock(AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     // Pillars
     public static final RegistryObject<RotatedPillarBlock> IRON_PILLAR = register("iron_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
