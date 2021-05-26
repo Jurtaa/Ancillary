@@ -9,11 +9,13 @@ public class CherryBlossomParticle extends SpriteTexturedParticle {
 
     protected CherryBlossomParticle(ClientWorld worldIn, double xPos, double yPos, double zPos, IAnimatedSprite spriteSet) {
         super(worldIn, xPos, yPos, zPos);
-        int i = (int)(32.0D / (Math.random() * 0.8D + 0.2D));
+        int i = (int)(32.0D / (Math.random() * 0.8D + 0.1D));
         this.lifetime = (int)Math.max((float)i * 0.9F, 1.0F);
         this.hasPhysics = true;
         this.pickSprite(spriteSet);
         this.rotSpeed = ((float)Math.random() - 0.5F) * 0.1F;
+        this.xd = ((float)Math.random() - 0.5F) * 0.1F;
+        this.zd = ((float)Math.random() - 0.5F) * 0.1F;
         this.roll = (float)Math.random() * ((float)Math.PI * 2F);
     }
 
