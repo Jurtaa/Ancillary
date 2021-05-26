@@ -114,6 +114,7 @@ public class Supplementary {
         ClientSetup.setupBlockRenderLayers();
         ClientSetup.setupAtlases();
         ClientSetup.setupTileEntityRenderers();
+        ClientSetup.setupEntityRenderers();
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

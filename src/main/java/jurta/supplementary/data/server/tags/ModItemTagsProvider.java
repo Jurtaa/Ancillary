@@ -40,6 +40,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.WOODEN_BUTTONS).add(ModBlocks.SAKURA_BUTTON.get().asItem());
         tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.SAKURA_PRESSURE_PLATE.get().asItem());
         tag(ItemTags.WOODEN_FENCES).add(ModBlocks.SAKURA_FENCE.get().asItem(), ModBlocks.SAKURA_FENCE_GATE.get().asItem());
+        tag(ItemTags.BOATS).add(ModItems.SAKURA_BOAT.get());
         // Forge Tags
         tag(Tags.Items.STONE).add(ModBlocks.LUSH_STONE.get().asItem());
         tag(ModTags.Items.CROPS_BROCCOLI).add(ModItems.BROCCOLI.get().asItem());

@@ -11,6 +11,7 @@
     }
   },
   "result": {
-    "item": "supplementary:sakura_stairs"
+    "item": "supplementary:sakura_stairs",
+    "count": 4
   }
 }

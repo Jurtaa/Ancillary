@@ -39,9 +39,11 @@
   "config.supplementary.generation.title": "Supplementary Generation Config",
   "config.supplementary.generation.tooltip": "Settings for generation relating to the mod.",
   "config.supplementary.title": "Supplementary Config",
+  "entity.supplementary.boat": "Boat",
   "item.supplementary.broccoli": "Broccoli",
   "item.supplementary.broccoli_seeds": "Broccoli Seeds",
   "item.supplementary.cherries": "Cherries",
+  "item.supplementary.sakura_boat": "Sakura Boat",
   "item.supplementary.sakura_sign": "Sakura Sign",
   "itemGroup.supplementary": "Supplementary"
 }

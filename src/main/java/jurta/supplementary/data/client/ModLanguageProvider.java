@@ -2,6 +2,7 @@ package jurta.supplementary.data.client;
 
 import jurta.supplementary.Supplementary;
 import jurta.supplementary.init.ModBlocks;
+import jurta.supplementary.init.ModEntities;
 import jurta.supplementary.init.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -80,8 +81,9 @@ public class ModLanguageProvider extends LanguageProvider {
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");
-                // addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
+                addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
                 addItem(ModItems.SAKURA_SIGN, "Sakura Sign");
+                addEntityType(ModEntities.MOD_BOAT, "Boat");
                 break;
         }
     }

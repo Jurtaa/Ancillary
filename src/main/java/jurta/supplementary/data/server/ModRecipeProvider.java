@@ -2,6 +2,7 @@ package jurta.supplementary.data.server;
 
 import jurta.supplementary.Supplementary;
 import jurta.supplementary.init.ModBlocks;
+import jurta.supplementary.init.ModItems;
 import jurta.supplementary.init.ModTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
@@ -153,6 +154,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_sakura_fence", has(ModBlocks.SAKURA_FENCE.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.SAKURA_BOAT.get())
+                .define('#', ModBlocks.SAKURA_PLANKS.get())
+                .pattern("# #")
+                .pattern("###")
+                .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
+                .unlockedBy("has_sakura_boat", has(ModItems.SAKURA_BOAT.get()))
                 .save(consumer);
     }
 }

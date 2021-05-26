@@ -57,7 +57,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "sakura_sign");
         builder(itemGenerated, "sakura_door");
         builder(itemGenerated, "sakura_sapling", "block/sakura_sapling");
-        // builder(itemGenerated, "sakura_boat");
+        builder(itemGenerated, "sakura_boat");
 
     }
 
