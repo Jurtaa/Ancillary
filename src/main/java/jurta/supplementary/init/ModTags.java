@@ -1,5 +1,6 @@
 package jurta.supplementary.init;
 
+import jurta.supplementary.Supplementary;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tags.BlockTags;
@@ -17,7 +18,7 @@ public class ModTags {
         }
 
         private static Tags.IOptionalNamedTag<Block> modTag(String name) {
-            return BlockTags.createOptional(new ResourceLocation("supplementary", name));
+            return BlockTags.createOptional(new ResourceLocation(Supplementary.MOD_ID, name));
         }
     }
 
@@ -31,7 +32,7 @@ public class ModTags {
         }
 
         private static Tags.IOptionalNamedTag<Item> modTag(String name) {
-            return ItemTags.createOptional(new ResourceLocation("supplementary", name));
+            return ItemTags.createOptional(new ResourceLocation(Supplementary.MOD_ID, name));
         }
     }
 }

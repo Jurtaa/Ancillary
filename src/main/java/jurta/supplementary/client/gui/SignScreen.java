@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import jurta.supplementary.client.render.SignRenderer;
+import jurta.supplementary.client.renderer.SignRenderer;
 import jurta.supplementary.tileentity.ModSignTileEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.StandingSignBlock;

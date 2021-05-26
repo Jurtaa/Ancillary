@@ -1,4 +1,4 @@
-package jurta.supplementary.client.render;
+package jurta.supplementary.client.renderer;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
