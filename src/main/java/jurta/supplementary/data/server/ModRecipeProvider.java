@@ -7,6 +7,7 @@ import jurta.supplementary.init.ModTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
 import net.minecraft.item.Items;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Consumer;
 
@@ -81,7 +82,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ModBlocks.ROCK_BLOCK.get())
                 .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
                 .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
-                .save(consumer, "rock_from_rock_block");
+                .save(consumer, modLoc("rock_from_rock_block"));
         ShapelessRecipeBuilder.shapeless(ModBlocks.SAKURA_PLANKS.get(), 4)
                 .requires(ModTags.Items.SAKURA_LOGS)
                 .unlockedBy("has_sakura_logs", has(ModTags.Items.SAKURA_LOGS))
@@ -162,5 +163,9 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_boat", has(ModItems.SAKURA_BOAT.get()))
                 .save(consumer);
+    }
+
+    public ResourceLocation modLoc(String name) {
+        return new ResourceLocation(Supplementary.MOD_ID, name);
     }
 }

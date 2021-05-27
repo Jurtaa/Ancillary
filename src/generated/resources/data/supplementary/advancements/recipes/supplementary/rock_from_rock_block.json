@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "minecraft:rock_from_rock_block"
+      "supplementary:rock_from_rock_block"
     ]
   },
   "criteria": {
@@ -29,7 +29,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "minecraft:rock_from_rock_block"
+        "recipe": "supplementary:rock_from_rock_block"
       }
     }
   },

@@ -13,7 +13,6 @@ public class ModTabs {
             new ItemStack(Items.STRING));
 
     public static final class ModTab extends ItemGroup {
-
         @Nonnull
         private final Supplier<ItemStack> iconSupplier;
 
