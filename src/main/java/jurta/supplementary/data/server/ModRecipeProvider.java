@@ -163,6 +163,20 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_boat", has(ModItems.SAKURA_BOAT.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.SAKURA_WOOD.get(), 3)
+                .define('#', ModBlocks.SAKURA_LOG.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_sakura_log", has(ModBlocks.SAKURA_LOG.get()))
+                .unlockedBy("has_sakura_wood", has(ModBlocks.SAKURA_WOOD.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.STRIPPED_SAKURA_WOOD.get(), 3)
+                .define('#', ModBlocks.STRIPPED_SAKURA_LOG.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_stripped_sakura_log", has(ModBlocks.STRIPPED_SAKURA_LOG.get()))
+                .unlockedBy("has_stripped_sakura_wood", has(ModBlocks.STRIPPED_SAKURA_WOOD.get()))
+                .save(consumer);
     }
 
     public ResourceLocation modLoc(String name) {

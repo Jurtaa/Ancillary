@@ -1,0 +1,39 @@
+* 1.16.5-0.0.5b
+Bug Fixes
+- Fixed "rock_from_rock_block" accidentally generating in "minecraft"
+- Added recipes for Sakura Wood and Stripped Sakura Wood
+* 1.16.5-0.0.5
+Blocks
+- Added Pebbles
+- Added Rock
+- Added Rock Block
+- Added Sakura Log, Wood and stripped variants
+- Added Sakura Planks and variants
+- Added Sakura Leaves
+- Added Sakura Sapling
+- Added Sakura Door
+- Added Sakura Trapdoor
+- Added Sakura Fence
+- Added Sakura Fence Gate
+- Added Sakura Sign
+- Added Sakura Pressure Plate
+- Added Sakura Button
+- Added Broccoli
+- Added Cherry Bush
+- Added Lush Stone
+- Added Iron, Diamond, Gold, Emerald and Netherite Pillars
+Items
+- Added Broccoli
+- Added Broccoli Seeds
+- Added Cherries
+Particles
+- Added Cherry Blossom
+Generation
+- Sakura Trees can be found in biomes that are marked as "Plains"
+- Rocks and Pebbles can be found in caves as patches
+- Patches of Cherry Bushes can be found in biomes that are marked as "Plains"
+-- There is generation for Lush Stone, however, that is disabled by default within the config due to it not generating correctly.
+Config
+- Added config for all generation relating to the mod.
+Entities
+- Added Sakura Boat

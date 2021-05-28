@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "supplementary:sakura_wood"
+    ]
+  },
+  "criteria": {
+    "has_sakura_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "supplementary:sakura_log"
+          }
+        ]
+      }
+    },
+    "has_sakura_wood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "supplementary:sakura_wood"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "supplementary:sakura_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sakura_log",
+      "has_sakura_wood",
+      "has_the_recipe"
+    ]
+  ]
+}
