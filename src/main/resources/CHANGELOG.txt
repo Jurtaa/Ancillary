@@ -1,3 +1,6 @@
+* 1.16.5-0.0.6
+Textures
+- Updated Lush Stone textures
 * 1.16.5-0.0.5b
 Bug Fixes
 - Fixed "rock_from_rock_block" accidentally generating in "minecraft"
