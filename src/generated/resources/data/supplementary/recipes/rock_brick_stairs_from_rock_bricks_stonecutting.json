@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "supplementary:rock_bricks"
+  },
+  "result": "supplementary:rock_brick_stairs",
+  "count": 1
+}

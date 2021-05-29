@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "supplementary:rock_brick_wall"
+    ]
+  },
+  "criteria": {
+    "has_rock_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "supplementary:rock_bricks"
+          }
+        ]
+      }
+    },
+    "has_rock_brick_wall": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "supplementary:rock_brick_wall"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "supplementary:rock_brick_wall"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rock_bricks",
+      "has_rock_brick_wall",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -36,14 +36,21 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ItemTags.WOODEN_TRAPDOORS).add(ModBlocks.SAKURA_TRAPDOOR.get().asItem());
         tag(ItemTags.PLANKS).add(ModBlocks.SAKURA_PLANKS.get().asItem());
         tag(ItemTags.WOODEN_STAIRS).add(ModBlocks.SAKURA_STAIRS.get().asItem());
-        tag(ItemTags.STAIRS).add(ModBlocks.ROCK_STAIRS.get().asItem(), ModBlocks.POLISHED_ROCK_STAIRS.get().asItem());
+        tag(ItemTags.STAIRS).add(ModBlocks.ROCK_STAIRS.get().asItem(),
+                ModBlocks.POLISHED_ROCK_STAIRS.get().asItem(),
+                ModBlocks.ROCK_BRICK_STAIRS.get().asItem());
         tag(ItemTags.WOODEN_SLABS).add(ModBlocks.SAKURA_SLAB.get().asItem());
-        tag(ItemTags.SLABS).add(ModBlocks.ROCK_SLAB.get().asItem(), ModBlocks.POLISHED_ROCK_SLAB.get().asItem());
+        tag(ItemTags.SLABS).add(ModBlocks.ROCK_SLAB.get().asItem(),
+                ModBlocks.POLISHED_ROCK_SLAB.get().asItem(),
+                ModBlocks.ROCK_BRICK_SLAB.get().asItem());
         tag(ItemTags.WOODEN_BUTTONS).add(ModBlocks.SAKURA_BUTTON.get().asItem());
         tag(ItemTags.BUTTONS).add(ModBlocks.POLISHED_ROCK_BUTTON.get().asItem());
         tag(ItemTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.SAKURA_PRESSURE_PLATE.get().asItem());
-        tag(ItemTags.WOODEN_FENCES).add(ModBlocks.SAKURA_FENCE.get().asItem(), ModBlocks.SAKURA_FENCE_GATE.get().asItem());
-        tag(ItemTags.WALLS).add(ModBlocks.ROCK_WALL.get().asItem(), ModBlocks.POLISHED_ROCK_WALL.get().asItem());
+        tag(ItemTags.WOODEN_FENCES).add(ModBlocks.SAKURA_FENCE.get().asItem(),
+                ModBlocks.SAKURA_FENCE_GATE.get().asItem());
+        tag(ItemTags.WALLS).add(ModBlocks.ROCK_WALL.get().asItem(),
+                ModBlocks.POLISHED_ROCK_WALL.get().asItem(),
+                ModBlocks.ROCK_BRICK_WALL.get().asItem());
         tag(ItemTags.BOATS).add(ModItems.SAKURA_BOAT.get());
         // Forge Tags
         tag(Tags.Items.STONE).add(ModBlocks.LUSH_STONE.get().asItem());
@@ -52,6 +59,9 @@ public class ModItemTagsProvider extends ItemTagsProvider {
         tag(ModTags.Items.STORAGE_BLOCKS_ROCK).add(ModBlocks.ROCK_BLOCK.get().asItem());
         tag(Tags.Items.STORAGE_BLOCKS).addTag(ModTags.Items.STORAGE_BLOCKS_ROCK);
         // Supplementary Tags
-        tag(ModTags.Items.SAKURA_LOGS).add(ModBlocks.SAKURA_LOG.get().asItem(), ModBlocks.SAKURA_WOOD.get().asItem(), ModBlocks.STRIPPED_SAKURA_LOG.get().asItem(), ModBlocks.STRIPPED_SAKURA_WOOD.get().asItem());
+        tag(ModTags.Items.SAKURA_LOGS).add(ModBlocks.SAKURA_LOG.get().asItem(),
+                ModBlocks.SAKURA_WOOD.get().asItem(),
+                ModBlocks.STRIPPED_SAKURA_LOG.get().asItem(),
+                ModBlocks.STRIPPED_SAKURA_WOOD.get().asItem());
     }
 }

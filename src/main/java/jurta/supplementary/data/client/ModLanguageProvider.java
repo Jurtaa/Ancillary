@@ -53,6 +53,8 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");
                 addBlock(ModBlocks.POLISHED_ROCK_BLOCK, "Polished Rock Block");
                 addBlock(ModBlocks.LUSH_STONE, "Lush Stone");
+                addBlock(ModBlocks.ROCK_BRICKS, "Rock Bricks");
+                addBlock(ModBlocks.CRACKED_ROCK_BRICKS, "Cracked Rock Bricks");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
                 addBlock(ModBlocks.PEBBLES, "Pebbles");
@@ -71,9 +73,11 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.SAKURA_PLANKS, "Sakura Planks");
                 addBlock(ModBlocks.ROCK_STAIRS, "Rock Stairs");
                 addBlock(ModBlocks.POLISHED_ROCK_STAIRS, "Polished Rock Stairs");
+                addBlock(ModBlocks.ROCK_BRICK_STAIRS, "Rock Brick Stairs");
                 addBlock(ModBlocks.SAKURA_STAIRS, "Sakura Stairs");
                 addBlock(ModBlocks.ROCK_SLAB, "Rock Slab");
                 addBlock(ModBlocks.POLISHED_ROCK_SLAB, "Polished Rock Slab");
+                addBlock(ModBlocks.ROCK_BRICK_SLAB, "Rock Brick Slab");
                 addBlock(ModBlocks.SAKURA_SLAB, "Sakura Slab");
                 addBlock(ModBlocks.SAKURA_SIGN, "Sakura Sign");
                 add("block.supplementary.sakura_wall_sign", "Sakura Wall Sign");
@@ -87,6 +91,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.SAKURA_FENCE_GATE, "Sakura Fence Gate");
                 addBlock(ModBlocks.ROCK_WALL, "Rock Wall");
                 addBlock(ModBlocks.POLISHED_ROCK_WALL, "Polished Rock Wall");
+                addBlock(ModBlocks.ROCK_BRICK_WALL, "Rock Brick Wall");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");

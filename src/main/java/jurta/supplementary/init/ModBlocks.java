@@ -20,10 +20,15 @@ public class ModBlocks {
             new RockBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().strength(1.0F, 4.0F).noOcclusion()));
     public static final RegistryObject<Block> ROCK_BLOCK = register("rock_block", () ->
             new Block(AbstractBlock.Properties.copy(Blocks.STONE)));
-    public static final RegistryObject<LushStoneBlock> LUSH_STONE = registerNoItem("lush_stone", () ->
+    public static final RegistryObject<LushStoneBlock> LUSH_STONE = register("lush_stone", () ->
             new LushStoneBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().randomTicks().strength(1.5F, 6.0F).sound(ModSoundType.LUSH_STONE)));
     // Polished Blocks
     public static final RegistryObject<Block> POLISHED_ROCK_BLOCK = register("polished_rock_block", () ->
+            new Block(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
+    // Bricks
+    public static final RegistryObject<Block> ROCK_BRICKS = register("rock_bricks", () ->
+            new Block(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
+    public static final RegistryObject<Block> CRACKED_ROCK_BRICKS = register("cracked_rock_bricks", () ->
             new Block(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     // Leaves
     public static final RegistryObject<SakuraLeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
@@ -51,6 +56,8 @@ public class ModBlocks {
             new StairsBlock(() -> ROCK_BLOCK.get().defaultBlockState(), AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     public static final RegistryObject<StairsBlock> POLISHED_ROCK_STAIRS = register("polished_rock_stairs", () ->
             new StairsBlock(() -> POLISHED_ROCK_BLOCK.get().defaultBlockState(), AbstractBlock.Properties.copy(POLISHED_ROCK_BLOCK.get())));
+    public static final RegistryObject<StairsBlock> ROCK_BRICK_STAIRS = register("rock_brick_stairs", () ->
+            new StairsBlock(() -> ROCK_BRICKS.get().defaultBlockState(), AbstractBlock.Properties.copy(ROCK_BRICKS.get())));
     public static final RegistryObject<StairsBlock> SAKURA_STAIRS = register("sakura_stairs", () ->
             new StairsBlock(() -> SAKURA_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
     // Slabs
@@ -58,6 +65,8 @@ public class ModBlocks {
             new SlabBlock(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     public static final RegistryObject<SlabBlock> POLISHED_ROCK_SLAB = register("polished_rock_slab", () ->
             new SlabBlock(AbstractBlock.Properties.copy(POLISHED_ROCK_BLOCK.get())));
+    public static final RegistryObject<SlabBlock> ROCK_BRICK_SLAB = register("rock_brick_slab", () ->
+            new SlabBlock(AbstractBlock.Properties.copy(ROCK_BRICKS.get())));
     public static final RegistryObject<SlabBlock> SAKURA_SLAB = register("sakura_slab", () ->
             new SlabBlock(AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
     // Buttons
@@ -94,6 +103,8 @@ public class ModBlocks {
             new WallBlock(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     public static final RegistryObject<WallBlock> POLISHED_ROCK_WALL = register("polished_rock_wall", () ->
             new WallBlock(AbstractBlock.Properties.copy(POLISHED_ROCK_BLOCK.get())));
+    public static final RegistryObject<WallBlock> ROCK_BRICK_WALL = register("rock_brick_wall", () ->
+            new WallBlock(AbstractBlock.Properties.copy(ROCK_BRICKS.get())));
     // Pillars
     public static final RegistryObject<RotatedPillarBlock> IRON_PILLAR = register("iron_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));

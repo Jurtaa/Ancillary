@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "supplementary:rock_wall",
-    "supplementary:polished_rock_wall"
+    "supplementary:polished_rock_wall",
+    "supplementary:rock_brick_wall"
   ]
 }

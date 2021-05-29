@@ -19,6 +19,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("lush_stone", modLoc("block/lush_stone"));
         // Polished Blocks
         withExistingParent("polished_rock_block", modLoc("block/polished_rock_block"));
+        // Bricks
+        withExistingParent("rock_bricks", modLoc("block/rock_bricks"));
+        withExistingParent("cracked_rock_bricks", modLoc("block/cracked_rock_bricks"));
         // Leaves
         withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
         // Logs
@@ -32,10 +35,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Stairs
         withExistingParent("rock_stairs", modLoc("block/rock_stairs"));
         withExistingParent("polished_rock_stairs", modLoc("block/polished_rock_stairs"));
+        withExistingParent("rock_brick_stairs", modLoc("block/rock_brick_stairs"));
         withExistingParent("sakura_stairs", modLoc("block/sakura_stairs"));
         // Slabs
         withExistingParent("rock_slab", modLoc("block/rock_slab"));
         withExistingParent("polished_rock_slab", modLoc("block/polished_rock_slab"));
+        withExistingParent("rock_brick_slab", modLoc("block/rock_brick_slab"));
         withExistingParent("sakura_slab", modLoc("block/sakura_slab"));
         // Buttons
         withExistingParent("polished_rock_button", modLoc("block/polished_rock_button_inventory"));
@@ -50,8 +55,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Fence Gates
         withExistingParent("sakura_fence_gate", modLoc("block/sakura_fence_gate"));
         // Walls
-        wallInventory("polished_rock_wall", modLoc("block/polished_rock_block"));
         wallInventory("rock_wall", modLoc("block/rock_block"));
+        wallInventory("polished_rock_wall", modLoc("block/polished_rock_block"));
+        wallInventory("rock_brick_wall", modLoc("block/rock_bricks"));
         // Pillars
         withExistingParent("iron_pillar", modLoc("block/iron_pillar"));
         withExistingParent("gold_pillar", modLoc("block/gold_pillar"));

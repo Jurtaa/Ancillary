@@ -44,6 +44,9 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         add(ModBlocks.LUSH_STONE.get(), (lushStone) -> createSingleItemTableWithSilkTouch(lushStone, Blocks.COBBLESTONE));
         // Polished Blocks
         dropSelf(ModBlocks.POLISHED_ROCK_BLOCK.get());
+        // Bricks
+        dropSelf(ModBlocks.ROCK_BRICKS.get());
+        dropSelf(ModBlocks.CRACKED_ROCK_BRICKS.get());
         // Leaves
         add(ModBlocks.SAKURA_LEAVES.get(), (sakuraLeaves) -> createLeavesDrops(sakuraLeaves, ModBlocks.SAKURA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES).withPool(LootPool.lootPool().setRolls(ConstantRange.exactly(1)).when(HAS_NO_SHEARS_OR_SILK_TOUCH).add(applyExplosionCondition(sakuraLeaves, ItemLootEntry.lootTableItem(ModItems.CHERRIES.get())).when(TableBonus.bonusLevelFlatChance(Enchantments.BLOCK_FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F)))));
         // Sapling
@@ -59,10 +62,12 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         // Stairs
         dropSelf(ModBlocks.ROCK_STAIRS.get());
         dropSelf(ModBlocks.POLISHED_ROCK_STAIRS.get());
+        dropSelf(ModBlocks.ROCK_BRICK_STAIRS.get());
         dropSelf(ModBlocks.SAKURA_STAIRS.get());
         // Slabs
         dropSlab(ModBlocks.ROCK_SLAB.get());
         dropSlab(ModBlocks.POLISHED_ROCK_SLAB.get());
+        dropSlab(ModBlocks.ROCK_BRICK_SLAB.get());
         dropSlab(ModBlocks.SAKURA_SLAB.get());
         // Buttons
         dropSelf(ModBlocks.POLISHED_ROCK_BUTTON.get());
@@ -83,6 +88,7 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         // Walls
         dropSelf(ModBlocks.ROCK_WALL.get());
         dropSelf(ModBlocks.POLISHED_ROCK_WALL.get());
+        dropSelf(ModBlocks.ROCK_BRICK_WALL.get());
         // Pillars
         dropSelf(ModBlocks.IRON_PILLAR.get());
         dropSelf(ModBlocks.GOLD_PILLAR.get());

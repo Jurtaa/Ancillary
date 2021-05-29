@@ -239,6 +239,34 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
                 .unlockedBy("has_polished_rock_stairs", has(ModBlocks.POLISHED_ROCK_STAIRS.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_BRICKS.get(), 4)
+                .define('#', ModBlocks.POLISHED_ROCK_BLOCK.get())
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
+                .unlockedBy("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_BRICK_WALL.get(), 6)
+                .define('#', ModBlocks.ROCK_BRICKS.get())
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .unlockedBy("has_rock_brick_wall", has(ModBlocks.ROCK_BRICK_WALL.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_BRICK_SLAB.get(), 6)
+                .define('#', ModBlocks.ROCK_BRICKS.get())
+                .pattern("###")
+                .unlockedBy("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .unlockedBy("has_rock_brick_slab", has(ModBlocks.ROCK_BRICK_SLAB.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_BRICK_STAIRS.get(), 4)
+                .define('#', ModBlocks.ROCK_BRICKS.get())
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .unlockedBy("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .unlockedBy("has_rock_brick_stairs", has(ModBlocks.ROCK_BRICK_STAIRS.get()))
+                .save(consumer);
         // Stonecutter
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BLOCK.get()), ModBlocks.ROCK_STAIRS.get())
                 .unlocks("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
@@ -258,6 +286,31 @@ public class ModRecipeProvider extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.POLISHED_ROCK_BLOCK.get()), ModBlocks.POLISHED_ROCK_WALL.get())
                 .unlocks("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
                 .save(consumer, modLoc("polished_rock_wall_from_polished_rock_block_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BRICKS.get()), ModBlocks.ROCK_BRICK_STAIRS.get())
+                .unlocks("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .save(consumer, modLoc("rock_brick_stairs_from_rock_bricks_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BRICKS.get()), ModBlocks.ROCK_BRICK_SLAB.get(), 2)
+                .unlocks("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .save(consumer, modLoc("rock_brick_slab_from_rock_bricks_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BRICKS.get()), ModBlocks.ROCK_BRICK_WALL.get())
+                .unlocks("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .save(consumer, modLoc("rock_brick_wall_from_rock_bricks_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.POLISHED_ROCK_BLOCK.get()), ModBlocks.ROCK_BRICKS.get())
+                .unlocks("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_bricks_from_polished_rock_block_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.POLISHED_ROCK_BLOCK.get()), ModBlocks.ROCK_BRICK_STAIRS.get())
+                .unlocks("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_brick_stairs_from_polished_rock_block_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.POLISHED_ROCK_BLOCK.get()), ModBlocks.ROCK_BRICK_SLAB.get(), 2)
+                .unlocks("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_brick_slab_from_polished_rock_block_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.POLISHED_ROCK_BLOCK.get()), ModBlocks.ROCK_BRICK_WALL.get())
+                .unlocks("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_brick_wall_from_polished_rock_block_stonecutting"));
+        // Furnace
+        CookingRecipeBuilder.smelting(Ingredient.of(ModBlocks.ROCK_BRICKS.get()), ModBlocks.CRACKED_ROCK_BRICKS.get(), 0.1F, 200)
+                .unlockedBy("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
+                .save(consumer);
     }
 
     public ResourceLocation modLoc(String name) {

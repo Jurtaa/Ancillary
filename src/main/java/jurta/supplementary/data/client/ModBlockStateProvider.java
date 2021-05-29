@@ -35,6 +35,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.LUSH_STONE.get(), models().cubeBottomTop("lush_stone", modLoc("block/lush_stone_side"), mcLoc("block/stone"), modLoc("block/lush_stone_top")));
         // Polished Blocks
         simpleBlock(ModBlocks.POLISHED_ROCK_BLOCK.get());
+        // Bricks
+        simpleBlock(ModBlocks.ROCK_BRICKS.get());
+        simpleBlock(ModBlocks.CRACKED_ROCK_BRICKS.get());
         // Leaves
         simpleBlock(ModBlocks.SAKURA_LEAVES.get());
         // Sapling
@@ -50,10 +53,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Stairs
         stairsBlock(ModBlocks.ROCK_STAIRS.get(), modLoc("block/rock_block"));
         stairsBlock(ModBlocks.POLISHED_ROCK_STAIRS.get(), modLoc("block/polished_rock_block"));
+        stairsBlock(ModBlocks.ROCK_BRICK_STAIRS.get(), modLoc("block/rock_bricks"));
         stairsBlock(ModBlocks.SAKURA_STAIRS.get(), modLoc("block/sakura_planks"));
         // Slabs
         slabBlock(ModBlocks.ROCK_SLAB.get(), modLoc("block/rock_block"), modLoc("block/rock_block"));
         slabBlock(ModBlocks.POLISHED_ROCK_SLAB.get(), modLoc("block/polished_rock_block"), modLoc("block/polished_rock_block"));
+        slabBlock(ModBlocks.ROCK_BRICK_SLAB.get(), modLoc("block/rock_bricks"), modLoc("block/rock_bricks"));
         slabBlock(ModBlocks.SAKURA_SLAB.get(), modLoc("block/sakura_planks"), modLoc("block/sakura_planks"));
         // Buttons
         buttonBlock(ModBlocks.POLISHED_ROCK_BUTTON.get(), modLoc("block/polished_rock_block"));
@@ -73,8 +78,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Fence Gates
         fenceGateBlock(ModBlocks.SAKURA_FENCE_GATE.get(), modLoc("block/sakura_planks"));
         // Walls
-        wallBlock(ModBlocks.POLISHED_ROCK_WALL.get(), modLoc("block/polished_rock_block"));
         wallBlock(ModBlocks.ROCK_WALL.get(), modLoc("block/rock_block"));
+        wallBlock(ModBlocks.POLISHED_ROCK_WALL.get(), modLoc("block/polished_rock_block"));
+        wallBlock(ModBlocks.ROCK_BRICK_WALL.get(), modLoc("block/rock_bricks"));
         // Pillars
         axisBlock(ModBlocks.IRON_PILLAR.get());
         axisBlock(ModBlocks.GOLD_PILLAR.get());

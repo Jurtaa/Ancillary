@@ -1,6 +1,7 @@
 {
   "block.supplementary.broccoli": "Broccoli",
   "block.supplementary.cherry_bush": "Cherry Bush",
+  "block.supplementary.cracked_rock_bricks": "Cracked Rock Bricks",
   "block.supplementary.diamond_pillar": "Diamond Pillar",
   "block.supplementary.emerald_pillar": "Emerald Pillar",
   "block.supplementary.gold_pillar": "Gold Pillar",
@@ -16,6 +17,10 @@
   "block.supplementary.polished_rock_wall": "Polished Rock Wall",
   "block.supplementary.rock": "Rock",
   "block.supplementary.rock_block": "Rock Block",
+  "block.supplementary.rock_brick_slab": "Rock Brick Slab",
+  "block.supplementary.rock_brick_stairs": "Rock Brick Stairs",
+  "block.supplementary.rock_brick_wall": "Rock Brick Wall",
+  "block.supplementary.rock_bricks": "Rock Bricks",
   "block.supplementary.rock_slab": "Rock Slab",
   "block.supplementary.rock_stairs": "Rock Stairs",
   "block.supplementary.rock_wall": "Rock Wall",
