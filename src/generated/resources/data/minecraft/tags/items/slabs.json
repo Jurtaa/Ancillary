@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "supplementary:rock_slab"
+    "supplementary:rock_slab",
+    "supplementary:polished_rock_slab"
   ]
 }

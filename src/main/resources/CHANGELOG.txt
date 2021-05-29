@@ -1,6 +1,7 @@
 * 1.16.5-0.0.6
 Blocks
-- Added Rock Stairs, Slab, Button, Pressure Plate and Wall
+- Added Rock Stairs, Slab, and Wall
+- Added Polished Rock Block, Stairs, Slab, Button, Pressure Plate and Wall
 Textures
 - Updated Lush Stone textures
 - Updated logo

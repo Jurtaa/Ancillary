@@ -17,6 +17,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Rocks
         withExistingParent("rock_block", modLoc("block/rock_block"));
         withExistingParent("lush_stone", modLoc("block/lush_stone"));
+        // Polished Blocks
+        withExistingParent("polished_rock_block", modLoc("block/polished_rock_block"));
         // Leaves
         withExistingParent("sakura_leaves", modLoc("block/sakura_leaves"));
         // Logs
@@ -29,15 +31,17 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent("sakura_planks", modLoc("block/sakura_planks"));
         // Stairs
         withExistingParent("rock_stairs", modLoc("block/rock_stairs"));
+        withExistingParent("polished_rock_stairs", modLoc("block/polished_rock_stairs"));
         withExistingParent("sakura_stairs", modLoc("block/sakura_stairs"));
         // Slabs
         withExistingParent("rock_slab", modLoc("block/rock_slab"));
+        withExistingParent("polished_rock_slab", modLoc("block/polished_rock_slab"));
         withExistingParent("sakura_slab", modLoc("block/sakura_slab"));
         // Buttons
-        withExistingParent("rock_button", modLoc("block/rock_button_inventory"));
+        withExistingParent("polished_rock_button", modLoc("block/polished_rock_button_inventory"));
         withExistingParent("sakura_button", modLoc("block/sakura_button_inventory"));
         // Pressure Plates
-        withExistingParent("rock_pressure_plate", modLoc("block/rock_pressure_plate"));
+        withExistingParent("polished_rock_pressure_plate", modLoc("block/polished_rock_pressure_plate"));
         withExistingParent("sakura_pressure_plate", modLoc("block/sakura_pressure_plate"));
         // Trapdoors
         withExistingParent("sakura_trapdoor", modLoc("block/sakura_trapdoor_bottom"));
@@ -46,6 +50,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Fence Gates
         withExistingParent("sakura_fence_gate", modLoc("block/sakura_fence_gate"));
         // Walls
+        wallInventory("polished_rock_wall", modLoc("block/polished_rock_block"));
         wallInventory("rock_wall", modLoc("block/rock_block"));
         // Pillars
         withExistingParent("iron_pillar", modLoc("block/iron_pillar"));
@@ -67,7 +72,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     private ItemModelBuilder builder(ModelFile model, String name) {
-        return getBuilder(name).parent(model).texture("layer0", modLoc("item/" + name));
+        return builder(model, name, "item/" + name);
     }
 
     private ItemModelBuilder builder(ModelFile model, String name, String texture) {

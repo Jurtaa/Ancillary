@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "supplementary:rock_pressure_plate"
+          "name": "supplementary:polished_rock_pressure_plate"
         }
       ],
       "conditions": [

@@ -51,6 +51,7 @@ public class ModLanguageProvider extends LanguageProvider {
                         "\u00A74WARNING: Doesn't generate as intended.\n" +
                                 "\u00A7r\u00A77Default: OFF");
                 addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");
+                addBlock(ModBlocks.POLISHED_ROCK_BLOCK, "Polished Rock Block");
                 addBlock(ModBlocks.LUSH_STONE, "Lush Stone");
                 addBlock(ModBlocks.BROCCOLI, "Broccoli");
                 addBlock(ModBlocks.CHERRY_BUSH, "Cherry Bush");
@@ -69,20 +70,23 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.STRIPPED_SAKURA_WOOD, "Stripped Sakura Wood");
                 addBlock(ModBlocks.SAKURA_PLANKS, "Sakura Planks");
                 addBlock(ModBlocks.ROCK_STAIRS, "Rock Stairs");
+                addBlock(ModBlocks.POLISHED_ROCK_STAIRS, "Polished Rock Stairs");
                 addBlock(ModBlocks.SAKURA_STAIRS, "Sakura Stairs");
                 addBlock(ModBlocks.ROCK_SLAB, "Rock Slab");
+                addBlock(ModBlocks.POLISHED_ROCK_SLAB, "Polished Rock Slab");
                 addBlock(ModBlocks.SAKURA_SLAB, "Sakura Slab");
                 addBlock(ModBlocks.SAKURA_SIGN, "Sakura Sign");
                 add("block.supplementary.sakura_wall_sign", "Sakura Wall Sign");
-                addBlock(ModBlocks.ROCK_PRESSURE_PLATE, "Rock Pressure Plate");
+                addBlock(ModBlocks.POLISHED_ROCK_PRESSURE_PLATE, "Polished Rock Pressure Plate");
                 addBlock(ModBlocks.SAKURA_PRESSURE_PLATE, "Sakura Pressure Plate");
-                addBlock(ModBlocks.ROCK_BUTTON, "Rock Button");
+                addBlock(ModBlocks.POLISHED_ROCK_BUTTON, "Polished Rock Button");
                 addBlock(ModBlocks.SAKURA_BUTTON, "Sakura Button");
                 addBlock(ModBlocks.SAKURA_DOOR, "Sakura Door");
                 addBlock(ModBlocks.SAKURA_TRAPDOOR, "Sakura Trapdoor");
                 addBlock(ModBlocks.SAKURA_FENCE, "Sakura Fence");
                 addBlock(ModBlocks.SAKURA_FENCE_GATE, "Sakura Fence Gate");
                 addBlock(ModBlocks.ROCK_WALL, "Rock Wall");
+                addBlock(ModBlocks.POLISHED_ROCK_WALL, "Polished Rock Wall");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");

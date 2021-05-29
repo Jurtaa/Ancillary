@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "supplementary:rock_button"
+          "name": "supplementary:polished_rock_block"
         }
       ],
       "conditions": [

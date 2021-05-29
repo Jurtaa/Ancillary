@@ -22,6 +22,9 @@ public class ModBlocks {
             new Block(AbstractBlock.Properties.copy(Blocks.STONE)));
     public static final RegistryObject<LushStoneBlock> LUSH_STONE = registerNoItem("lush_stone", () ->
             new LushStoneBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).requiresCorrectToolForDrops().randomTicks().strength(1.5F, 6.0F).sound(ModSoundType.LUSH_STONE)));
+    // Polished Blocks
+    public static final RegistryObject<Block> POLISHED_ROCK_BLOCK = register("polished_rock_block", () ->
+            new Block(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     // Leaves
     public static final RegistryObject<SakuraLeavesBlock> SAKURA_LEAVES = register("sakura_leaves", () ->
             new SakuraLeavesBlock(AbstractBlock.Properties.copy(Blocks.OAK_LEAVES)));
@@ -46,21 +49,25 @@ public class ModBlocks {
     // Stairs
     public static final RegistryObject<StairsBlock> ROCK_STAIRS = register("rock_stairs", () ->
             new StairsBlock(() -> ROCK_BLOCK.get().defaultBlockState(), AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
+    public static final RegistryObject<StairsBlock> POLISHED_ROCK_STAIRS = register("polished_rock_stairs", () ->
+            new StairsBlock(() -> POLISHED_ROCK_BLOCK.get().defaultBlockState(), AbstractBlock.Properties.copy(POLISHED_ROCK_BLOCK.get())));
     public static final RegistryObject<StairsBlock> SAKURA_STAIRS = register("sakura_stairs", () ->
             new StairsBlock(() -> SAKURA_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
     // Slabs
     public static final RegistryObject<SlabBlock> ROCK_SLAB = register("rock_slab", () ->
             new SlabBlock(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
+    public static final RegistryObject<SlabBlock> POLISHED_ROCK_SLAB = register("polished_rock_slab", () ->
+            new SlabBlock(AbstractBlock.Properties.copy(POLISHED_ROCK_BLOCK.get())));
     public static final RegistryObject<SlabBlock> SAKURA_SLAB = register("sakura_slab", () ->
             new SlabBlock(AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
     // Buttons
-    public static final RegistryObject<StoneButtonBlock> ROCK_BUTTON = register("rock_button", () ->
+    public static final RegistryObject<StoneButtonBlock> POLISHED_ROCK_BUTTON = register("polished_rock_button", () ->
             new StoneButtonBlock(AbstractBlock.Properties.copy(Blocks.STONE_BUTTON)));
     public static final RegistryObject<WoodButtonBlock> SAKURA_BUTTON = register("sakura_button", () ->
             new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON)));
     // Pressure Plates
-    public static final RegistryObject<PressurePlateBlock> ROCK_PRESSURE_PLATE = register("rock_pressure_plate", () ->
-            new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, AbstractBlock.Properties.of(Material.STONE, ROCK_BLOCK.get().defaultMaterialColor()).requiresCorrectToolForDrops().noCollission().strength(0.5F)));
+    public static final RegistryObject<PressurePlateBlock> POLISHED_ROCK_PRESSURE_PLATE = register("polished_rock_pressure_plate", () ->
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, AbstractBlock.Properties.of(Material.STONE, POLISHED_ROCK_BLOCK.get().defaultMaterialColor()).requiresCorrectToolForDrops().noCollission().strength(0.5F)));
     public static final RegistryObject<PressurePlateBlock> SAKURA_PRESSURE_PLATE = register("sakura_pressure_plate", () ->
             new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).noCollission().strength(0.5F).sound(SoundType.WOOD)));
     // Signs
@@ -85,6 +92,8 @@ public class ModBlocks {
     // Walls
     public static final RegistryObject<WallBlock> ROCK_WALL = register("rock_wall", () ->
             new WallBlock(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
+    public static final RegistryObject<WallBlock> POLISHED_ROCK_WALL = register("polished_rock_wall", () ->
+            new WallBlock(AbstractBlock.Properties.copy(POLISHED_ROCK_BLOCK.get())));
     // Pillars
     public static final RegistryObject<RotatedPillarBlock> IRON_PILLAR = register("iron_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));

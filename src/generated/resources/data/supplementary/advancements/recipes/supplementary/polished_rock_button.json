@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "supplementary:rock_pressure_plate"
+      "supplementary:polished_rock_button"
     ]
   },
   "criteria": {
@@ -16,12 +16,12 @@
         ]
       }
     },
-    "has_rock_pressure_plate": {
+    "has_polished_rock_button": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "supplementary:rock_pressure_plate"
+            "item": "supplementary:polished_rock_button"
           }
         ]
       }
@@ -29,14 +29,14 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "supplementary:rock_pressure_plate"
+        "recipe": "supplementary:polished_rock_button"
       }
     }
   },
   "requirements": [
     [
       "has_rock_block",
-      "has_rock_pressure_plate",
+      "has_polished_rock_button",
       "has_the_recipe"
     ]
   ]

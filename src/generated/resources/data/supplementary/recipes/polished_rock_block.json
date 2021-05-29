@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
+    "##",
     "##"
   ],
   "key": {
@@ -9,6 +10,7 @@
     }
   },
   "result": {
-    "item": "supplementary:rock_pressure_plate"
+    "item": "supplementary:polished_rock_block",
+    "count": 4
   }
 }
