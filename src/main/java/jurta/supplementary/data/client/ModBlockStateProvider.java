@@ -46,12 +46,16 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Planks
         simpleBlock(ModBlocks.SAKURA_PLANKS.get());
         // Stairs
+        stairsBlock(ModBlocks.ROCK_STAIRS.get(), modLoc("block/rock_block"));
         stairsBlock(ModBlocks.SAKURA_STAIRS.get(), modLoc("block/sakura_planks"));
         // Slabs
+        slabBlock(ModBlocks.ROCK_SLAB.get(), modLoc("block/rock_block"), modLoc("block/rock_block"));
         slabBlock(ModBlocks.SAKURA_SLAB.get(), modLoc("block/sakura_planks"), modLoc("block/sakura_planks"));
         // Buttons
+        buttonBlock(ModBlocks.ROCK_BUTTON.get(), modLoc("block/rock_block"));
         buttonBlock(ModBlocks.SAKURA_BUTTON.get(), modLoc("block/sakura_planks"));
         // Pressure Plates
+        pressurePlateBlock(ModBlocks.ROCK_PRESSURE_PLATE.get(), modLoc("block/rock_block"));
         pressurePlateBlock(ModBlocks.SAKURA_PRESSURE_PLATE.get(), modLoc("block/sakura_planks"));
         // Signs
         simpleBlock(ModBlocks.SAKURA_SIGN.get(), models().withExistingParent("sakura_sign", mcLoc("block/block")).texture("particle", modLoc("block/sakura_planks")));
@@ -64,6 +68,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         fenceBlock(ModBlocks.SAKURA_FENCE.get(), modLoc("block/sakura_planks"));
         // Fence Gates
         fenceGateBlock(ModBlocks.SAKURA_FENCE_GATE.get(), modLoc("block/sakura_planks"));
+        // Walls
+        wallBlock(ModBlocks.ROCK_WALL.get(), modLoc("block/rock_block"));
         // Pillars
         axisBlock(ModBlocks.IRON_PILLAR.get());
         axisBlock(ModBlocks.GOLD_PILLAR.get());

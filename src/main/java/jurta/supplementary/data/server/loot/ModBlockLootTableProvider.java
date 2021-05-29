@@ -11,6 +11,8 @@ import net.minecraft.advancements.criterion.MinMaxBounds;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.DoorBlock;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
@@ -53,23 +55,29 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         // Planks
         dropSelf(ModBlocks.SAKURA_PLANKS.get());
         // Stairs
+        dropSelf(ModBlocks.ROCK_STAIRS.get());
         dropSelf(ModBlocks.SAKURA_STAIRS.get());
         // Slabs
-        add(ModBlocks.SAKURA_SLAB.get(), createSlabItemTable(ModBlocks.SAKURA_SLAB.get()));
+        dropSlab(ModBlocks.ROCK_SLAB.get());
+        dropSlab(ModBlocks.SAKURA_SLAB.get());
         // Buttons
+        dropSelf(ModBlocks.ROCK_BUTTON.get());
         dropSelf(ModBlocks.SAKURA_BUTTON.get());
         // Pressure Plates
+        dropSelf(ModBlocks.ROCK_PRESSURE_PLATE.get());
         dropSelf(ModBlocks.SAKURA_PRESSURE_PLATE.get());
         // Signs
         dropSelf(ModBlocks.SAKURA_SIGN.get());
         // Doors
-        add(ModBlocks.SAKURA_DOOR.get(), createDoorTable(ModBlocks.SAKURA_DOOR.get()));
+        dropDoor(ModBlocks.SAKURA_DOOR.get());
         // Trapdoors
         dropSelf(ModBlocks.SAKURA_TRAPDOOR.get());
         // Fences
         dropSelf(ModBlocks.SAKURA_FENCE.get());
         // Fence Gates
         dropSelf(ModBlocks.SAKURA_FENCE_GATE.get());
+        // Walls
+        dropSelf(ModBlocks.ROCK_WALL.get());
         // Pillars
         dropSelf(ModBlocks.IRON_PILLAR.get());
         dropSelf(ModBlocks.GOLD_PILLAR.get());
@@ -87,5 +95,13 @@ public class ModBlockLootTableProvider extends BlockLootTables {
         return ForgeRegistries.BLOCKS.getValues().stream()
                 .filter(block -> Supplementary.MOD_ID.equals(block.getRegistryName().getNamespace()))
                 .collect(Collectors.toSet());
+    }
+
+    public void dropSlab(SlabBlock block) {
+        add(block, createSlabItemTable(block));
+    }
+
+    public void dropDoor(DoorBlock block) {
+        add(block, createDoorTable(block));
     }
 }

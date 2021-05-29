@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "supplementary:rock_block"
+  },
+  "result": "supplementary:rock_slab",
+  "count": 2
+}

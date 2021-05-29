@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "supplementary:rock_block"
+    }
+  },
+  "result": {
+    "item": "supplementary:rock_stairs",
+    "count": 4
+  }
+}

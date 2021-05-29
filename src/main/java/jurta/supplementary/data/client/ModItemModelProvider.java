@@ -28,12 +28,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         // Planks
         withExistingParent("sakura_planks", modLoc("block/sakura_planks"));
         // Stairs
+        withExistingParent("rock_stairs", modLoc("block/rock_stairs"));
         withExistingParent("sakura_stairs", modLoc("block/sakura_stairs"));
         // Slabs
+        withExistingParent("rock_slab", modLoc("block/rock_slab"));
         withExistingParent("sakura_slab", modLoc("block/sakura_slab"));
         // Buttons
+        withExistingParent("rock_button", modLoc("block/rock_button_inventory"));
         withExistingParent("sakura_button", modLoc("block/sakura_button_inventory"));
         // Pressure Plates
+        withExistingParent("rock_pressure_plate", modLoc("block/rock_pressure_plate"));
         withExistingParent("sakura_pressure_plate", modLoc("block/sakura_pressure_plate"));
         // Trapdoors
         withExistingParent("sakura_trapdoor", modLoc("block/sakura_trapdoor_bottom"));
@@ -41,6 +45,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         fenceInventory("sakura_fence", modLoc("block/sakura_planks"));
         // Fence Gates
         withExistingParent("sakura_fence_gate", modLoc("block/sakura_fence_gate"));
+        // Walls
+        wallInventory("rock_wall", modLoc("block/rock_block"));
         // Pillars
         withExistingParent("iron_pillar", modLoc("block/iron_pillar"));
         withExistingParent("gold_pillar", modLoc("block/gold_pillar"));
@@ -58,7 +64,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         builder(itemGenerated, "sakura_door");
         builder(itemGenerated, "sakura_sapling", "block/sakura_sapling");
         builder(itemGenerated, "sakura_boat");
-
     }
 
     private ItemModelBuilder builder(ModelFile model, String name) {

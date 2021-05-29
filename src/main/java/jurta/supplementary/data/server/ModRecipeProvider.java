@@ -7,6 +7,9 @@ import jurta.supplementary.init.ModTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
 import net.minecraft.item.Items;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.item.crafting.SingleItemRecipe;
+import net.minecraft.item.crafting.StonecuttingRecipe;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Consumer;
@@ -23,6 +26,7 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
+        // Crafting Table
         ShapedRecipeBuilder.shaped(ModBlocks.IRON_PILLAR.get(), 2)
                 .define('#', Blocks.IRON_BLOCK)
                 .pattern("#")
@@ -177,6 +181,48 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_stripped_sakura_log", has(ModBlocks.STRIPPED_SAKURA_LOG.get()))
                 .unlockedBy("has_stripped_sakura_wood", has(ModBlocks.STRIPPED_SAKURA_WOOD.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_WALL.get(), 6)
+                .define('#', ModBlocks.ROCK_BLOCK.get())
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .unlockedBy("has_rock_wall", has(ModBlocks.ROCK_WALL.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_SLAB.get(), 6)
+                .define('#', ModBlocks.ROCK_BLOCK.get())
+                .pattern("###")
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .unlockedBy("has_rock_slab", has(ModBlocks.ROCK_SLAB.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_STAIRS.get(), 4)
+                .define('#', ModBlocks.ROCK_BLOCK.get())
+                .pattern("#  ")
+                .pattern("## ")
+                .pattern("###")
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .unlockedBy("has_rock_stairs", has(ModBlocks.ROCK_STAIRS.get()))
+                .save(consumer);
+        ShapelessRecipeBuilder.shapeless(ModBlocks.ROCK_BUTTON.get())
+                .requires(ModBlocks.ROCK_BLOCK.get())
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .unlockedBy("has_rock_button", has(ModBlocks.SAKURA_BUTTON.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.ROCK_PRESSURE_PLATE.get())
+                .define('#', ModBlocks.ROCK_BLOCK.get())
+                .pattern("##")
+                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .unlockedBy("has_rock_pressure_plate", has(ModBlocks.ROCK_PRESSURE_PLATE.get()))
+                .save(consumer);
+        // Stonecutter
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BLOCK.get()), ModBlocks.ROCK_STAIRS.get())
+                .unlocks("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_stairs_from_rock_block_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BLOCK.get()), ModBlocks.ROCK_SLAB.get(), 2)
+                .unlocks("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_slab_from_rock_block_stonecutting"));
+        SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BLOCK.get()), ModBlocks.ROCK_WALL.get())
+                .unlocks("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .save(consumer, modLoc("rock_wall_from_rock_block_stonecutting"));
     }
 
     public ResourceLocation modLoc(String name) {

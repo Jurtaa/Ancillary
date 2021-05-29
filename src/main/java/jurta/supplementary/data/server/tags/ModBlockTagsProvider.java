@@ -35,10 +35,15 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.WOODEN_TRAPDOORS).add(ModBlocks.SAKURA_TRAPDOOR.get());
         tag(BlockTags.PLANKS).add(ModBlocks.SAKURA_PLANKS.get());
         tag(BlockTags.WOODEN_STAIRS).add(ModBlocks.SAKURA_STAIRS.get());
+        tag(BlockTags.STAIRS).add(ModBlocks.ROCK_STAIRS.get());
         tag(BlockTags.WOODEN_SLABS).add(ModBlocks.SAKURA_SLAB.get());
+        tag(BlockTags.SLABS).add(ModBlocks.ROCK_SLAB.get());
         tag(BlockTags.WOODEN_BUTTONS).add(ModBlocks.SAKURA_BUTTON.get());
+        tag(BlockTags.BUTTONS).add(ModBlocks.ROCK_BUTTON.get());
         tag(BlockTags.WOODEN_PRESSURE_PLATES).add(ModBlocks.SAKURA_PRESSURE_PLATE.get());
+        tag(BlockTags.STONE_PRESSURE_PLATES).add(ModBlocks.ROCK_PRESSURE_PLATE.get());
         tag(BlockTags.WOODEN_FENCES).add(ModBlocks.SAKURA_FENCE.get(), ModBlocks.SAKURA_FENCE_GATE.get());
+        tag(BlockTags.WALLS).add(ModBlocks.ROCK_WALL.get());
         // Forge Tags
         tag(Tags.Blocks.STONE).add(ModBlocks.LUSH_STONE.get());
         tag(ModTags.Blocks.STORAGE_BLOCKS_ROCK).add(ModBlocks.ROCK_BLOCK.get());

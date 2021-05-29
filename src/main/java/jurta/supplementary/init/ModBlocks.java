@@ -44,15 +44,23 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAKURA_PLANKS = register("sakura_planks", () ->
             new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.TERRACOTTA_PINK).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     // Stairs
+    public static final RegistryObject<StairsBlock> ROCK_STAIRS = register("rock_stairs", () ->
+            new StairsBlock(() -> ROCK_BLOCK.get().defaultBlockState(), AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     public static final RegistryObject<StairsBlock> SAKURA_STAIRS = register("sakura_stairs", () ->
             new StairsBlock(() -> SAKURA_PLANKS.get().defaultBlockState(), AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
     // Slabs
+    public static final RegistryObject<SlabBlock> ROCK_SLAB = register("rock_slab", () ->
+            new SlabBlock(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     public static final RegistryObject<SlabBlock> SAKURA_SLAB = register("sakura_slab", () ->
             new SlabBlock(AbstractBlock.Properties.copy(SAKURA_PLANKS.get())));
     // Buttons
+    public static final RegistryObject<StoneButtonBlock> ROCK_BUTTON = register("rock_button", () ->
+            new StoneButtonBlock(AbstractBlock.Properties.copy(Blocks.STONE_BUTTON)));
     public static final RegistryObject<WoodButtonBlock> SAKURA_BUTTON = register("sakura_button", () ->
             new WoodButtonBlock(AbstractBlock.Properties.copy(Blocks.OAK_BUTTON)));
     // Pressure Plates
+    public static final RegistryObject<PressurePlateBlock> ROCK_PRESSURE_PLATE = register("rock_pressure_plate", () ->
+            new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, AbstractBlock.Properties.of(Material.STONE, ROCK_BLOCK.get().defaultMaterialColor()).requiresCorrectToolForDrops().noCollission().strength(0.5F)));
     public static final RegistryObject<PressurePlateBlock> SAKURA_PRESSURE_PLATE = register("sakura_pressure_plate", () ->
             new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).noCollission().strength(0.5F).sound(SoundType.WOOD)));
     // Signs
@@ -74,6 +82,9 @@ public class ModBlocks {
     // Fence Gates
     public static final RegistryObject<FenceGateBlock> SAKURA_FENCE_GATE = register("sakura_fence_gate", () ->
             new FenceGateBlock(AbstractBlock.Properties.of(Material.WOOD, SAKURA_PLANKS.get().defaultMaterialColor()).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
+    // Walls
+    public static final RegistryObject<WallBlock> ROCK_WALL = register("rock_wall", () ->
+            new WallBlock(AbstractBlock.Properties.copy(ROCK_BLOCK.get())));
     // Pillars
     public static final RegistryObject<RotatedPillarBlock> IRON_PILLAR = register("iron_pillar", () ->
             new RotatedPillarBlock(AbstractBlock.Properties.copy(Blocks.IRON_BLOCK)));
