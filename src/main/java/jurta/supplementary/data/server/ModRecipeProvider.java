@@ -215,14 +215,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_rock_stairs", has(ModBlocks.ROCK_STAIRS.get()))
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(ModBlocks.POLISHED_ROCK_BUTTON.get())
-                .requires(ModBlocks.ROCK_BLOCK.get())
-                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .requires(ModBlocks.POLISHED_ROCK_BLOCK.get())
+                .unlockedBy("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
                 .unlockedBy("has_polished_rock_button", has(ModBlocks.POLISHED_ROCK_BUTTON.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.POLISHED_ROCK_PRESSURE_PLATE.get())
-                .define('#', ModBlocks.ROCK_BLOCK.get())
+                .define('#', ModBlocks.POLISHED_ROCK_BLOCK.get())
                 .pattern("##")
-                .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
+                .unlockedBy("has_polished_rock_block", has(ModBlocks.POLISHED_ROCK_BLOCK.get()))
                 .unlockedBy("has_polished_rock_pressure_plate", has(ModBlocks.POLISHED_ROCK_PRESSURE_PLATE.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.POLISHED_ROCK_BLOCK.get(), 4)

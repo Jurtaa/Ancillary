@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "supplementary:rock_block"
+      "item": "supplementary:polished_rock_block"
     }
   ],
   "result": {

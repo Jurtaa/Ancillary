@@ -4,6 +4,8 @@ Textures
 Recipes
 - Added "in_water" requirement for Sakura Boat
 - Added groups to some recipes
+Bug Fixes
+- Fixed Polished Rock Button and Pressure Plate recipes
 * 1.16.5-0.0.6
 Blocks
 - Added Rock Stairs, Slab, Wall, Bricks, Brick Stairs, Brick Slab, Brick Wall and Cracked Bricks
