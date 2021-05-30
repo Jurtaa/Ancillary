@@ -26,6 +26,12 @@
         ]
       }
     },
+    "in_water": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "minecraft:water"
+      }
+    },
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
@@ -37,6 +43,7 @@
     [
       "has_sakura_planks",
       "has_sakura_boat",
+      "in_water",
       "has_the_recipe"
     ]
   ]

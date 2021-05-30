@@ -28,9 +28,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         // Rocks
         simpleBlock(ModBlocks.PEBBLES.get(), models().withExistingParent("pebbles", modLoc("block/template_pebbles"))
-                .texture("pebbles", modLoc("block/rock_block")));
+                .texture("pebbles", modLoc("block/pebbles")));
         simpleBlock(ModBlocks.ROCK.get(), models().withExistingParent("rock", modLoc("block/template_rock"))
-                .texture("rock", modLoc("block/rock_block")));
+                .texture("rock", modLoc("block/rock")));
         simpleBlock(ModBlocks.ROCK_BLOCK.get());
         simpleBlock(ModBlocks.LUSH_STONE.get(), models().cubeBottomTop("lush_stone", modLoc("block/lush_stone_side"), mcLoc("block/stone"), modLoc("block/lush_stone_top")));
         // Polished Blocks

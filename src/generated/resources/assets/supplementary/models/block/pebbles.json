@@ -1,6 +1,6 @@
 {
   "parent": "supplementary:block/template_pebbles",
   "textures": {
-    "pebbles": "supplementary:block/rock_block"
+    "pebbles": "supplementary:block/pebbles"
   }
 }

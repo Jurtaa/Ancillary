@@ -64,6 +64,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('#', ModBlocks.PEBBLES.get())
                 .pattern("##")
                 .pattern("##")
+                .group("rock")
                 .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
                 .unlockedBy("has_pebbles", has(ModBlocks.PEBBLES.get()))
                 .save(consumer);
@@ -82,11 +83,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .save(consumer);
         ShapelessRecipeBuilder.shapeless(ModBlocks.ROCK.get(), 9)
                 .requires(ModBlocks.ROCK_BLOCK.get())
+                .group("rock")
                 .unlockedBy("has_rock", has(ModBlocks.ROCK.get()))
                 .unlockedBy("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))
                 .save(consumer, modLoc("rock_from_rock_block"));
         ShapelessRecipeBuilder.shapeless(ModBlocks.SAKURA_PLANKS.get(), 4)
                 .requires(ModTags.Items.SAKURA_LOGS)
+                .group("planks")
                 .unlockedBy("has_sakura_logs", has(ModTags.Items.SAKURA_LOGS))
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .save(consumer);
@@ -96,6 +99,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .pattern("###")
                 .pattern(" X ")
+                .group("sign")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_sakura_sign", has(ModBlocks.SAKURA_SIGN.get()))
@@ -105,6 +109,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("##")
                 .pattern("##")
                 .pattern("##")
+                .group("wooden_door")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_door", has(ModBlocks.SAKURA_DOOR.get()))
                 .save(consumer);
@@ -112,12 +117,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('#', ModBlocks.SAKURA_PLANKS.get())
                 .pattern("###")
                 .pattern("###")
+                .group("wooden_trapdoor")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_trapdoor", has(ModBlocks.SAKURA_TRAPDOOR.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.SAKURA_SLAB.get(), 6)
                 .define('#', ModBlocks.SAKURA_PLANKS.get())
                 .pattern("###")
+                .group("wooden_slab")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_slab", has(ModBlocks.SAKURA_SLAB.get()))
                 .save(consumer);
@@ -126,6 +133,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern("#  ")
                 .pattern("## ")
                 .pattern("###")
+                .group("wooden_stairs")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_stairs", has(ModBlocks.SAKURA_STAIRS.get()))
                 .save(consumer);
@@ -137,6 +145,7 @@ public class ModRecipeProvider extends RecipeProvider {
         ShapedRecipeBuilder.shaped(ModBlocks.SAKURA_PRESSURE_PLATE.get())
                 .define('#', ModBlocks.SAKURA_PLANKS.get())
                 .pattern("##")
+                .group("wooden_pressure_plate")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_pressure_plate", has(ModBlocks.SAKURA_PRESSURE_PLATE.get()))
                 .save(consumer);
@@ -145,6 +154,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('X', Items.STICK)
                 .pattern("#X#")
                 .pattern("#X#")
+                .group("wooden_fence")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_sakura_fence", has(ModBlocks.SAKURA_FENCE.get()))
@@ -154,6 +164,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('X', Items.STICK)
                 .pattern("X#X")
                 .pattern("X#X")
+                .group("wooden_fence_gate")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_stick", has(Items.STICK))
                 .unlockedBy("has_sakura_fence", has(ModBlocks.SAKURA_FENCE.get()))
@@ -162,13 +173,16 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('#', ModBlocks.SAKURA_PLANKS.get())
                 .pattern("# #")
                 .pattern("###")
+                .group("boat")
                 .unlockedBy("has_sakura_planks", has(ModBlocks.SAKURA_PLANKS.get()))
                 .unlockedBy("has_sakura_boat", has(ModItems.SAKURA_BOAT.get()))
+                .unlockedBy("in_water", insideOf(Blocks.WATER))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.SAKURA_WOOD.get(), 3)
                 .define('#', ModBlocks.SAKURA_LOG.get())
                 .pattern("##")
                 .pattern("##")
+                .group("bark")
                 .unlockedBy("has_sakura_log", has(ModBlocks.SAKURA_LOG.get()))
                 .unlockedBy("has_sakura_wood", has(ModBlocks.SAKURA_WOOD.get()))
                 .save(consumer);
