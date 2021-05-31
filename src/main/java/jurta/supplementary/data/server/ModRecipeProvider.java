@@ -281,6 +281,13 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_rock_bricks", has(ModBlocks.ROCK_BRICKS.get()))
                 .unlockedBy("has_rock_brick_stairs", has(ModBlocks.ROCK_BRICK_STAIRS.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.LEATHER_BLOCK.get())
+                .define('#', Items.LEATHER)
+                .pattern("##")
+                .pattern("##")
+                .unlockedBy("has_leather", has(Items.LEATHER))
+                .unlockedBy("has_leather_block", has(ModBlocks.LEATHER_BLOCK.get()))
+                .save(consumer);
         // Stonecutter
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ModBlocks.ROCK_BLOCK.get()), ModBlocks.ROCK_STAIRS.get())
                 .unlocks("has_rock_block", has(ModBlocks.ROCK_BLOCK.get()))

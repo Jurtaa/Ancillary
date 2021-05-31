@@ -12,15 +12,15 @@ import jurta.supplementary.data.server.ModRecipeProvider;
 import jurta.supplementary.data.server.loot.ModLootTableProvider;
 import jurta.supplementary.data.server.tags.ModBlockTagsProvider;
 import jurta.supplementary.data.server.tags.ModItemTagsProvider;
-import jurta.supplementary.init.ModBlocks;
-import jurta.supplementary.init.ModFeatures;
-import jurta.supplementary.init.ModParticleTypes;
-import jurta.supplementary.init.Registration;
+import jurta.supplementary.init.*;
+import jurta.supplementary.tileentity.LeatherBlockTileEntity;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleManager;
+import net.minecraft.client.renderer.color.BlockColors;
+import net.minecraft.client.renderer.color.ItemColors;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.item.IDyeableArmorItem;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
@@ -30,7 +30,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.jigsaw.JigsawPattern;
 import net.minecraft.world.gen.feature.jigsaw.SingleJigsawPiece;
-import net.minecraft.world.gen.feature.template.*;
+import net.minecraft.world.gen.feature.template.StructureProcessor;
+import net.minecraft.world.gen.feature.template.StructureProcessorList;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.MinecraftForge;
@@ -90,24 +92,26 @@ public class Supplementary {
         eventBus.addListener(this::stripBlock);
         eventBus.addListener(this::addNewVillageCrop);
         modBus.addListener(this::registerParticles);
+        modBus.addListener(this::setupBlockColors);
+        modBus.addListener(this::setupItemColors);
 
         Registration.init(modBus);
     }
 
-    public static RuleStructureProcessor MODDED_CROP_PROCESSOR;
+    // public static RuleStructureProcessor MODDED_CROP_PROCESSOR;
 
     private void setup(final FMLCommonSetupEvent event) {
-        MODDED_CROP_PROCESSOR = new RuleStructureProcessor(ImmutableList.of(
-                new RuleEntry(
+        // MODDED_CROP_PROCESSOR = new RuleStructureProcessor(ImmutableList.of(
+        //         new RuleEntry(
                         // We replace the vanilla Wheat block with Broccoli 30% of the time.
                         // Note, Potatoes and Beetroot will also be available to be replaced too by our processor.
-                        new RandomBlockMatchRuleTest(Blocks.WHEAT, 0.3F),
+        //                 new RandomBlockMatchRuleTest(Blocks.WHEAT, 0.3F),
                         // Location predicate. Keep this as always true for most use-cases.
-                        AlwaysTrueRuleTest.INSTANCE,
+        //                 AlwaysTrueRuleTest.INSTANCE,
                         // The modded block to use.
-                        ModBlocks.BROCCOLI.get().defaultBlockState()
-                )
-        ));
+        //                 ModBlocks.BROCCOLI.get().defaultBlockState()
+        //         )
+        // ));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -241,7 +245,7 @@ public class Supplementary {
                         List<StructureProcessor> mutableProcessorList = new ArrayList<>(originalStructureProcessorList.list());
 
                         // Add our processor to the end so it runs after everything else
-                        mutableProcessorList.add(MODDED_CROP_PROCESSOR);
+                        mutableProcessorList.add(ModProcessors.MODDED_CROP_PROCESSOR);
                         StructureProcessorList newStructureProcessorList = new StructureProcessorList(mutableProcessorList);
 
                         // Override the original field with our new instance. This is an additive operation and safe to stack with other mods
@@ -312,5 +316,19 @@ public class Supplementary {
     private void registerParticles(ParticleFactoryRegisterEvent event) {
         ParticleManager engine = Minecraft.getInstance().particleEngine;
         engine.register(ModParticleTypes.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Factory::new);
+    }
+
+    private void setupBlockColors(ColorHandlerEvent.Block event) {
+        BlockColors blockcolors = event.getBlockColors();
+        blockcolors.register((state, world, pos, tintindex) ->
+                        world != null && pos != null && tintindex > 0 ? -1 : LeatherBlockTileEntity.getColor(world, pos),
+                ModBlocks.LEATHER_BLOCK.get());
+    }
+
+    private void setupItemColors(ColorHandlerEvent.Item event) {
+        ItemColors itemcolors = event.getItemColors();
+        itemcolors.register((stack, tintindex) ->
+                        tintindex > 0 ? -1 : ((IDyeableArmorItem)stack.getItem()).getColor(stack),
+                ModItems.LEATHER_BLOCK.get());
     }
 }

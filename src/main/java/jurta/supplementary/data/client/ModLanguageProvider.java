@@ -50,6 +50,7 @@ public class ModLanguageProvider extends LanguageProvider {
                         "Determines if lush stone should generate within worlds.\n" +
                         "\u00A74WARNING: Doesn't generate as intended.\n" +
                                 "\u00A7r\u00A77Default: OFF");
+                addBlock(ModBlocks.LEATHER_BLOCK, "Leather Block");
                 addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");
                 addBlock(ModBlocks.POLISHED_ROCK_BLOCK, "Polished Rock Block");
                 addBlock(ModBlocks.LUSH_STONE, "Lush Stone");

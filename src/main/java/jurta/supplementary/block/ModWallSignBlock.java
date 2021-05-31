@@ -13,6 +13,11 @@ public class ModWallSignBlock extends WallSignBlock {
     }
 
     @Override
+    public boolean hasTileEntity(BlockState state) {
+        return true;
+    }
+
+    @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
         return new ModSignTileEntity();
     }

@@ -1,0 +1,6 @@
+{
+  "parent": "supplementary:block/dyeable_block",
+  "textures": {
+    "all": "supplementary:block/leather_block"
+  }
+}

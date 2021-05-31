@@ -14,6 +14,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        // Material Blocks
+        withExistingParent("leather_block", modLoc("block/leather_block"));
         // Rocks
         withExistingParent("rock_block", modLoc("block/rock_block"));
         withExistingParent("lush_stone", modLoc("block/lush_stone"));

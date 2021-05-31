@@ -3,6 +3,7 @@ package jurta.supplementary.data.server.loot;
 import jurta.supplementary.Supplementary;
 import jurta.supplementary.block.BroccoliBlock;
 import jurta.supplementary.block.CherryBushBlock;
+import jurta.supplementary.block.LeatherBlock;
 import jurta.supplementary.init.ModBlocks;
 import jurta.supplementary.init.ModItems;
 import net.minecraft.advancements.criterion.EnchantmentPredicate;
@@ -22,6 +23,8 @@ import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.loot.conditions.MatchTool;
 import net.minecraft.loot.conditions.TableBonus;
 import net.minecraft.loot.functions.ApplyBonus;
+import net.minecraft.loot.functions.CopyName;
+import net.minecraft.loot.functions.CopyNbt;
 import net.minecraft.loot.functions.SetCount;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -37,6 +40,8 @@ public class ModBlockLootTableProvider extends BlockLootTables {
 
     @Override
     protected void addTables() {
+        // Material Blocks
+        dropLeatherBlock(ModBlocks.LEATHER_BLOCK.get());
         // Rocks
         dropSelf(ModBlocks.PEBBLES.get());
         dropSelf(ModBlocks.ROCK.get());
@@ -114,5 +119,13 @@ public class ModBlockLootTableProvider extends BlockLootTables {
 
     public void dropDoor(DoorBlock block) {
         add(block, createDoorTable(block));
+    }
+
+    public void dropLeatherBlock(LeatherBlock block) {
+        add(block, createLeatherBlockDrop(block));
+    }
+
+    protected static LootTable.Builder createLeatherBlockDrop(Block block) {
+        return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantRange.exactly(1)).add(ItemLootEntry.lootTableItem(block).apply(SetCount.setCount(ConstantRange.exactly(1))).apply(CopyName.copyName(CopyName.Source.BLOCK_ENTITY)).apply(CopyNbt.copyData(CopyNbt.Source.BLOCK_ENTITY).copy("Color", "BlockEntityTag.Color"))));
     }
 }

@@ -1,6 +1,7 @@
 package jurta.supplementary.init;
 
 import jurta.supplementary.entity.item.ModBoatEntity;
+import jurta.supplementary.item.LeatherBlockItem;
 import jurta.supplementary.item.ModBoatItem;
 import jurta.supplementary.item.ModSignItem;
 import net.minecraft.item.BlockNamedItem;
@@ -8,6 +9,9 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.RegistryObject;
 
 public class ModItems {
+    // Block Items
+    public static final RegistryObject<LeatherBlockItem> LEATHER_BLOCK = Registration.ITEMS.register("leather_block", () ->
+            new LeatherBlockItem(ModBlocks.LEATHER_BLOCK.get(), new Item.Properties().tab(ModTabs.SUPPLEMENTARY)));
     // Food
     public static final RegistryObject<Item> BROCCOLI = Registration.ITEMS.register("broccoli", () ->
             new Item(new Item.Properties().tab(ModTabs.SUPPLEMENTARY).food(ModFoods.BROCCOLI)));

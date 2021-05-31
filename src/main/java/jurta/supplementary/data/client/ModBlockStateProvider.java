@@ -26,6 +26,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        // Material Blocks
+        simpleBlock(ModBlocks.LEATHER_BLOCK.get(), models().withExistingParent("leather_block", modLoc("block/dyeable_block"))
+                .texture("all", modLoc("block/leather_block")));
         // Rocks
         simpleBlock(ModBlocks.PEBBLES.get(), models().withExistingParent("pebbles", modLoc("block/template_pebbles"))
                 .texture("pebbles", modLoc("block/pebbles")));

@@ -13,6 +13,9 @@ import net.minecraftforge.fml.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+    // Material Blocks
+    public static final RegistryObject<LeatherBlock> LEATHER_BLOCK = registerNoItem("leather_block", () ->
+            new LeatherBlock(AbstractBlock.Properties.copy(Blocks.WHITE_WOOL)));
     // Rocks
     public static final RegistryObject<PebblesBlock> PEBBLES = register("pebbles", () ->
             new PebblesBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().noOcclusion()));
