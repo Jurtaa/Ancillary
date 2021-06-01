@@ -2,6 +2,8 @@
 Blocks
 - Added Leather Blocks
 - Rock and Pebbles are now discentered like grass and flowers.
+Bug Fixes
+- Fixed issue with Sakura Signs not properly saving.
 * 1.16.5-0.0.6b
 Textures
 - Added textures for Pebbles and Rock blocks

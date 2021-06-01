@@ -30,11 +30,11 @@ public class SignScreen extends Screen {
     /**
      * Reference to the sign object.
      */
-    private final ModSignTileEntity tileSign;
+    private final ModSignTileEntity sign;
     /**
      * Counts the number of screen updates.
      */
-    private int updateCounter;
+    private int frame;
     /**
      * The index of the line that is being edited.
      */
@@ -45,41 +45,40 @@ public class SignScreen extends Screen {
     public SignScreen(ModSignTileEntity teSign) {
         super(new TranslationTextComponent("sign.edit"));
         this.field_238846_r_ = IntStream.range(0, 4).mapToObj(teSign::getMessage).map(ITextComponent::getString).toArray(String[]::new);
-        this.tileSign = teSign;
+        this.sign = teSign;
     }
 
     protected void init() {
         this.minecraft.keyboardHandler.setSendRepeatsToGui(true);
         this.addButton(new Button(this.width / 2 - 100, this.height / 4 + 120, 200, 20, DialogTexts.GUI_DONE, (p_238847_1_) -> {
-            this.close();
+            this.onDone();
         }));
-        this.tileSign.setEditable(false);
+        this.sign.setEditable(false);
         this.textInputUtil = new TextInputUtil(() -> this.field_238846_r_[this.editLine], (p_238850_1_) -> {
             this.field_238846_r_[this.editLine] = p_238850_1_;
-            this.tileSign.setMessage(this.editLine, new StringTextComponent(p_238850_1_));
+            this.sign.setMessage(this.editLine, new StringTextComponent(p_238850_1_));
         }, TextInputUtil.createClipboardGetter(this.minecraft), TextInputUtil.createClipboardSetter(this.minecraft), (p_238848_1_) -> this.minecraft.font.width(p_238848_1_) <= 90);
     }
 
-    public void onClose() {
+    public void removed() {
         this.minecraft.keyboardHandler.setSendRepeatsToGui(false);
         ClientPlayNetHandler clientplaynethandler = this.minecraft.getConnection();
         if (clientplaynethandler != null) {
-            clientplaynethandler.send(new CUpdateSignPacket(this.tileSign.getBlockPos(), this.field_238846_r_[0], this.field_238846_r_[1], this.field_238846_r_[2], this.field_238846_r_[3]));
+            clientplaynethandler.send(new CUpdateSignPacket(this.sign.getBlockPos(), this.field_238846_r_[0], this.field_238846_r_[1], this.field_238846_r_[2], this.field_238846_r_[3]));
         }
 
-        this.tileSign.setEditable(true);
+        this.sign.setEditable(true);
     }
 
     public void tick() {
-        ++this.updateCounter;
-        if (!this.tileSign.getType().isValid(this.tileSign.getBlockState().getBlock())) {
-            this.close();
+        ++this.frame;
+        if (!this.sign.getType().isValid(this.sign.getBlockState().getBlock())) {
+            this.onDone();
         }
-
     }
 
-    private void close() {
-        this.tileSign.setChanged();
+    private void onDone() {
+        this.sign.setChanged();
         this.minecraft.setScreen(null);
     }
 
@@ -111,13 +110,13 @@ public class SignScreen extends Screen {
         float f = 93.75F;
         matrixStack.scale(93.75F, -93.75F, 93.75F);
         matrixStack.translate(0.0D, -1.3125D, 0.0D);
-        BlockState blockstate = this.tileSign.getBlockState();
+        BlockState blockstate = this.sign.getBlockState();
         boolean flag = blockstate.getBlock() instanceof StandingSignBlock;
         if (!flag) {
             matrixStack.translate(0.0D, -0.3125D, 0.0D);
         }
 
-        boolean flag1 = this.updateCounter / 6 % 2 == 0;
+        boolean flag1 = this.frame / 6 % 2 == 0;
         float f1 = 0.6666667F;
         matrixStack.pushPose();
         matrixStack.scale(0.6666667F, -0.6666667F, -0.6666667F);
@@ -133,7 +132,7 @@ public class SignScreen extends Screen {
         float f2 = 0.010416667F;
         matrixStack.translate(0.0D, (double) 0.33333334F, (double) 0.046666667F);
         matrixStack.scale(0.010416667F, -0.010416667F, 0.010416667F);
-        int i = this.tileSign.getColor().getTextColor();
+        int i = this.sign.getColor().getTextColor();
         int j = this.textInputUtil.getCursorPos();
         int k = this.textInputUtil.getSelectionPos();
         int l = this.editLine * 10 - this.field_238846_r_.length * 5;
