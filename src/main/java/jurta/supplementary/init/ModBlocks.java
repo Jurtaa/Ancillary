@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public class ModBlocks {
     // Material Blocks
     public static final RegistryObject<LeatherBlock> LEATHER_BLOCK = registerNoItem("leather_block", () ->
-            new LeatherBlock(AbstractBlock.Properties.copy(Blocks.WHITE_WOOL)));
+            new LeatherBlock(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
     // Rocks
     public static final RegistryObject<PebblesBlock> PEBBLES = register("pebbles", () ->
             new PebblesBlock(AbstractBlock.Properties.of(Material.STONE, MaterialColor.STONE).instabreak().noOcclusion()));

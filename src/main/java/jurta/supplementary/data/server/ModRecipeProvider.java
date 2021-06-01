@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.*;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.Consumer;
@@ -282,10 +283,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_rock_brick_stairs", has(ModBlocks.ROCK_BRICK_STAIRS.get()))
                 .save(consumer);
         ShapedRecipeBuilder.shaped(ModBlocks.LEATHER_BLOCK.get())
-                .define('#', Items.LEATHER)
-                .pattern("##")
-                .pattern("##")
+                .define('L', Items.LEATHER)
+                .define('P', ItemTags.PLANKS)
+                .define('S', Items.STRING)
+                .pattern("SLS")
+                .pattern("LPL")
+                .pattern("SLS")
                 .unlockedBy("has_leather", has(Items.LEATHER))
+                .unlockedBy("has_planks", has(ItemTags.PLANKS))
+                .unlockedBy("has_string", has(Items.STRING))
                 .unlockedBy("has_leather_block", has(ModBlocks.LEATHER_BLOCK.get()))
                 .save(consumer);
         // Stonecutter
