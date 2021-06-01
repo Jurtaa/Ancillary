@@ -88,10 +88,6 @@ public class SignScreen extends Screen {
         return true;
     }
 
-    public void closeScreen() {
-        this.close();
-    }
-
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         if (keyCode == 265) {
             this.editLine = this.editLine - 1 & 3;

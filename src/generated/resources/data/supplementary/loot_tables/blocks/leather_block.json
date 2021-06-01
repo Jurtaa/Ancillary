@@ -8,26 +8,23 @@
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_count",
-              "count": 1
-            },
-            {
-              "function": "minecraft:copy_name",
-              "source": "block_entity"
-            },
-            {
               "function": "minecraft:copy_nbt",
               "source": "block_entity",
               "ops": [
                 {
                   "source": "Color",
-                  "target": "BlockEntityTag.Color",
+                  "target": "display.color",
                   "op": "replace"
                 }
               ]
             }
           ],
           "name": "supplementary:leather_block"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
         }
       ]
     }

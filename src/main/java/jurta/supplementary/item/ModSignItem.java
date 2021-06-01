@@ -26,9 +26,4 @@ public class ModSignItem extends WallOrFloorItem {
         }
         return flag;
     }
-
-    @Override
-    public String getDescriptionId() {
-        return getOrCreateDescriptionId();
-    }
 }

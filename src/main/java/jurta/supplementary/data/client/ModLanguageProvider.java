@@ -97,7 +97,6 @@ public class ModLanguageProvider extends LanguageProvider {
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");
                 addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
-                addItem(ModItems.SAKURA_SIGN, "Sakura Sign");
                 addEntityType(ModEntities.MOD_BOAT, "Boat");
                 break;
         }
