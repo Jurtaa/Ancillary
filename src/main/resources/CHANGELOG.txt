@@ -1,66 +1,69 @@
+* 1.16.5-0.0.8b
+Textures
+- Updated texture of the sakura sign to correlate with the sign texture updates in 1.17.
 * 1.16.5-0.0.8
 Blocks
-- Added Leather Blocks
-- Rock and Pebbles are now discentered like grass and flowers.
+- Added leather blocks
+- Rock and pebbles are now discentered like grass and flowers.
 Textures
 - Updated logo
 Bug Fixes
-- Fixed issue with Sakura Signs not properly saving.
+- Fixed issue with sakura signs not properly saving.
 Misc
 - Renamed mod to 'Ancillary' to prevent confusion with another mod.
 * 1.16.5-0.0.6b
 Textures
-- Added textures for Pebbles and Rock blocks
+- Added textures for pebbles and rock blocks
 Recipes
-- Added "in_water" requirement for Sakura Boat
+- Added "in_water" requirement for the sakura boat
 - Added groups to some recipes
 Bug Fixes
-- Fixed Polished Rock Button and Pressure Plate recipes
+- Fixed polished rock button and pressure plate recipes
 * 1.16.5-0.0.6
 Blocks
-- Added Rock Stairs, Slab, Wall, Bricks, Brick Stairs, Brick Slab, Brick Wall and Cracked Bricks
-- Added Polished Rock Block, Stairs, Slab, Button, Pressure Plate and Wall
+- Added rock stairs, slab, wall, bricks, brick stairs, brick slab,brick wall and cracked bricks
+- Added polished rock block, stairs, slab, button, pressure plate and wall
 Textures
-- Updated Lush Stone textures
+- Updated lush stone textures
 - Updated logo
 Bug Fixes
-- Fixed bug where Lush Stone didn't appear in the creative inventory
+- Fixed bug where lush stone didn't appear in the creative inventory
 * 1.16.5-0.0.5b
 Bug Fixes
 - Fixed "rock_from_rock_block" accidentally generating in "minecraft"
-- Added recipes for Sakura Wood and Stripped Sakura Wood
+- Added recipes for sakura wood and stripped sakura wood
 * 1.16.5-0.0.5
 Blocks
-- Added Pebbles
-- Added Rock
-- Added Rock Block
-- Added Sakura Log, Wood and stripped variants
-- Added Sakura Planks and variants
-- Added Sakura Leaves
-- Added Sakura Sapling
-- Added Sakura Door
-- Added Sakura Trapdoor
-- Added Sakura Fence
-- Added Sakura Fence Gate
-- Added Sakura Sign
-- Added Sakura Pressure Plate
-- Added Sakura Button
-- Added Broccoli
-- Added Cherry Bush
-- Added Lush Stone
-- Added Iron, Diamond, Gold, Emerald and Netherite Pillars
+- Added pebbles
+- Added rock
+- Added rock block
+- Added sakura log, wood and stripped variants
+- Added sakura planks and variants
+- Added sakura leaves
+- Added sakura sapling
+- Added sakura door
+- Added sakura trapdoor
+- Added sakura fence
+- Added sakura fence gate
+- Added sakura sign
+- Added sakura pressure plate
+- Added sakura button
+- Added broccoli
+- Added cherry bush
+- Added lush stone
+- Added iron, diamond, gold, emerald and netherite pillars
 Items
-- Added Broccoli
-- Added Broccoli Seeds
-- Added Cherries
+- Added broccoli
+- Added broccoli seeds
+- Added cherries
 Particles
-- Added Cherry Blossom
+- Added cherry blossom
 Generation
-- Sakura Trees can be found in biomes that are marked as "Plains"
-- Rocks and Pebbles can be found in caves as patches
-- Patches of Cherry Bushes can be found in biomes that are marked as "Plains"
--- There is generation for Lush Stone, however, that is disabled by default within the config due to it not generating correctly.
+- Sakura trees can be found in biomes that are marked as "plains"
+- Rocks and pebbles can be found in caves as patches
+- Patches of cherry bushes can be found in biomes that are marked as "plains"
+-- There is generation for lush stone, however, that is disabled by default within the config due to it not generating correctly.
 Config
 - Added config for all generation relating to the mod.
 Entities
-- Added Sakura Boat
+- Added sakura boat
