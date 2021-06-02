@@ -2,8 +2,8 @@ package jurta.ancillary.block;
 
 import jurta.ancillary.init.ModItems;
 import jurta.ancillary.tileentity.LeatherBlockTileEntity;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +11,7 @@ import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 
-public class LeatherBlock extends Block {
+public class LeatherBlock extends RotatedPillarBlock {
     public LeatherBlock(Properties properties) {
         super(properties);
     }

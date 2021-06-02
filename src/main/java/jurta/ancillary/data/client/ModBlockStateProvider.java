@@ -5,7 +5,9 @@ import jurta.ancillary.block.BroccoliBlock;
 import jurta.ancillary.block.CherryBushBlock;
 import jurta.ancillary.init.ModBlocks;
 import net.minecraft.block.AbstractButtonBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.PressurePlateBlock;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.state.properties.AttachFace;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -13,6 +15,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -27,8 +30,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         // Material Blocks
-        simpleBlock(ModBlocks.LEATHER_BLOCK.get(), models().withExistingParent("leather_block", modLoc("block/dyeable_block"))
-                .texture("all", modLoc("block/leather_block")));
+        dyeableAxisBlock(ModBlocks.LEATHER_BLOCK.get());
         // Rocks
         simpleBlock(ModBlocks.PEBBLES.get(), models().withExistingParent("pebbles", modLoc("block/template_pebbles"))
                 .texture("pebbles", modLoc("block/pebbles")));
@@ -167,5 +169,42 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 name + "_inventory",
                 mcLoc("block/button_inventory"))
                 .texture("texture", texture);
+    }
+
+    private String name(Block block) {
+        return block.getRegistryName().getPath();
+    }
+
+    private ResourceLocation extend(ResourceLocation rl, String suffix) {
+        return new ResourceLocation(rl.getNamespace(), rl.getPath() + suffix);
+    }
+
+    public void dyeableAxisBlock(RotatedPillarBlock block) {
+        dyeableAxisBlock(block, blockTexture(block));
+    }
+
+    public void dyeableAxisBlock(RotatedPillarBlock block, ResourceLocation baseName) {
+        dyeableAxisBlock(block, extend(baseName, "_side"), extend(baseName, "_end"));
+    }
+
+    public void dyeableAxisBlock(RotatedPillarBlock block, ResourceLocation side, ResourceLocation end) {
+        dyeableAxisBlock(block, models().withExistingParent(name(block),
+                modLoc("block/dyeable_cube_column"))
+                .texture("side", side)
+                .texture("end", end),
+        models().withExistingParent(name(block) + "_horizontal",
+                modLoc("block/dyeable_cube_column_horizontal"))
+                .texture("side", side)
+                .texture("end", end));
+    }
+
+    public void dyeableAxisBlock(RotatedPillarBlock block, ModelFile vertical, ModelFile horizontal) {
+        getVariantBuilder(block)
+                .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Y)
+                .modelForState().modelFile(vertical).addModel()
+                .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.Z)
+                .modelForState().modelFile(horizontal).rotationX(90).addModel()
+                .partialState().with(RotatedPillarBlock.AXIS, Direction.Axis.X)
+                .modelForState().modelFile(horizontal).rotationX(90).rotationY(90).addModel();
     }
 }
