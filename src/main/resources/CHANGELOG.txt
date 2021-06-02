@@ -5,6 +5,7 @@ Textures
 - Updated texture of the sakura sign to correlate with the sign texture updates in 1.17.
 - Updated leather block texture
 - Updated rock texture to be less 'noisy'
+- Updated logo
 * 1.16.5-0.0.8
 Blocks
 - Added leather blocks
