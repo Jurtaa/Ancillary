@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "rock",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "ancillary:pebbles"
+    }
+  },
+  "result": {
+    "item": "ancillary:rock"
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "supplementary:rock_block"
-  },
-  "result": "supplementary:rock_wall",
-  "count": 1
-}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "ancillary:sakura_log",
+    "ancillary:sakura_wood",
+    "ancillary:stripped_sakura_log",
+    "ancillary:stripped_sakura_wood"
+  ]
+}

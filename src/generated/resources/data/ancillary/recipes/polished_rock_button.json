@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ancillary:polished_rock_block"
+    }
+  ],
+  "result": {
+    "item": "ancillary:polished_rock_button"
+  }
+}

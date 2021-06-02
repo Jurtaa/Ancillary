@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "ancillary:block/polished_rock_block",
+    "bottom": "ancillary:block/polished_rock_block",
+    "top": "ancillary:block/polished_rock_block"
+  }
+}

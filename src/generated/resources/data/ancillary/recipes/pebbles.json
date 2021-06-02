@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "ancillary:rock"
+    }
+  ],
+  "result": {
+    "item": "ancillary:pebbles",
+    "count": 4
+  }
+}

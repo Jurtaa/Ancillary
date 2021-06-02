@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ancillary:sakura_planks"
+    ]
+  },
+  "criteria": {
+    "has_sakura_logs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "ancillary:sakura_logs"
+          }
+        ]
+      }
+    },
+    "has_sakura_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ancillary:sakura_planks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ancillary:sakura_planks"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sakura_logs",
+      "has_sakura_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

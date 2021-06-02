@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "ancillary:block/emerald_pillar_side",
+    "end": "ancillary:block/emerald_pillar_end"
+  }
+}

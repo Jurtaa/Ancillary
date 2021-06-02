@@ -1,0 +1,6 @@
+{
+  "parent": "ancillary:block/template_pebbles",
+  "textures": {
+    "pebbles": "ancillary:block/pebbles"
+  }
+}

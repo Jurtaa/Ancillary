@@ -1,6 +1,6 @@
 {
   "replace": false,
   "values": [
-    "supplementary:sakura_pressure_plate"
+    "ancillary:sakura_pressure_plate"
   ]
 }

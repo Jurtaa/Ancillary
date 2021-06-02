@@ -2,8 +2,12 @@
 Blocks
 - Added Leather Blocks
 - Rock and Pebbles are now discentered like grass and flowers.
+Textures
+- Updated logo
 Bug Fixes
 - Fixed issue with Sakura Signs not properly saving.
+Misc
+- Renamed mod to 'Ancillary' to prevent confusion with another mod.
 * 1.16.5-0.0.6b
 Textures
 - Added textures for Pebbles and Rock blocks

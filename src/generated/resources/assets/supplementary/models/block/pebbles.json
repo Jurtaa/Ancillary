@@ -1,6 +1,0 @@
-{
-  "parent": "supplementary:block/template_pebbles",
-  "textures": {
-    "pebbles": "supplementary:block/pebbles"
-  }
-}

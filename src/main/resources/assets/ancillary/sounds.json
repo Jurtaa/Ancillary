@@ -1,0 +1,70 @@
+{
+  "block.lush_stone.break": {
+    "subtitle": "subtitles.block.generic.break",
+    "sounds": [
+      "ancillary:block/lush_stone/break1",
+      "ancillary:block/lush_stone/break2",
+      "ancillary:block/lush_stone/break3",
+      "ancillary:block/lush_stone/break4"
+    ]
+  },
+  "block.lush_stone.fall": {
+    "sounds": [
+      "ancillary:block/lush_stone/step1",
+      "ancillary:block/lush_stone/step2",
+      "ancillary:block/lush_stone/step3",
+      "ancillary:block/lush_stone/step4",
+      "ancillary:block/lush_stone/step5",
+      "ancillary:block/lush_stone/step6"
+    ]
+  },
+  "block.lush_stone.hit": {
+    "subtitle": "subtitles.block.generic.hit",
+    "sounds": [
+      {
+        "name": "ancillary:block/lush_stone/step1",
+        "volume": 0.55
+      },
+      {
+        "name": "ancillary:block/lush_stone/step2",
+        "volume": 0.55
+      },
+      {
+        "name": "ancillary:block/lush_stone/step3",
+        "volume": 0.55
+      },
+      {
+        "name": "ancillary:block/lush_stone/step4",
+        "volume": 0.55
+      },
+      {
+        "name": "ancillary:block/lush_stone/step5",
+        "volume": 0.55
+      },
+      {
+        "name": "ancillary:block/lush_stone/step6",
+        "volume": 0.55
+      }
+    ]
+  },
+  "block.lush_stone.place": {
+    "subtitle": "subtitles.block.generic.place",
+    "sounds": [
+      "ancillary:block/lush_stone/break1",
+      "ancillary:block/lush_stone/break2",
+      "ancillary:block/lush_stone/break3",
+      "ancillary:block/lush_stone/break4"
+    ]
+  },
+  "block.lush_stone.step": {
+    "subtitle": "subtitles.block.generic.footsteps",
+    "sounds": [
+      "ancillary:block/lush_stone/step1",
+      "ancillary:block/lush_stone/step2",
+      "ancillary:block/lush_stone/step3",
+      "ancillary:block/lush_stone/step4",
+      "ancillary:block/lush_stone/step5",
+      "ancillary:block/lush_stone/step6"
+    ]
+  }
+}

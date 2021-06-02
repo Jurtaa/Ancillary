@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ancillary:rock_brick_wall_from_rock_bricks_stonecutting"
+    ]
+  },
+  "criteria": {
+    "has_rock_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ancillary:rock_bricks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ancillary:rock_brick_wall_from_rock_bricks_stonecutting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rock_bricks",
+      "has_the_recipe"
+    ]
+  ]
+}

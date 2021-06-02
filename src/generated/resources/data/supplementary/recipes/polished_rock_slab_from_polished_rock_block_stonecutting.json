@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "supplementary:polished_rock_block"
-  },
-  "result": "supplementary:polished_rock_slab",
-  "count": 2
-}

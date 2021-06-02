@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "side": "supplementary:block/polished_rock_block",
-    "bottom": "supplementary:block/polished_rock_block",
-    "top": "supplementary:block/polished_rock_block"
-  }
-}

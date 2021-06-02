@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "ancillary:polished_rock_block"
+  },
+  "result": "ancillary:rock_brick_slab",
+  "count": 2
+}

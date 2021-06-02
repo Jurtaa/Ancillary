@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ancillary:rock_brick_slab"
+    ]
+  },
+  "criteria": {
+    "has_rock_bricks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ancillary:rock_bricks"
+          }
+        ]
+      }
+    },
+    "has_rock_brick_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ancillary:rock_brick_slab"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ancillary:rock_brick_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_rock_bricks",
+      "has_rock_brick_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

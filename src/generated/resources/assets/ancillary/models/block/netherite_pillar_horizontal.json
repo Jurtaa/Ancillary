@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "ancillary:block/netherite_pillar_side",
+    "end": "ancillary:block/netherite_pillar_end"
+  }
+}

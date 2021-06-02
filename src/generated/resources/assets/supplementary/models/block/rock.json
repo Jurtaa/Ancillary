@@ -1,6 +1,0 @@
-{
-  "parent": "supplementary:block/template_rock",
-  "textures": {
-    "rock": "supplementary:block/rock"
-  }
-}

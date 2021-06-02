@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "ancillary:rock_bricks"
+    }
+  },
+  "result": {
+    "item": "ancillary:rock_brick_stairs",
+    "count": 4
+  }
+}

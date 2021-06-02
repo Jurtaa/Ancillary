@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "ancillary:rock_bricks"
+  },
+  "result": "ancillary:rock_brick_wall",
+  "count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "side": "ancillary:block/rock_block",
+    "bottom": "ancillary:block/rock_block",
+    "top": "ancillary:block/rock_block"
+  }
+}

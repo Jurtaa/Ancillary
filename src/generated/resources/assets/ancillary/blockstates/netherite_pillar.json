@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ancillary:block/netherite_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ancillary:block/netherite_pillar"
+    },
+    "axis=z": {
+      "model": "ancillary:block/netherite_pillar_horizontal",
+      "x": 90
+    }
+  }
+}

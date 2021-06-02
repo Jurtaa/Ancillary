@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ancillary:block/polished_rock_slab_top"
+    },
+    "type=bottom": {
+      "model": "ancillary:block/polished_rock_slab"
+    },
+    "type=double": {
+      "model": "ancillary:block/polished_rock_block"
+    }
+  }
+}

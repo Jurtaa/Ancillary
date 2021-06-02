@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "boat",
+  "pattern": [
+    "# #",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "ancillary:sakura_planks"
+    }
+  },
+  "result": {
+    "item": "ancillary:sakura_boat"
+  }
+}

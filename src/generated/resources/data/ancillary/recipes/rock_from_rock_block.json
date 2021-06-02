@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "rock",
+  "ingredients": [
+    {
+      "item": "ancillary:rock_block"
+    }
+  ],
+  "result": {
+    "item": "ancillary:rock",
+    "count": 9
+  }
+}

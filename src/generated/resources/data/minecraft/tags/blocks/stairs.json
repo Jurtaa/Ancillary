@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-    "supplementary:rock_stairs",
-    "supplementary:polished_rock_stairs",
-    "supplementary:rock_brick_stairs"
+    "ancillary:rock_stairs",
+    "ancillary:polished_rock_stairs",
+    "ancillary:rock_brick_stairs"
   ]
 }

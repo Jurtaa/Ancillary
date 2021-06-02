@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "ancillary:block/rock_slab_top"
+    },
+    "type=bottom": {
+      "model": "ancillary:block/rock_slab"
+    },
+    "type=double": {
+      "model": "ancillary:block/rock_block"
+    }
+  }
+}
