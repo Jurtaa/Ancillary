@@ -15,6 +15,8 @@ import jurta.ancillary.data.server.tags.ModItemTagsProvider;
 import jurta.ancillary.init.*;
 import jurta.ancillary.tileentity.LeatherBlockTileEntity;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.ParticleManager;
 import net.minecraft.client.renderer.color.BlockColors;
@@ -70,15 +72,11 @@ public class Ancillary {
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus eventBus = MinecraftForge.EVENT_BUS;
 
-        // Register the setup method for modloading
-        modBus.addListener(this::setup);
+        modBus.addListener(this::commonSetup);
         modBus.addListener(this::gatherData);
-        // Register the enqueueIMC method for modloading
         modBus.addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
         modBus.addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
-        modBus.addListener(this::doClientStuff);
+        modBus.addListener(this::clientSetup);
 
         // Register the configuration GUI factory
         ModLoadingContext.get().registerExtensionPoint(
@@ -98,9 +96,14 @@ public class Ancillary {
         Registration.init(modBus);
     }
 
-    private void setup(final FMLCommonSetupEvent event) {}
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        FlowerPotBlock pot = (FlowerPotBlock)Blocks.FLOWER_POT;
+        event.enqueueWork(() -> {
+            pot.addPlant(new ResourceLocation(MOD_ID, "sakura_sapling"), ModBlocks.POTTED_SAKURA_SAPLING);
+        });
+    }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
+    private void clientSetup(final FMLClientSetupEvent event) {
         ClientSetup.setupBlockRenderLayers();
         ClientSetup.setupAtlases();
         ClientSetup.setupTileEntityRenderers();

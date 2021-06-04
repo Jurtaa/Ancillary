@@ -20,6 +20,7 @@ public class ClientSetup {
         RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_SAPLING.get(), cutout);
         RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_DOOR.get(), cutout);
         RenderTypeLookup.setRenderLayer(ModBlocks.SAKURA_TRAPDOOR.get(), cutout);
+        RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_SAKURA_SAPLING.get(), cutout);
     }
 
     public static void setupAtlases() {

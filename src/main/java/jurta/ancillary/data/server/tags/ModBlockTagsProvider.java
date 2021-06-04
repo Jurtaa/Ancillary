@@ -51,6 +51,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
         tag(BlockTags.WALLS).add(ModBlocks.ROCK_WALL.get(),
                 ModBlocks.POLISHED_ROCK_WALL.get(),
                 ModBlocks.ROCK_BRICK_WALL.get());
+        tag(BlockTags.FLOWER_POTS).add(ModBlocks.POTTED_SAKURA_SAPLING.get());
         // Forge Tags
         tag(Tags.Blocks.STONE).add(ModBlocks.LUSH_STONE.get());
         tag(ModTags.Blocks.STORAGE_BLOCKS_ROCK).add(ModBlocks.ROCK_BLOCK.get());

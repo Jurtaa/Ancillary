@@ -1,6 +1,7 @@
-* 1.16.5-0.0.8b
+* 1.16.5-0.0.9
 Blocks
 - Leather blocks are now rotatable
+- Sakura saplings can now be placed in flower pots
 Textures
 - Updated texture of the sakura sign to correlate with the sign texture updates in 1.17.
 - Updated leather block texture

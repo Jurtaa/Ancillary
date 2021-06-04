@@ -136,6 +136,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 .partialState().with(BroccoliBlock.AGE, 7).addModels(new ConfiguredModel(models()
                         .withExistingParent("broccoli_stage3", mcLoc("block/crop"))
                         .texture("crop", modLoc("block/broccoli_stage3"))));
+        // Flower Pots
+        simpleBlock(ModBlocks.POTTED_SAKURA_SAPLING.get(), models().withExistingParent("potted_sakura_sapling", mcLoc("block/flower_pot_cross"))
+                .texture("plant", modLoc("block/sakura_sapling")));
     }
 
     public void pressurePlateBlock(PressurePlateBlock block, ResourceLocation texture) {

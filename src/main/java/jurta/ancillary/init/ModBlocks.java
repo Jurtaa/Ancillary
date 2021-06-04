@@ -124,6 +124,9 @@ public class ModBlocks {
             new BroccoliBlock(AbstractBlock.Properties.of(Material.PLANT).noCollission().randomTicks().instabreak().sound(SoundType.CROP)));
     public static final RegistryObject<CherryBushBlock> CHERRY_BUSH = registerNoItem("cherry_bush", () ->
             new CherryBushBlock(AbstractBlock.Properties.of(Material.PLANT).noOcclusion().randomTicks().instabreak().sound(SoundType.SWEET_BERRY_BUSH)));
+    // Flower Pots
+    public static final RegistryObject<FlowerPotBlock> POTTED_SAKURA_SAPLING = registerNoItem("potted_sakura_sapling", () ->
+            new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SAKURA_SAPLING, AbstractBlock.Properties.copy(Blocks.FLOWER_POT)));
 
     static void register() {}
 

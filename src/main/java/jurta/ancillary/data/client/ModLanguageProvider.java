@@ -93,6 +93,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 addBlock(ModBlocks.ROCK_WALL, "Rock Wall");
                 addBlock(ModBlocks.POLISHED_ROCK_WALL, "Polished Rock Wall");
                 addBlock(ModBlocks.ROCK_BRICK_WALL, "Rock Brick Wall");
+                addBlock(ModBlocks.POTTED_SAKURA_SAPLING, "Potted Sakura Sapling");
                 addItem(ModItems.BROCCOLI, "Broccoli");
                 addItem(ModItems.BROCCOLI_SEEDS, "Broccoli Seeds");
                 addItem(ModItems.CHERRIES, "Cherries");
