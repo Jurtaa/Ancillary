@@ -34,8 +34,8 @@ public class ModFeatures {
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> FANCY_SAKURA_BEES_005 = register("fancy_sakura_bees_005", Feature.TREE.configured(FANCY_SAKURA.config().withDecorators(ImmutableList.of(Features.Placements.BEEHIVE_005))));
     public static final ConfiguredFeature<?, ?> SAKURA_PLAIN_VEGETATION = register("sakura_plain_vegetation", Feature.RANDOM_SELECTOR.configured(new MultipleRandomFeatureConfig(ImmutableList.of(FANCY_SAKURA_BEES_005.weighted(0.33333334F)), SAKURA_BEES_005)).decorated(Features.Placements.HEIGHTMAP_SQUARE).decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(0, 0.05F, 1))));
     public static final ConfiguredFeature<?, ?> DISK_LUSH_STONE = register("disk_lush_stone", ModFeature.LUSH_STONE_PATCH.get().configured(new SphereReplaceConfig(States.LUSH_STONE, FeatureSpread.of(3, 1), 1, ImmutableList.of(States.STONE))).decorated(Features.Placements.TOP_SOLID_HEIGHTMAP_SQUARE));
-    public static final ConfiguredFeature<?, ?> PATCH_ROCK = register("rock", Feature.RANDOM_PATCH.configured(Configs.ROCK_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE).count(8));
-    public static final ConfiguredFeature<?, ?> PATCH_PEBBLES = register("pebbles", Feature.RANDOM_PATCH.configured(Configs.PEBBLES_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE).count(14));
+    public static final ConfiguredFeature<?, ?> PATCH_ROCK = register("patch_rock", Feature.RANDOM_PATCH.configured(Configs.ROCK_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE).count(8));
+    public static final ConfiguredFeature<?, ?> PATCH_PEBBLES = register("patch_pebbles", Feature.RANDOM_PATCH.configured(Configs.PEBBLES_CONFIG).decorated(Features.Placements.HEIGHTMAP_DOUBLE_SQUARE).count(14));
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String name, ConfiguredFeature<FC, ?> configuredFeature) {
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, name, configuredFeature);
