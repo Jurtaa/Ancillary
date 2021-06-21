@@ -1,6 +1,6 @@
 * 1.16.5-0.0.10
-Generation
-- Pebbles now generate on coarse dirt within giant tree taiga biomes.
+Biomes
+- Added sakura valley
 * 1.16.5-0.0.9
 Blocks
 - Leather blocks are now rotatable

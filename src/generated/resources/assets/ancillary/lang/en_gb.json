@@ -1,4 +1,5 @@
 {
+  "biome.ancillary.sakura_valley": "Sakura Valley",
   "block.ancillary.broccoli": "Broccoli",
   "block.ancillary.cherry_bush": "Cherry Bush",
   "block.ancillary.cracked_rock_bricks": "Cracked Rock Bricks",
@@ -44,7 +45,7 @@
   "block.ancillary.stripped_sakura_log": "Stripped Sakura Log",
   "block.ancillary.stripped_sakura_wood": "Stripped Sakura Wood",
   "config.ancillary.allowLushStoneGeneration.title": "Lush Stone",
-  "config.ancillary.allowLushStoneGeneration.tooltip": "Determines if lush stone should generate within worlds.\n\u00A74WARNING: Doesn't generate as intended.\n\u00A7r\u00A77Default: OFF",
+  "config.ancillary.allowLushStoneGeneration.tooltip": "Determines if lush stone should generate within worlds.\n\u00A74NOTE: Currently does nothing due to related issues.\n\u00A7r\u00A77Default: OFF",
   "config.ancillary.allowRockGeneration.title": "Rocks",
   "config.ancillary.allowRockGeneration.tooltip": "Determines if rocks should generate within worlds.\n\u00A77Default: ON",
   "config.ancillary.allowTreeGeneration.title": "Trees",

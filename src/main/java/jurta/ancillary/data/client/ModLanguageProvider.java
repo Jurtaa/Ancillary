@@ -48,7 +48,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 add("config.ancillary.allowLushStoneGeneration.title", "Lush Stone");
                 add("config.ancillary.allowLushStoneGeneration.tooltip",
                         "Determines if lush stone should generate within worlds.\n" +
-                        "\u00A74WARNING: Doesn't generate as intended.\n" +
+                        "\u00A74NOTE: Currently does nothing due to related issues.\n" +
                                 "\u00A7r\u00A77Default: OFF");
                 addBlock(ModBlocks.LEATHER_BLOCK, "Leather Block");
                 addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");
@@ -99,6 +99,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 addItem(ModItems.CHERRIES, "Cherries");
                 addItem(ModItems.SAKURA_BOAT, "Sakura Boat");
                 addEntityType(ModEntities.MOD_BOAT, "Boat");
+                add("biome.ancillary.sakura_valley", "Sakura Valley");
                 break;
         }
     }

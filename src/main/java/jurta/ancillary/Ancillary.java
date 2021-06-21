@@ -99,6 +99,8 @@ public class Ancillary {
     private void commonSetup(final FMLCommonSetupEvent event) {
         FlowerPotBlock pot = (FlowerPotBlock)Blocks.FLOWER_POT;
         event.enqueueWork(() -> {
+            ModFeatures.registerConfiguredFeatures();
+
             pot.addPlant(new ResourceLocation(MOD_ID, "sakura_sapling"), ModBlocks.POTTED_SAKURA_SAPLING);
         });
     }
@@ -154,7 +156,7 @@ public class Ancillary {
             }
         } if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OVERWORLD)) {
             if (config.allowLushStoneGeneration()) {
-                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE);
+                // gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE); Commented out due to issues relating to the feature.
             } if (config.allowRockGeneration()) {
                 gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_ROCK);
                 gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_PEBBLES);

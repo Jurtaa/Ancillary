@@ -19,6 +19,6 @@ public class LushStonePatchFeature extends AbstractSphereReplaceConfig {
         if (!reader.isEmptyBlock(pos.above())) {
             return false;
         }
-        return !reader.isEmptyBlock(pos) ? false : super.place(reader, generator, random, pos, config);
+        return reader.isEmptyBlock(pos) && super.place(reader, generator, random, pos, config);
     }
 }

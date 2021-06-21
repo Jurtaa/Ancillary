@@ -54,7 +54,7 @@ public class ConfigManager {
                 .translation("config.ancillary.allowRockGeneration.title")
                 .define("allowRockGeneration", true);
         allowLushStoneGeneration = configSpecBuilder
-                .comment("Determines if lush stone should generate within worlds. WARNING: Doesn't generate as intended.")
+                .comment("Determines if lush stone should generate within worlds. NOTE: Currently does nothing due to related issues.")
                 .translation("config.ancillary.allowLushStoneGeneration.title")
                 .define("allowLushStoneGeneration", false);
     }
