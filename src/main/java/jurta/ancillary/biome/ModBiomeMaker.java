@@ -1,6 +1,6 @@
 package jurta.ancillary.biome;
 
-import jurta.ancillary.init.ModFeatures;
+import jurta.ancillary.init.ModConfiguredFeatures;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
@@ -33,7 +33,7 @@ public class ModBiomeMaker {
         DefaultBiomeFeatures.addDefaultLakes(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addForestFlowers(biomegenerationsettings$builder);
-        biomegenerationsettings$builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_VALLEY_VEGETATION);
+        // biomegenerationsettings$builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.SAKURA_VALLEY_VEGETATION); Commented out due to related issues
 
         DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);
@@ -47,6 +47,22 @@ public class ModBiomeMaker {
         DefaultBiomeFeatures.addDefaultSprings(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addSurfaceFreezing(biomegenerationsettings$builder);
 
-        return (new Biome.Builder()).precipitation(Biome.RainType.RAIN).biomeCategory(Biome.Category.FOREST).depth(0.125F).scale(0.05F).temperature(0.8F).downfall(0.8F).specialEffects((new BiomeAmbience.Builder()).waterColor(4159204).waterFogColor(329011).fogColor(12638463).skyColor(calculateSkyColor(0.8F)).ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS).build()).mobSpawnSettings(mobspawninfo$builder.build()).generationSettings(biomegenerationsettings$builder.build()).build();
+        return (new Biome.Builder())
+                .precipitation(Biome.RainType.RAIN)
+                .biomeCategory(Biome.Category.FOREST)
+                .depth(0.125F)
+                .scale(0.05F)
+                .temperature(0.8F)
+                .downfall(0.8F)
+                .specialEffects((new BiomeAmbience.Builder())
+                        .waterColor(4159204)
+                        .waterFogColor(329011)
+                        .fogColor(12638463)
+                        .skyColor(calculateSkyColor(0.8F))
+                        .ambientMoodSound(MoodSoundAmbience.LEGACY_CAVE_SETTINGS)
+                        .build())
+                .mobSpawnSettings(mobspawninfo$builder.build())
+                .generationSettings(biomegenerationsettings$builder.build())
+                .build();
     }
 }

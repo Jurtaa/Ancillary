@@ -42,7 +42,7 @@ public class Registration {
         ModEntities.register();
         ModTileEntities.register();
         ModParticleTypes.register();
-        ModFeature.register();
+        ModFeatures.register();
         ModBiomes.register();
     }
 }

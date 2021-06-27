@@ -86,7 +86,7 @@ public class Ancillary {
 
         // Register ourselves for server and other game events we are interested in
         eventBus.register(this);
-        eventBus.addListener(this::biomeLoading);
+        eventBus.addListener(this::onBiomeLoad);
         eventBus.addListener(this::stripBlock);
         eventBus.addListener(this::addNewVillageCrop);
         modBus.addListener(this::registerParticles);
@@ -99,8 +99,8 @@ public class Ancillary {
     private void commonSetup(final FMLCommonSetupEvent event) {
         FlowerPotBlock pot = (FlowerPotBlock)Blocks.FLOWER_POT;
         event.enqueueWork(() -> {
-            ModFeatures.registerConfiguredFeatures();
-
+            ModConfiguredFeatures.registerConfiguredFeatures();
+            ModBiomes.setupBiomeInfo();
             pot.addPlant(new ResourceLocation(MOD_ID, "sakura_sapling"), ModBlocks.POTTED_SAKURA_SAPLING);
         });
     }
@@ -143,23 +143,23 @@ public class Ancillary {
         }
     }
 
-    private void biomeLoading(BiomeLoadingEvent event) {
+    private void onBiomeLoad(BiomeLoadingEvent event) {
         RegistryKey<Biome> biome = RegistryKey.create(Registry.BIOME_REGISTRY, event.getName());
         ConfigManager config = ConfigManager.getInstance();
         BiomeGenerationSettingsBuilder gen = event.getGeneration();
-        if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.PLAINS)) {
+        if (event.getName().equals(new ResourceLocation("minecraft", "plains"))) {
             if (config.allowVegetalGeneration()) {
-                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_SPARSE);
-                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.PATCH_CHERRY_DECORATED);
+                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.PATCH_CHERRY_SPARSE);
+                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.PATCH_CHERRY_DECORATED);
             } if (config.allowTreeGeneration()) {
-                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModFeatures.SAKURA_PLAIN_VEGETATION);
+                gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.SAKURA_PLAIN_VEGETATION);
             }
         } if (BiomeDictionary.hasType(biome, BiomeDictionary.Type.OVERWORLD)) {
             if (config.allowLushStoneGeneration()) {
-                // gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.DISK_LUSH_STONE); Commented out due to issues relating to the feature.
+                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.DISK_LUSH_STONE);
             } if (config.allowRockGeneration()) {
-                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_ROCK);
-                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModFeatures.PATCH_PEBBLES);
+                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.PATCH_ROCK);
+                gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.PATCH_PEBBLES);
             }
         }
     }

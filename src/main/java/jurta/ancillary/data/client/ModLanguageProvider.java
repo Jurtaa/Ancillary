@@ -48,8 +48,7 @@ public class ModLanguageProvider extends LanguageProvider {
                 add("config.ancillary.allowLushStoneGeneration.title", "Lush Stone");
                 add("config.ancillary.allowLushStoneGeneration.tooltip",
                         "Determines if lush stone should generate within worlds.\n" +
-                        "\u00A74NOTE: Currently does nothing due to related issues.\n" +
-                                "\u00A7r\u00A77Default: OFF");
+                                "\u00A7r\u00A77Default: ON");
                 addBlock(ModBlocks.LEATHER_BLOCK, "Leather Block");
                 addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");
                 addBlock(ModBlocks.POLISHED_ROCK_BLOCK, "Polished Rock Block");

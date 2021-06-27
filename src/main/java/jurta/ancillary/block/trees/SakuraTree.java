@@ -1,6 +1,6 @@
 package jurta.ancillary.block.trees;
 
-import jurta.ancillary.init.ModFeatures;
+import jurta.ancillary.init.ModConfiguredFeatures;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.gen.feature.BaseTreeFeatureConfig;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -13,9 +13,9 @@ public class SakuraTree extends Tree {
     @Override
     protected ConfiguredFeature<BaseTreeFeatureConfig, ?> getConfiguredFeature(Random random, boolean hasBees) {
         if (random.nextInt(10) == 0) {
-            return hasBees ? ModFeatures.FANCY_SAKURA_BEES_005 : ModFeatures.FANCY_SAKURA;
+            return hasBees ? ModConfiguredFeatures.FANCY_SAKURA_BEES_005 : ModConfiguredFeatures.FANCY_SAKURA;
         } else {
-            return hasBees ? ModFeatures.SAKURA_BEES_005 : ModFeatures.SAKURA;
+            return hasBees ? ModConfiguredFeatures.SAKURA_BEES_005 : ModConfiguredFeatures.SAKURA;
         }
     }
 }

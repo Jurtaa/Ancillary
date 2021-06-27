@@ -1,6 +1,8 @@
 * 1.16.5-0.0.10
 Biomes
 - Added sakura valley
+Generation
+- Finally fixed lush stone generation (Now enabled by default)
 * 1.16.5-0.0.9
 Blocks
 - Leather blocks are now rotatable
