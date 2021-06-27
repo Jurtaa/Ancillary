@@ -1,11 +1,9 @@
 package jurta.ancillary.biome;
 
-import jurta.ancillary.init.ModConfiguredFeatures;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.biome.*;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.structure.StructureFeatures;
 import net.minecraft.world.gen.surfacebuilders.ConfiguredSurfaceBuilders;
 
@@ -33,7 +31,7 @@ public class ModBiomeMaker {
         DefaultBiomeFeatures.addDefaultLakes(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultMonsterRoom(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addForestFlowers(biomegenerationsettings$builder);
-        // biomegenerationsettings$builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.SAKURA_VALLEY_VEGETATION); Commented out due to related issues
+        // biomegenerationsettings$builder.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.SAKURA_VALLEY_VEGETATION);
 
         DefaultBiomeFeatures.addDefaultUndergroundVariety(biomegenerationsettings$builder);
         DefaultBiomeFeatures.addDefaultOres(biomegenerationsettings$builder);

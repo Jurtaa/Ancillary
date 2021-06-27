@@ -72,7 +72,8 @@ public class ModConfiguredFeatures {
             .decorated(Placement.COUNT_EXTRA.configured(new AtSurfaceWithExtraConfig(6, 0.1F, 1)));
     public static final ConfiguredFeature<?, ?> DISK_LUSH_STONE = ModFeatures.LUSH_STONE_PATCH.get()
             .configured(new SphereReplaceConfig(States.LUSH_STONE,
-                    FeatureSpread.of(3, 1), 1,
+                    FeatureSpread.of(5, 2),
+                    2,
                     ImmutableList.of(States.STONE)))
             .decorated(Features.Placements.TOP_SOLID_HEIGHTMAP_SQUARE);
     public static final ConfiguredFeature<?, ?> PATCH_ROCK = Feature.RANDOM_PATCH

@@ -1,6 +1,7 @@
 package jurta.ancillary.world.gen.feature;
 
 import com.mojang.serialization.Codec;
+import jurta.ancillary.init.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -32,7 +33,7 @@ public class StonePatchFeature extends Feature<SphereReplaceConfig> {
 
                         for (BlockState blockstate2 : config.targets) {
                             if (blockstate2.getBlock() == blockstate.getBlock() && (distance != radius * radius || rand.nextFloat() < 0.5F)) {
-                                if (blockstate1.isAir(world, blockpos)) {
+                                if (blockstate1.isAir(world, blockpos) || blockstate1.is(ModBlocks.PEBBLES.get()) || blockstate1.is(ModBlocks.ROCK.get())) {
                                     world.setBlock(blockpos, config.state, 2);
                                 }
                                 i++;

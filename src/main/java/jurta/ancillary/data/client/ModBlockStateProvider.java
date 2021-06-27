@@ -18,7 +18,7 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class ModBlockStateProvider extends BlockStateProvider {
+public class  ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(DataGenerator gen, ExistingFileHelper exFileHelper) {
         super(gen, Ancillary.MOD_ID, exFileHelper);
     }
@@ -37,7 +37,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlock(ModBlocks.ROCK.get(), models().withExistingParent("rock", modLoc("block/template_rock"))
                 .texture("rock", modLoc("block/rock")));
         simpleBlock(ModBlocks.ROCK_BLOCK.get());
-        simpleBlock(ModBlocks.LUSH_STONE.get(), models().cubeBottomTop("lush_stone", modLoc("block/lush_stone_side"), mcLoc("block/stone"), modLoc("block/lush_stone_top")));
+        snowyGrassBlock(ModBlocks.LUSH_STONE.get(), modLoc("block/lush_stone_side"), mcLoc("block/stone"), modLoc("block/lush_stone_top"));
         // Polished Blocks
         simpleBlock(ModBlocks.POLISHED_ROCK_BLOCK.get());
         // Bricks
@@ -139,6 +139,19 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // Flower Pots
         simpleBlock(ModBlocks.POTTED_SAKURA_SAPLING.get(), models().withExistingParent("potted_sakura_sapling", mcLoc("block/flower_pot_cross"))
                 .texture("plant", modLoc("block/sakura_sapling")));
+    }
+
+    public void snowyGrassBlock(Block block, ResourceLocation side, ResourceLocation bottom, ResourceLocation top) {
+        String name = block.getRegistryName().getPath();
+        getVariantBuilder(block).forAllStates(state -> {
+            boolean isSnowy = state.getValue(BlockStateProperties.SNOWY);
+            return ConfiguredModel.builder().modelFile(
+                    isSnowy ? models().cubeBottomTop(name + "_snow",
+                            extend(side, "_snow"),
+                            bottom, mcLoc("block/snow"))
+                    : models().cubeBottomTop(name, side, bottom, top))
+                    .build();
+        });
     }
 
     public void pressurePlateBlock(PressurePlateBlock block, ResourceLocation texture) {

@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "snowy=false": {
       "model": "ancillary:block/lush_stone"
+    },
+    "snowy=true": {
+      "model": "ancillary:block/lush_stone_snow"
     }
   }
 }

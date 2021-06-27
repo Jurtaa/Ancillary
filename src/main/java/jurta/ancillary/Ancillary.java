@@ -162,6 +162,10 @@ public class Ancillary {
                 gen.addFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.PATCH_PEBBLES);
             }
         }
+        // Modded Biome Features
+        if (event.getName().equals(new ResourceLocation(Ancillary.MOD_ID, "sakura_valley"))) {
+            gen.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.SAKURA_VALLEY_VEGETATION);
+        }
     }
 
     // Registers the locales for the language provider

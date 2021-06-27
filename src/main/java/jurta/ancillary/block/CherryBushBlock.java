@@ -33,16 +33,16 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
     }
 
     @Override
-    public ItemStack getCloneItemStack(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState) {
+    public ItemStack getCloneItemStack(IBlockReader world, BlockPos pos, BlockState state) {
         return new ItemStack(ModItems.CHERRIES.get());
     }
 
     @Override
-    public VoxelShape getShape(BlockState blockState, IBlockReader iBlockReader, BlockPos blockPos, ISelectionContext iSelectionContext) {
-        if (blockState.getValue(AGE) == 0) {
+    public VoxelShape getShape(BlockState state, IBlockReader world, BlockPos pos, ISelectionContext selectionContext) {
+        if (state.getValue(AGE) == 0) {
             return SAPLING_SHAPE;
         }
-        return super.getShape(blockState, iBlockReader, blockPos, iSelectionContext);
+        return super.getShape(state, world, pos, selectionContext);
     }
 
     @Override
@@ -51,48 +51,48 @@ public class CherryBushBlock extends BushBlock implements IGrowable {
     }
 
     @Override
-    public void randomTick(BlockState blockState, ServerWorld serverWorld, BlockPos blockPos, Random random) {
-        int i = blockState.getValue(AGE);
-        if (i < 3 && serverWorld.getRawBrightness(blockPos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(serverWorld, blockPos, blockState, random.nextInt(5) == 0)) {
-            serverWorld.setBlock(blockPos, blockState.setValue(AGE, i + 1), 2);
-            ForgeHooks.onCropsGrowPost(serverWorld, blockPos, blockState);
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        int i = state.getValue(AGE);
+        if (i < 3 && world.getRawBrightness(pos.above(), 0) >= 9 && ForgeHooks.onCropsGrowPre(world, pos, state, random.nextInt(5) == 0)) {
+            world.setBlock(pos, state.setValue(AGE, i + 1), 2);
+            ForgeHooks.onCropsGrowPost(world, pos, state);
         }
     }
 
     @Override
-    public ActionResultType use(BlockState blockState, World worldIn, BlockPos blockPos, PlayerEntity playerEntity, Hand hand, BlockRayTraceResult result) {
-        int i = blockState.getValue(AGE);
+    public ActionResultType use(BlockState state, World worldIn, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult result) {
+        int i = state.getValue(AGE);
         boolean flag = (i == 3);
-        if (!flag && playerEntity.getItemInHand(hand).getItem() == Items.BONE_MEAL)
+        if (!flag && player.getItemInHand(hand).getItem() == Items.BONE_MEAL)
         return ActionResultType.PASS;
         if (i > 1) {
             int j = 1 + worldIn.random.nextInt(2);
-            popResource(worldIn, blockPos, new ItemStack(ModItems.CHERRIES.get(), j + (flag ? 1 : 0)));
-            worldIn.playSound(null, blockPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
-            worldIn.setBlock(blockPos, blockState.setValue(AGE, 1), 2);
+            popResource(worldIn, pos, new ItemStack(ModItems.CHERRIES.get(), j + (flag ? 1 : 0)));
+            worldIn.playSound(null, pos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundCategory.BLOCKS, 1.0F, 0.8F + worldIn.random.nextFloat() * 0.4F);
+            worldIn.setBlock(pos, state.setValue(AGE, 1), 2);
             return ActionResultType.sidedSuccess(worldIn.isClientSide);
         }
-        return super.use(blockState, worldIn, blockPos, playerEntity, hand, result);
+        return super.use(state, worldIn, pos, player, hand, result);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> block) {
-        block.add(AGE);
+    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> builder) {
+        builder.add(AGE);
     }
 
     @Override
-    public boolean isValidBonemealTarget(IBlockReader iBlockReader, BlockPos blockPos, BlockState blockState, boolean isClient) {
-        return blockState.getValue(AGE) < 3;
+    public boolean isValidBonemealTarget(IBlockReader world, BlockPos pos, BlockState state, boolean isClient) {
+        return state.getValue(AGE) < 3;
     }
 
     @Override
-    public boolean isBonemealSuccess(World worldIn, Random random, BlockPos blockPos, BlockState blockState) {
+    public boolean isBonemealSuccess(World worldIn, Random random, BlockPos pos, BlockState state) {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerWorld serverWorld, Random random, BlockPos blockPos, BlockState blockState) {
-        int i = Math.min(3, blockState.getValue(AGE) + 1);
-        serverWorld.setBlock(blockPos, blockState.setValue(AGE, i), 2);
+    public void performBonemeal(ServerWorld serverWorld, Random random, BlockPos pos, BlockState state) {
+        int i = Math.min(3, state.getValue(AGE) + 1);
+        serverWorld.setBlock(pos, state.setValue(AGE, i), 2);
     }
 }
