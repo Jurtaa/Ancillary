@@ -6,7 +6,7 @@ Biomes
 Generation
 - Finally fixed lush stone generation (Now enabled by default.)
 Textures
-- Update sakura leaves texture
+- Updated sakura leaves texture
 * 1.16.5-0.0.9
 Blocks
 - Leather blocks are now rotatable
