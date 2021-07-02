@@ -48,6 +48,15 @@ public class ModLanguageProvider extends LanguageProvider {
                 add("config.ancillary.allowLushStoneGeneration.title", "Lush Stone");
                 add("config.ancillary.allowLushStoneGeneration.tooltip",
                         "Determines if lush stone should generate within worlds.\n" +
+                                "\u00A77Default: ON");
+                add("config.ancillary.allowCropGeneration.title", "Crops");
+                add("config.ancillary.allowCropGeneration.tooltip",
+                        "Determines if crops should generate within worlds.\n" +
+                                "\u00A77Default: ON");
+                add("config.ancillary.allowBiomeGeneration.title", "Biomes");
+                add("config.ancillary.allowBiomeGeneration.tooltip",
+                        "Determines if biomes should generate within worlds.\n" +
+                                "\u00A74NOTE: Minecraft needs to be restarted so changes can be applied.\n" +
                                 "\u00A7r\u00A77Default: ON");
                 addBlock(ModBlocks.LEATHER_BLOCK, "Leather Block");
                 addBlock(ModBlocks.ROCK_BLOCK, "Rock Block");

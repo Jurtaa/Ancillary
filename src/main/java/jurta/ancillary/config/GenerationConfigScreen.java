@@ -70,8 +70,7 @@ public class GenerationConfigScreen extends Screen {
                 "config.ancillary.allowTreeGeneration.title",
                 new TranslationTextComponent("config.ancillary.allowTreeGeneration.tooltip", Ancillary.MOD_ID),
                 unused -> CMI.allowTreeGeneration(),
-                (unused, newValue) -> CMI.changeAllowTreeGeneration(newValue))
-        );
+                (unused, newValue) -> CMI.changeAllowTreeGeneration(newValue)));
         this.optionsRowList.addSmall(new BooleanOption(
                 "config.ancillary.allowRockGeneration.title",
                 new TranslationTextComponent("config.ancillary.allowRockGeneration.tooltip", Ancillary.MOD_ID),
@@ -81,8 +80,17 @@ public class GenerationConfigScreen extends Screen {
                 "config.ancillary.allowLushStoneGeneration.title",
                 new TranslationTextComponent("config.ancillary.allowLushStoneGeneration.tooltip", Ancillary.MOD_ID),
                 unused -> CMI.allowLushStoneGeneration(),
-                (unused, newValue) -> CMI.changeAllowLushStoneGeneration(newValue))
-        );
+                (unused, newValue) -> CMI.changeAllowLushStoneGeneration(newValue)));
+        this.optionsRowList.addSmall(new BooleanOption(
+                "config.ancillary.allowCropGeneration.title",
+                new TranslationTextComponent("config.ancillary.allowCropGeneration.tooltip", Ancillary.MOD_ID),
+                unused -> CMI.allowCropGeneration(),
+                (unused, newValue) -> CMI.changeAllowCropGeneration(newValue)
+        ), new BooleanOption(
+                "config.ancillary.allowBiomeGeneration.title",
+                new TranslationTextComponent("config.ancillary.allowBiomeGeneration.tooltip", Ancillary.MOD_ID),
+                unused -> CMI.allowBiomeGeneration(),
+                (unused, newValue) -> CMI.changeAllowBiomeGeneration(newValue)));
 
         // Add the options row list as this screen's child
         // If this is not done, users cannot click on items in the list

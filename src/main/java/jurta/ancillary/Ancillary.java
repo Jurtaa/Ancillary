@@ -37,6 +37,7 @@ import net.minecraft.world.gen.feature.template.StructureProcessorList;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.BiomeManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -98,10 +99,14 @@ public class Ancillary {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         FlowerPotBlock pot = (FlowerPotBlock)Blocks.FLOWER_POT;
+        ConfigManager config = ConfigManager.getInstance();
         event.enqueueWork(() -> {
             ModConfiguredFeatures.registerConfiguredFeatures();
             ModBiomes.setupBiomeInfo();
             pot.addPlant(new ResourceLocation(MOD_ID, "sakura_sapling"), ModBlocks.POTTED_SAKURA_SAPLING);
+            if (config.allowBiomeGeneration()) {
+                BiomeManager.addAdditionalOverworldBiomes(RegistryKey.create(Registry.BIOME_REGISTRY, ModBiomes.SAKURA_VALLEY.get().getRegistryName()));
+            }
         });
     }
 
@@ -216,6 +221,7 @@ public class Ancillary {
      */
     private static void addCropToPoolElement(MutableRegistry<JigsawPattern> templatePoolRegistry, ResourceLocation poolRL, List<ResourceLocation> nbtPieceRLList) {
         JigsawPattern pool = templatePoolRegistry.get(poolRL);
+        ConfigManager config = ConfigManager.getInstance();
         if (pool == null) return;
 
         // AccessTransformer to make JigsawPattern's templates field public for us to see.
@@ -240,7 +246,9 @@ public class Ancillary {
                         List<StructureProcessor> mutableProcessorList = new ArrayList<>(originalStructureProcessorList.list());
 
                         // Add our processor to the end so it runs after everything else
-                        mutableProcessorList.add(ModProcessors.MODDED_CROP_PROCESSOR);
+                        if (config.allowCropGeneration()) {
+                            mutableProcessorList.add(ModProcessors.MODDED_CROP_PROCESSOR);
+                        }
                         StructureProcessorList newStructureProcessorList = new StructureProcessorList(mutableProcessorList);
 
                         // Override the original field with our new instance. This is an additive operation and safe to stack with other mods

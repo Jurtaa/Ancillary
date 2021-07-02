@@ -33,12 +33,11 @@ public class ConfigManager {
     }
 
     private final ForgeConfigSpec.BooleanValue allowVegetalGeneration;
-
     private final ForgeConfigSpec.BooleanValue allowTreeGeneration;
-
     private final ForgeConfigSpec.BooleanValue allowRockGeneration;
-
     private final ForgeConfigSpec.BooleanValue allowLushStoneGeneration;
+    private final ForgeConfigSpec.BooleanValue allowCropGeneration;
+    private final ForgeConfigSpec.BooleanValue allowBiomeGeneration;
 
     private ConfigManager(ForgeConfigSpec.Builder configSpecBuilder) {
         allowVegetalGeneration = configSpecBuilder
@@ -57,6 +56,14 @@ public class ConfigManager {
                 .comment("Determines if lush stone should generate within worlds.")
                 .translation("config.ancillary.allowLushStoneGeneration.title")
                 .define("allowLushStoneGeneration", true);
+        allowCropGeneration = configSpecBuilder
+                .comment("Determines if crops should generate within worlds.")
+                .translation("config.ancillary.allowCropGeneration.title")
+                .define("allowCropGeneration", true);
+        allowBiomeGeneration = configSpecBuilder
+                .comment("Determines if biomes should generate within worlds.")
+                .translation("config.ancillary.allowBiomeGeneration.title")
+                .define("allowBiomeGeneration", false);
     }
 
     public static ConfigManager getInstance() {
@@ -79,6 +86,14 @@ public class ConfigManager {
         return allowLushStoneGeneration.get();
     }
 
+    public boolean allowCropGeneration() {
+        return allowCropGeneration.get();
+    }
+
+    public boolean allowBiomeGeneration() {
+        return allowBiomeGeneration.get();
+    }
+
     public void changeAllowVegetalGeneration(boolean newValue) {
         allowVegetalGeneration.set(newValue);
     }
@@ -93,6 +108,14 @@ public class ConfigManager {
 
     public void changeAllowLushStoneGeneration(boolean newValue) {
         allowLushStoneGeneration.set(newValue);
+    }
+
+    public void changeAllowCropGeneration(boolean newValue) {
+        allowCropGeneration.set(newValue);
+    }
+
+    public void changeAllowBiomeGeneration(boolean newValue) {
+        allowBiomeGeneration.set(newValue);
     }
 
     public void save() {
